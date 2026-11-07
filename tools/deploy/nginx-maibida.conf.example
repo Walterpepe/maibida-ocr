@@ -51,6 +51,11 @@ server {
     # brotli on;  brotli_types text/plain text/css application/javascript application/json image/svg+xml;
 
     # ---- canonical homepage and retired locale editions
+    location = / {
+        include /etc/nginx/snippets/maibida-security.conf;
+        add_header Cache-Control "no-cache" always;
+        rewrite ^ /index.html break;
+    }
     location = /index.html                         { return 301 /$is_args$args; }
     location = /index.en-AU.html                    { return 301 /index.en-SG.html; }
     location = /product/10032.en-AU.html            { return 301 /product/10032.en-SG.html; }
