@@ -1,0 +1,14 @@
+const fs=require('fs');const path=require('path');
+const file=path.resolve(__dirname,'..','product','10032.html');
+let html=fs.readFileSync(file,'utf8');
+const top=['合模前进行模穴、模芯、产品残留确认','滑块位置、顶针折断和复位位置确认','镶件是否到位和遗漏检测','产品是否完全脱模、产品是否缺料检测','产品尺寸是否合格、产品毛边检测'];
+const bottom=['多穴产品是否缺失和残留检测','多色产品混色是否正确检测','安全门开关消除报警、<br>安全门动作自动复检','减少脱模剂使用，适用于脱模困难的产品','减少顶针顶出次数，提升注塑成型周期，<br>提高生产效率'];
+const cards=(items,row)=>items.map((t,i)=>`<div class="fbx-card ${row} c${i+1}">${t}</div>`).join('');
+const marks=(nums,row)=>nums.map((n,i)=>`<span class="fbx-mark ${row} m${i+1}">${n}</span>`).join('');
+const lines=Array.from({length:8},(_,i)=>`<i class="fbx-line l${i+1}"></i>`).join('');
+const fish=`<section class="fishbone-exact" aria-label="模具监视保护器检测内容"><h3>模具监视保护器</h3>${cards(top,'top')}${cards(bottom,'bottom')}${marks(['02','03','04','05'],'top')}${marks(['07','08','09','10'],'bottom')}${lines}<div class="fbx-spine"><b class="s1"></b><b class="s2"></b><b class="s3">检测内容</b><b class="s4"></b></div><div class="fbx-result">降低生产成本<br>提高生产效率</div></section>`;
+const re=/<img[^>]+src="\.\.\/cn\/testimg\/mjbh2\.jpg"[^>]*\/>/i;
+if(!re.test(html))throw new Error('Original fishbone image not found');
+html=html.replace(re,fish);
+if(html.includes('cn/testimg/mjbh2.jpg'))throw new Error('Fishbone image reference remains');
+fs.writeFileSync(file,html,'utf8');console.log('Exact fishbone rebuilt from attached reference.');

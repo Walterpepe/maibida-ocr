@@ -1,0 +1,86 @@
+{
+  "原版 8mm 镜头视野示意图": {
+    "en-US": "Original 8mm lens field of view",
+    "en-SG": "Original 8mm lens field of view",
+    "es-MX": "Campo de visión del lente original 8mm",
+    "id-ID": "Bidang pandang lensa asli 8mm",
+    "th-TH": "ระยะมองเห็นของเลนส์เดิม 8mm",
+    "vi-VN": "Trường nhìn của ống kính gốc 8mm",
+    "ko-KR": "기본 8mm 렌즈 시야 범위",
+    "ja-JP": "標準 8mm レンズの視野範囲",
+    "ms-MY": "Medan pandangan lensa asal 8mm",
+    "ru-RU": "Поле зрения штатного объектива 8mm"
+  },
+  "原版 12mm 镜头视野示意图": {
+    "en-US": "Original 12mm lens field of view",
+    "en-SG": "Original 12mm lens field of view",
+    "es-MX": "Campo de visión del lente original 12mm",
+    "id-ID": "Bidang pandang lensa asli 12mm",
+    "th-TH": "ระยะมองเห็นของเลนส์เดิม 12mm",
+    "vi-VN": "Trường nhìn của ống kính gốc 12mm",
+    "ko-KR": "기본 12mm 렌즈 시야 범위",
+    "ja-JP": "標準 12mm レンズの視野範囲",
+    "ms-MY": "Medan pandangan lensa asal 12mm",
+    "ru-RU": "Поле зрения штатного объектива 12mm"
+  },
+  "原版 16mm 镜头视野示意图": {
+    "en-US": "Original 16mm lens field of view",
+    "en-SG": "Original 16mm lens field of view",
+    "es-MX": "Campo de visión del lente original 16mm",
+    "id-ID": "Bidang pandang lensa asli 16mm",
+    "th-TH": "ระยะมองเห็นของเลนส์เดิม 16mm",
+    "vi-VN": "Trường nhìn của ống kính gốc 16mm",
+    "ko-KR": "기본 16mm 렌즈 시야 범위",
+    "ja-JP": "標準 16mm レンズの視野範囲",
+    "ms-MY": "Medan pandangan lensa asal 16mm",
+    "ru-RU": "Поле зрения штатного объектива 16mm"
+  },
+  "应用案例自动轮播": {
+    "en-US": "Application case carousel, auto-play",
+    "en-SG": "Application case carousel, auto-play",
+    "es-MX": "Carrusel automático de casos de aplicación",
+    "id-ID": "Carousel otomatis studi kasus aplikasi",
+    "th-TH": "ภาพสไลด์อัตโนมัติของกรณีการใช้งาน",
+    "vi-VN": "Băng chuyền tự động các trường hợp ứng dụng",
+    "ko-KR": "적용 사례 자동 슬라이드",
+    "ja-JP": "適用事例の自動カルーセル",
+    "ms-MY": "Karusel automatik kes aplikasi",
+    "ru-RU": "Автоматическая карусель примеров применения"
+  },
+  "成像处理效果对比": {
+    "en-US": "Image processing result comparison",
+    "en-SG": "Image processing result comparison",
+    "es-MX": "Comparación de resultados de procesamiento de imagen",
+    "id-ID": "Perbandingan hasil pemrosesan citra",
+    "th-TH": "เปรียบเทียบผลการประมวลผลภาพ",
+    "vi-VN": "So sánh kết quả xử lý hình ảnh",
+    "ko-KR": "영상 처리 결과 비교",
+    "ja-JP": "画像処理効果の比較",
+    "ms-MY": "Perbandingan hasil pemprosesan imej",
+    "ru-RU": "Сравнение результатов обработки изображений"
+  },
+  "模具监视保护器检测内容": {
+    "en-US": "Mold monitor inspection scope",
+    "en-SG": "Mold monitor inspection scope",
+    "es-MX": "Alcance de inspección del monitor de moldes",
+    "id-ID": "Cakupan inspeksi monitor cetakan",
+    "th-TH": "รายการตรวจจับของระบบตรวจสอบแม่พิมพ์",
+    "vi-VN": "Phạm vi kiểm tra của thiết bị giám sát khuôn",
+    "ko-KR": "금형 모니터 검사 항목",
+    "ja-JP": "金型モニターの検出項目",
+    "ms-MY": "Skop pemeriksaan monitor acuan",
+    "ru-RU": "Перечень проверок системы контроля пресс-форм"
+  },
+  "集中监控系统架构": {
+    "en-US": "Centralized monitoring system architecture",
+    "en-SG": "Centralized monitoring system architecture",
+    "es-MX": "Arquitectura del sistema de monitoreo centralizado",
+    "id-ID": "Arsitektur sistem pemantauan terpusat",
+    "th-TH": "สถาปัตยกรรมระบบตรวจสอบแบบรวมศูนย์",
+    "vi-VN": "Kiến trúc hệ thống giám sát tập trung",
+    "ko-KR": "중앙 모니터링 시스템 구성",
+    "ja-JP": "集中監視システムの構成",
+    "ms-MY": "Seni bina sistem pemantauan berpusat",
+    "ru-RU": "Архитектура системы централизованного мониторинга"
+  }
+}

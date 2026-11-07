@@ -1,0 +1,654 @@
+[
+ {
+  "id": "e0000",
+  "text": "Blue for 1000M, white for 100M, red for fault"
+ },
+ {
+  "id": "e0001",
+  "text": "10–12X continuously variable magnification"
+ },
+ {
+  "id": "e0002",
+  "text": "13.3-inch capacitive touchscreen"
+ },
+ {
+  "id": "e0003",
+  "text": "14-inch capacitive touchscreen"
+ },
+ {
+  "id": "e0004",
+  "text": "1-time monitoring"
+ },
+ {
+  "id": "e0005",
+  "text": "2 MP / 5 MP"
+ },
+ {
+  "id": "e0006",
+  "text": "2-time monitoring"
+ },
+ {
+  "id": "e0007",
+  "text": "3D noise reduction"
+ },
+ {
+  "id": "e0008",
+  "text": "3-component split design"
+ },
+ {
+  "id": "e0009",
+  "text": "3-in-1 integrated design"
+ },
+ {
+  "id": "e0010",
+  "text": "4 units"
+ },
+ {
+  "id": "e0011",
+  "text": "8 MP (3840*2140), backward compatible"
+ },
+ {
+  "id": "e0012",
+  "text": "AI automatic image acquisition"
+ },
+ {
+  "id": "e0013",
+  "text": "AI automatic capture timing"
+ },
+ {
+  "id": "e0014",
+  "text": "AI image acquisition and automatic capture timing;"
+ },
+ {
+  "id": "e0015",
+  "text": "IMX-790 mold monitor"
+ },
+ {
+  "id": "e0016",
+  "text": "IO box"
+ },
+ {
+  "id": "e0017",
+  "text": "IO features built-in isolation relays for direct connection to customer load circuits;"
+ },
+ {
+  "id": "e0018",
+  "text": "I/O inputs: independent input per channel for flexible, convenient wiring;"
+ },
+ {
+  "id": "e0019",
+  "text": "I/O outputs: expanded to 6 outputs, with added interfaces for external alarm output, cycle start, and ejector pin re-ejection;"
+ },
+ {
+  "id": "e0020",
+  "text": "V1PRO mold protection camera"
+ },
+ {
+  "id": "e0021",
+  "text": "The V1PRO mold protection camera supports up to 8 MP high-resolution capture, with selectable monochrome or color modes that render image detail precisely. The built-in light source integrates infrared light and white light in a single dual-light unit to cover a wider range of applications. Autofocus"
+ },
+ {
+  "id": "e0022",
+  "text": "Sensor brand"
+ },
+ {
+  "id": "e0023",
+  "text": "•  Compact and lightweight for easy handheld operation; the main unit is equipped with 5 network ports, allowing cameras to be added flexibly as production needs change, with a reserved interface for MES system integration;"
+ },
+ {
+  "id": "e0024",
+  "text": "•  Full touchscreen control for simple, intuitive operation; fast processing, with system inspection time as low as 0.03 s based on configured detection areas;"
+ },
+ {
+  "id": "e0025",
+  "text": "◎ Close the safety door"
+ },
+ {
+  "id": "e0026",
+  "text": "◎ Open the safety door"
+ },
+ {
+  "id": "e0027",
+  "text": "◎ Restore to normal state"
+ },
+ {
+  "id": "e0028",
+  "text": "Main unit active ambient light"
+ },
+ {
+  "id": "e0029",
+  "text": "Product dimension conformity and flash detection"
+ },
+ {
+  "id": "e0030",
+  "text": "Complete part release and short shot detection"
+ },
+ {
+  "id": "e0031",
+  "text": "Power supply"
+ },
+ {
+  "id": "e0032",
+  "text": "Save files"
+ },
+ {
+  "id": "e0033",
+  "text": "Optics and image capture"
+ },
+ {
+  "id": "e0034",
+  "text": "Full-frame autofocus / fov autofocus / multi-point focus"
+ },
+ {
+  "id": "e0035",
+  "text": "Automatic brightness correction avoids false alarms caused by brightness variations under natural lighting conditions;"
+ },
+ {
+  "id": "e0036",
+  "text": "Built-in light source"
+ },
+ {
+  "id": "e0037",
+  "text": "Internal communication for transferring status information, files, data, images, and more"
+ },
+ {
+  "id": "e0038",
+  "text": "Reduces the use of mold release agent; suitable for parts that are difficult to eject"
+ },
+ {
+  "id": "e0039",
+  "text": "Reduces the number of ejector pin strokes and improves the injection molding cycle,"
+ },
+ {
+  "id": "e0040",
+  "text": "Front end"
+ },
+ {
+  "id": "e0041",
+  "text": "Motion monitoring workflow"
+ },
+ {
+  "id": "e0042",
+  "text": "Gigabit Ethernet industrial camera"
+ },
+ {
+  "id": "e0043",
+  "text": "Independent user passwords can be set for parameter configuration, template editing, and algorithm settings to prevent operation by unauthorized personnel;"
+ },
+ {
+  "id": "e0044",
+  "text": "Reference images can be added manually, and static reference image learning is available on the sensitivity settings page;"
+ },
+ {
+  "id": "e0045",
+  "text": "ROI sensitivity can be adjusted independently, with no limit on the number of ROIs;"
+ },
+ {
+  "id": "e0046",
+  "text": "Verify the mold cavity, mold core, and part residue before mold closing"
+ },
+ {
+  "id": "e0047",
+  "text": "Back end"
+ },
+ {
+  "id": "e0048",
+  "text": "Image quality adjustment"
+ },
+ {
+  "id": "e0049",
+  "text": "Image sharpening"
+ },
+ {
+  "id": "e0050",
+  "text": "Sharpness enhancement, HDR, contrast, brightness, saturation, Gamma correction, and more"
+ },
+ {
+  "id": "e0051",
+  "text": "Before processing"
+ },
+ {
+  "id": "e0052",
+  "text": "After processing"
+ },
+ {
+  "id": "e0053",
+  "text": "Multi-scenario vision inspection"
+ },
+ {
+  "id": "e0054",
+  "text": "Detection of missing parts and residue in multi-cavity products"
+ },
+ {
+  "id": "e0055",
+  "text": "Verification of correct color mixing in multi-color products"
+ },
+ {
+  "id": "e0056",
+  "text": "Automatic re-inspection upon safety door actuation"
+ },
+ {
+  "id": "e0057",
+  "text": "Safety door open/close clears alarms,"
+ },
+ {
+  "id": "e0058",
+  "text": "Security camera"
+ },
+ {
+  "id": "e0059",
+  "text": "Real-time monitoring of mold cavities, mold cores, inserts, ejector pins, part residue, and ejection status to reduce the risk of mold damage."
+ },
+ {
+  "id": "e0060",
+  "text": "Focusing operation"
+ },
+ {
+  "id": "e0061",
+  "text": "Focus mode"
+ },
+ {
+  "id": "e0062",
+  "text": "Installation dimension drawing.png"
+ },
+ {
+  "id": "e0063",
+  "text": "Screen resolution"
+ },
+ {
+  "id": "e0064",
+  "text": "Industrial machine vision inspection and automation solutions"
+ },
+ {
+  "id": "e0065",
+  "text": "Industrial vision mold protection system"
+ },
+ {
+  "id": "e0066",
+  "text": "Mold opening complete"
+ },
+ {
+  "id": "e0067",
+  "text": "Abnormality handling complete"
+ },
+ {
+  "id": "e0068",
+  "text": "When an abnormality occurs:"
+ },
+ {
+  "id": "e0069",
+  "text": "Color support"
+ },
+ {
+  "id": "e0070",
+  "text": "Color / monochrome switching"
+ },
+ {
+  "id": "e0071",
+  "text": "White in standby, blue in operation, red on alarm"
+ },
+ {
+  "id": "e0072",
+  "text": "Molding"
+ },
+ {
+  "id": "e0073",
+  "text": "Manual focus"
+ },
+ {
+  "id": "e0074",
+  "text": "Manual adjustment"
+ },
+ {
+  "id": "e0075",
+  "text": "Technical specifications"
+ },
+ {
+  "id": "e0076",
+  "text": "Alarm images store parameter configurations and I/O output status at the time of alarm, and reports can be exported to a USB drive with one click."
+ },
+ {
+  "id": "e0077",
+  "text": "Improve production efficiency"
+ },
+ {
+  "id": "e0078",
+  "text": "Supports cameras up to 8 MP with an integrated infrared light / white light dual-light source and selectable monochrome & color modes for precise image detail; a built-in 12x adjustable autofocus lens locks onto targets at different distances without manual adjustment; patented depth-of-field fusion technology greatly improves operational efficiency;"
+ },
+ {
+  "id": "e0079",
+  "text": "Supports capture up to 8 MP, with selectable monochrome or color modes for precise image detail."
+ },
+ {
+  "id": "e0080",
+  "text": "Supports storage of inspection results, alarm images, and production data to support quality analysis."
+ },
+ {
+  "id": "e0081",
+  "text": "Number of supported cameras"
+ },
+ {
+  "id": "e0082",
+  "text": "Supports rectangular, elliptical, and arbitrary-shaped detection regions to accommodate complex molds;"
+ },
+ {
+  "id": "e0083",
+  "text": "Supports high-speed inline vision inspection of connectors, stamped strips, Insert Molding, and plastic parts."
+ },
+ {
+  "id": "e0084",
+  "text": "Magnification adjustment"
+ },
+ {
+  "id": "e0085",
+  "text": "Files, images, video"
+ },
+ {
+  "id": "e0086",
+  "text": "No"
+ },
+ {
+  "id": "e0087",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. - Manufacturer of Machine Vision Light Sources and Industrial Inline Inspection Equipment"
+ },
+ {
+  "id": "e0088",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. specializes in mold monitors, AI vision sensors, vision sorting machines, flexible feeding and tray-arranging machines, and inline inspection equipment, providing stable and efficient machine vision inspection solutions for injection molding, connector, electronic component, and precision part production."
+ },
+ {
+  "id": "e0089",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. specializes in mold monitors, CCD inline inspection equipment, vision sorting machines, and industrial machine vision solutions, supporting injection mold protection and inline inspection of connectors and plastic parts."
+ },
+ {
+  "id": "e0090",
+  "text": "Display size"
+ },
+ {
+  "id": "e0091",
+  "text": "Exposure and white balance"
+ },
+ {
+  "id": "e0092",
+  "text": "Up to 8 MP"
+ },
+ {
+  "id": "e0093",
+  "text": "Yes"
+ },
+ {
+  "id": "e0094",
+  "text": "Yes (patented technology)"
+ },
+ {
+  "id": "e0095",
+  "text": "Yes (external)"
+ },
+ {
+  "id": "e0096",
+  "text": "Yes (color / monochrome)"
+ },
+ {
+  "id": "e0097",
+  "text": "Flexible automation integration"
+ },
+ {
+  "id": "e0098",
+  "text": "View products →"
+ },
+ {
+  "id": "e0099",
+  "text": "Cameras, light sources, and automation mechanisms are configured according to product specifications, production cycle time, and on-site conditions."
+ },
+ {
+  "id": "e0100",
+  "text": "Multiple mounting options are available to suit customer production scenarios."
+ },
+ {
+  "id": "e0101",
+  "text": "Inspection items"
+ },
+ {
+  "id": "e0102",
+  "text": "I/O outputs in the detection logic can be changed to suit application requirements;"
+ },
+ {
+  "id": "e0103",
+  "text": "Mold monitoring and protection device"
+ },
+ {
+  "id": "e0104",
+  "text": "Mold Monitor - Kunshan Maibida Intelligent Equipment Co., Ltd."
+ },
+ {
+  "id": "e0105",
+  "text": "Mold Monitors and Industrial Vision Inspection Equipment Manufacturer | MAIBIDA"
+ },
+ {
+  "id": "e0106",
+  "text": "Mold Monitor Applications and Inspection Items"
+ },
+ {
+  "id": "e0107",
+  "text": "Normal operation"
+ },
+ {
+  "id": "e0108",
+  "text": "Each detection region can be assigned its own sensitivity and detection area;"
+ },
+ {
+  "id": "e0109",
+  "text": "Injection Molding Machine Mold Protection  |  InsertMolding Inspection Solutions  |  Insert Molding Inspection Solutions  |  High-Speed Out-of-Mold Inspection Systems for Injection Molding Machines"
+ },
+ {
+  "id": "e0110",
+  "text": "Streaming local recording"
+ },
+ {
+  "id": "e0111",
+  "text": "Eliminates the influence of surrounding personnel and the environment"
+ },
+ {
+  "id": "e0112",
+  "text": "Eliminates interference from external factory lighting"
+ },
+ {
+  "id": "e0113",
+  "text": "Verification of slide position, ejector pin breakage, and return position"
+ },
+ {
+  "id": "e0114",
+  "text": "Focal length adjustment, image signal processor"
+ },
+ {
+  "id": "e0115",
+  "text": "Status change upload, streaming video push, local video storage"
+ },
+ {
+  "id": "e0116",
+  "text": "Production data traceability"
+ },
+ {
+  "id": "e0117",
+  "text": "Motorized autofocus"
+ },
+ {
+  "id": "e0118",
+  "text": "Motorized adjustment"
+ },
+ {
+  "id": "e0119",
+  "text": "White light"
+ },
+ {
+  "id": "e0120",
+  "text": "White light / infrared light source (dual-light combination)"
+ },
+ {
+  "id": "e0121",
+  "text": "Camera active ambient light"
+ },
+ {
+  "id": "e0122",
+  "text": "Camera model"
+ },
+ {
+  "id": "e0123",
+  "text": "Camera built-in light source"
+ },
+ {
+  "id": "e0124",
+  "text": "Camera lens and light source combination"
+ },
+ {
+  "id": "e0125",
+  "text": "Hardware advantages"
+ },
+ {
+  "id": "e0126",
+  "text": "Hardware advantages•  Compact and lightweight for easy handheld operation; the main unit is equipped with 5 network ports, allowing cameras to be added flexibly as production needs change, with a reserved interface for MES system integration;•Supports cameras up to 8 MP with an integrated infrared / white light"
+ },
+ {
+  "id": "e0127",
+  "text": "Mold closing inhibited"
+ },
+ {
+  "id": "e0128",
+  "text": "Ejection inhibited"
+ },
+ {
+  "id": "e0129",
+  "text": "Infrared light"
+ },
+ {
+  "id": "e0130",
+  "text": "Combining vision positioning with parallel robots enables flexible feeding, picking, sorting, and tray arranging of products in multiple specifications."
+ },
+ {
+  "id": "e0131",
+  "text": "Network standard"
+ },
+ {
+  "id": "e0132",
+  "text": "Autofocus"
+ },
+ {
+  "id": "e0133",
+  "text": "Autofocus / manual touch focus"
+ },
+ {
+  "id": "e0134",
+  "text": "Auto exposure, auto white balance"
+ },
+ {
+  "id": "e0135",
+  "text": "Color processing"
+ },
+ {
+  "id": "e0136",
+  "text": "Color correction matrix, color / monochrome conversion"
+ },
+ {
+  "id": "e0137",
+  "text": "Covers inspection of appearance, dimensions, characters, position, short shots, burrs, and assembly status."
+ },
+ {
+  "id": "e0138",
+  "text": "Real-time video streaming"
+ },
+ {
+  "id": "e0139",
+  "text": "Eliminates the influence of reflected light"
+ },
+ {
+  "id": "e0140",
+  "text": "Certification"
+ },
+ {
+  "id": "e0141",
+  "text": "Extended depth-of-field fusion technology"
+ },
+ {
+  "id": "e0142",
+  "text": "Software features"
+ },
+ {
+  "id": "e0143",
+  "text": "Software features•  Full touchscreen control for simple, intuitive operation; fast processing, with system inspection time as low as 0.03 s based on configured detection areas;•ROI sensitivity can be adjusted independently, with no limit on the number of ROIs;•AI image acquisition and"
+ },
+ {
+  "id": "e0144",
+  "text": "The MAIBIDA IMX-790 mold monitor supports multiple cameras, AI image acquisition, and ROI-based inspection for injection mold protection, insert placement verification, part residue, and ejection status detection."
+ },
+ {
+  "id": "e0145",
+  "text": "Optional SD card: the SD card can store images and also supports program upgrades and I/O logic configuration updates;"
+ },
+ {
+  "id": "e0146",
+  "text": "General"
+ },
+ {
+  "id": "e0147",
+  "text": "Communication services"
+ },
+ {
+  "id": "e0148",
+  "text": "Intelligent autofocus quickly locks onto the subject to ensure sharp, clear images."
+ },
+ {
+  "id": "e0149",
+  "text": "Lens magnification"
+ },
+ {
+  "id": "e0150",
+  "text": "Detection of insert presence and missing inserts"
+ },
+ {
+  "id": "e0151",
+  "text": "Prevents mold damage, reduces mold repair costs, ensures on-time delivery, lowers production costs, and improves production efficiency"
+ },
+ {
+  "id": "e0152",
+  "text": "Lower production costs"
+ },
+ {
+  "id": "e0153",
+  "text": "Noise reduction and enhancement"
+ },
+ {
+  "id": "e0154",
+  "text": "Centralized monitoring system"
+ },
+ {
+  "id": "e0155",
+  "text": "The centralized monitoring system enables centralized collection of mold monitor data and big-data dashboards, providing real-time monitoring of mold monitor data and interfacing with the customer's MES system through the centralized monitoring application."
+ },
+ {
+  "id": "e0156",
+  "text": "Integrates AI vision capabilities and a range of inspection tools for character, appearance, position, quantity, and presence/absence inspection."
+ },
+ {
+  "id": "e0157",
+  "text": "An integrated dual light source combining infrared light and white light accommodates a wider range of applications."
+ },
+ {
+  "id": "e0158",
+  "text": "Performs appearance defect and dimensional inspection with automatic sorting of conforming parts and nonconforming parts for a wide range of industrial components."
+ },
+ {
+  "id": "e0159",
+  "text": "Ejection"
+ },
+ {
+  "id": "e0160",
+  "text": "After ejector pin retraction"
+ },
+ {
+  "id": "e0161",
+  "text": "High resolution"
+ },
+ {
+  "id": "e0162",
+  "text": "Monochrome / color (dual-color)"
+ }
+]

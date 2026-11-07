@@ -1,0 +1,35 @@
+﻿中文 / Chinese,en-US,es-MX,en-SG,id-ID,th-TH,vi-VN,ko-KR,ja-JP,ms-MY,ru-RU
+模具监视器,mold monitor,monitor de moldes,mold monitor,monitor cetakan,ระบบตรวจสอบแม่พิมพ์,thiết bị giám sát khuôn,금형 모니터,金型モニター,monitor acuan,система контроля пресс-форм
+模具监视保护器,mold monitoring and protection system,sistema de monitoreo y protección de moldes,mold monitoring and protection system,sistem pemantauan dan perlindungan cetakan,ระบบตรวจสอบและป้องกันแม่พิมพ์,hệ thống giám sát và bảo vệ khuôn,금형 감시 및 보호 시스템,金型監視・保護システム,sistem pemantauan dan perlindungan acuan,система контроля и защиты пресс-форм
+注塑模具,injection mold,molde de inyección,injection mold,cetakan injeksi,แม่พิมพ์ฉีด,khuôn ép nhựa,사출 금형,射出成形金型,acuan suntikan,пресс-форма для литья под давлением
+视觉传感器,vision sensor,sensor de visión,vision sensor,sensor visi,เซ็นเซอร์วิชัน,cảm biến thị giác,비전 센서,画像センサ,penderia visi,датчик машинного зрения
+视觉筛选机,vision sorting machine,máquina clasificadora por visión,vision sorting machine,mesin sortir visi,เครื่องคัดแยกด้วยวิชัน,máy phân loại thị giác,비전 선별기,画像選別機,mesin pengasingan visi,машина визуальной сортировки
+柔性上料摆盘机,flexible feeding and tray-loading system,sistema flexible de alimentación y acomodo en charolas,flexible feeding and tray-loading system,sistem pengumpan dan penataan baki fleksibel,ระบบป้อนและจัดเรียงถาดแบบยืดหยุ่น,hệ thống cấp liệu và xếp khay linh hoạt,플렉시블 피딩 및 트레이 배열 시스템,フレキシブル供給・トレー整列装置,sistem suapan dan susunan dulang fleksibel,гибкая система подачи и укладки на лотки
+在线检测设备,inline inspection equipment,equipo de inspección en línea,inline inspection equipment,peralatan inspeksi inline,อุปกรณ์ตรวจสอบแบบอินไลน์,thiết bị kiểm tra trực tuyến,인라인 검사 장비,インライン検査装置,peralatan pemeriksaan in-line,оборудование для встроенного контроля
+连接器在线检测设备,connector inline inspection equipment,equipo de inspección en línea de conectores,connector inline inspection equipment,peralatan inspeksi konektor inline,อุปกรณ์ตรวจสอบคอนเนคเตอร์แบบอินไลน์,thiết bị kiểm tra đầu nối trực tuyến,커넥터 인라인 검사 장비,コネクタ用インライン検査装置,peralatan pemeriksaan penyambung in-line,оборудование встроенного контроля разъемов
+HDMI拉料检测设备,HDMI strip-feed inspection equipment,equipo de inspección de tiras HDMI,HDMI strip-feed inspection equipment,peralatan inspeksi strip HDMI,อุปกรณ์ตรวจสอบแถบ HDMI,thiết bị kiểm tra dải HDMI,HDMI 스트립 공급 검사 장비,HDMIストリップ供給検査装置,peralatan pemeriksaan jalur HDMI,оборудование контроля лент HDMI
+塑料件在线检测设备,plastic parts inline inspection equipment,equipo de inspección en línea de piezas plásticas,plastic parts inline inspection equipment,peralatan inspeksi komponen plastik inline,อุปกรณ์ตรวจสอบชิ้นส่วนพลาสติกแบบอินไลน์,thiết bị kiểm tra chi tiết nhựa trực tuyến,플라스틱 부품 인라인 검사 장비,樹脂部品用インライン検査装置,peralatan pemeriksaan komponen plastik in-line,оборудование встроенного контроля пластиковых деталей
+检测区域,inspection region,zona de inspección,inspection region,area inspeksi,พื้นที่ตรวจสอบ,vùng kiểm tra,검사 영역,検査領域,kawasan pemeriksaan,зона контроля
+不良品,nonconforming parts,piezas no conformes,nonconforming parts,produk tidak sesuai,ชิ้นงานที่ไม่ผ่านเกณฑ์,sản phẩm không đạt,불량품,不良品,produk tidak mematuhi spesifikasi,бракованные детали
+良品,conforming parts,piezas conformes,conforming parts,produk sesuai,ชิ้นงานที่ผ่านเกณฑ์,sản phẩm đạt,양품,良品,produk yang mematuhi spesifikasi,годные детали
+缺料,short shot,falta de material,short shot,kekurangan material,วัสดุไม่เต็ม,thiếu vật liệu,미성형,ショートショット,kekurangan bahan,недолив
+顶针,ejector pin,pasador eyector,ejector pin,pin ejector,หมุดดันชิ้นงาน,chốt đẩy,이젝터 핀,エジェクタピン,pin penolak,толкатель
+合模,mold closing,cierre del molde,mold closing,penutupan cetakan,การปิดแม่พิมพ์,đóng khuôn,형폐,型閉,penutupan acuan,закрытие пресс-формы
+开模,mold opening,apertura del molde,mold opening,pembukaan cetakan,การเปิดแม่พิมพ์,mở khuôn,형개,型開,pembukaan acuan,раскрытие пресс-формы
+毛刺,burrs,rebabas,burrs,burr,ครีบ,ba via,버,バリ,serpihan,заусенцы
+技术参数,technical specifications,especificaciones técnicas,technical specifications,spesifikasi teknis,ข้อมูลทางเทคนิค,thông số kỹ thuật,기술 사양,技術仕様,spesifikasi teknikal,технические характеристики
+机器视觉,machine vision,visión artificial,machine vision,visi mesin,ระบบวิชัน,thị giác máy,머신 비전,マシンビジョン,visi mesin,машинное зрение
+产品中心,Products,Productos,Products,Produk,ผลิตภัณฑ์,Sản phẩm,제품,製品情報,Produk,Продукция
+产品介绍,Product Overview,Descripción del producto,Product Overview,Ikhtisar Produk,ภาพรวมผลิตภัณฑ์,Tổng quan sản phẩm,제품 개요,製品概要,Gambaran Produk,Обзор продукта
+产品参数,Specifications,Especificaciones,Specifications,Spesifikasi,ข้อมูลทางเทคนิค,Thông số kỹ thuật,사양,仕様,Spesifikasi,Характеристики
+规格参数,Specifications,Especificaciones,Specifications,Spesifikasi,ข้อมูลทางเทคนิค,Thông số kỹ thuật,사양,仕様,Spesifikasi,Характеристики
+应用案例,Application Examples,Ejemplos de aplicación,Application Examples,Contoh Aplikasi,ตัวอย่างการใช้งาน,Ví dụ ứng dụng,적용 사례,適用事例,Contoh Aplikasi,Примеры применения
+行业应用,Industry Applications,Aplicaciones industriales,Industry Applications,Aplikasi Industri,การใช้งานในอุตสาหกรรม,Ứng dụng công nghiệp,산업 적용 분야,産業分野での用途,Aplikasi Industri,Отраслевые применения
+联系我们,Contact Us,Contáctenos,Contact Us,Hubungi Kami,ติดต่อเรา,Liên hệ,문의하기,お問い合わせ,Hubungi Kami,Связаться с нами
+返回顶部,Back to Top,Volver arriba,Back to Top,Kembali ke atas,กลับขึ้นด้านบน,Về đầu trang,맨 위로,ページ上部へ,Kembali ke atas,Наверх
+解决方案,Solutions,Soluciones,Solutions,Solusi,โซลูชัน,Giải pháp,솔루션,ソリューション,Penyelesaian,Решения
+设备介绍,Equipment Overview,Descripción del equipo,Equipment Overview,Ikhtisar Peralatan,ภาพรวมอุปกรณ์,Tổng quan thiết bị,장비 개요,装置概要,Gambaran Peralatan,Обзор оборудования
+设备优势,Equipment Advantages,Ventajas del equipo,Equipment Advantages,Keunggulan Peralatan,ข้อดีของอุปกรณ์,Ưu điểm thiết bị,장비 장점,装置の特長,Kelebihan Peralatan,Преимущества оборудования
+适检产品,Inspectable Products,Productos inspeccionables,Inspectable Products,Produk yang Dapat Diinspeksi,ผลิตภัณฑ์ที่ตรวจสอบได้,Sản phẩm có thể kiểm tra,검사 대상 제품,検査対象製品,Produk Boleh Diperiksa,Контролируемые изделия
+检测工具,Inspection Tools,Herramientas de inspección,Inspection Tools,Alat Inspeksi,เครื่องมือตรวจสอบ,Công cụ kiểm tra,검사 도구,検査ツール,Alat Pemeriksaan,Инструменты контроля
+软件介绍,Software Overview,Descripción del software,Software Overview,Ikhtisar Perangkat Lunak,ภาพรวมซอฟต์แวร์,Tổng quan phần mềm,소프트웨어 개요,ソフトウェア概要,Gambaran Perisian,Обзор программного обеспечения

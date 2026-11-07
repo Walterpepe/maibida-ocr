@@ -1,0 +1,245 @@
+/* OCR diagrams: photographic crops only; all labels, frames, arrows and colored blocks are HTML/CSS/SVG. */
+.ocr-diagram {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #172435;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  line-height: 1.3;
+  container-type: inline-size;
+  user-select: text;
+}
+.ocr-diagram * { box-sizing: border-box; }
+.ocr-diagram > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.ocr-diagram .ocr-photo {
+  position: absolute;
+  display: block;
+  object-fit: cover;
+  z-index: 2;
+  pointer-events: none;
+}
+.ocr-diagram .ocr-frame {
+  position: absolute;
+  z-index: 2;
+  border: 0.16cqw solid #2b65d9;
+  border-radius: 0.15cqw;
+  background: #fff;
+  pointer-events: none;
+}
+.ocr-diagram .ocr-text {
+  position: absolute;
+  z-index: 4;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(9px, 1.06cqw, 18px);
+  color: #172435;
+  user-select: text;
+}
+.ocr-diagram .ocr-text.ocr-red { color: #d00000; }
+.ocr-diagram .ocr-text.ocr-green { color: #2e8b3d; }
+.ocr-diagram .ocr-text.ocr-strong { font-weight: 700; }
+.ocr-diagram .ocr-node {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.14cqw solid #333;
+  border-radius: 0.35cqw;
+  background: #fff;
+  color: #111;
+  font-size: clamp(9px, 1.15cqw, 20px);
+  font-weight: 700;
+  text-align: center;
+  transform: translateX(-50%);
+  user-select: text;
+}
+
+/* Diagram 1 — imaging comparison */
+.ocr-comparison { max-width: 1660px; aspect-ratio: 1660 / 360; }
+.ocr-comparison .ocr-panel {
+  position: absolute;
+  top: 0.55%;
+  height: 81.1%;
+  z-index: 2;
+  overflow: hidden;
+  border: 0.15cqw solid #2f2f2f;
+  border-radius: 0.75cqw;
+  background: #fff;
+}
+.ocr-comparison .ocr-panel.p1 { left: 0.12%; width: 16.63%; display: grid; grid-template-rows: 1fr 1fr; }
+.ocr-comparison .ocr-panel.p2 { left: 17.47%; width: 34.58%; display: grid; grid-template-columns: 1fr 1fr; }
+.ocr-comparison .ocr-panel.p3 { left: 52.95%; width: 23.01%; }
+.ocr-comparison .ocr-panel.p4 { left: 76.87%; width: 22.95%; }
+.ocr-comparison .ocr-panel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ocr-comparison .ocr-panel.p1 img + img { border-top: 0.14cqw solid #fff; }
+.ocr-comparison .ocr-panel.p2 img + img { border-left: 0.14cqw solid #fff; }
+.ocr-compare-label {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #e00024;
+  font-size: clamp(9px, 1.25cqw, 21px);
+  font-weight: 700;
+  white-space: nowrap;
+  user-select: text;
+}
+.ocr-compare-caption {
+  position: absolute;
+  top: 88.5%;
+  z-index: 4;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: clamp(9px, 1cqw, 17px);
+  color: #222;
+  user-select: text;
+}
+
+/* Diagram 2 — machine-cycle monitoring workflow */
+.ocr-flow { max-width: 1575px; aspect-ratio: 3477 / 1500; }
+.ocr-flow .ocr-kicker {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 4;
+  transform: translateX(-50%);
+  font-size: clamp(8px, 0.72cqw, 13px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.ocr-flow .ocr-flow-title {
+  position: absolute;
+  left: 50%;
+  top: 1.7%;
+  z-index: 4;
+  transform: translateX(-50%);
+  font-size: clamp(14px, 1.65cqw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.ocr-flow .ocr-flow-frame-title {
+  position: absolute;
+  z-index: 4;
+  transform: translateX(-50%);
+  font-size: clamp(9px, 1.05cqw, 19px);
+  white-space: nowrap;
+  user-select: text;
+}
+.ocr-flow .ocr-alert {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25cqw;
+  padding: 0.7cqw 1cqw;
+  border-radius: 0.9cqw;
+  background: #c60000;
+  color: #fff;
+  font-size: clamp(9px, 1.02cqw, 18px);
+  line-height: 1.35;
+  user-select: text;
+}
+.ocr-flow .ocr-alert b { font-size: clamp(10px, 1.2cqw, 21px); font-weight: 700; }
+.ocr-flow .ocr-alert::after {
+  content: "";
+  position: absolute;
+  left: 31%;
+  bottom: -17%;
+  width: 24%;
+  height: 20%;
+  background: #c60000;
+  clip-path: polygon(0 0, 100% 0, 18% 100%);
+}
+
+/* Diagram 3 — centralized monitoring architecture */
+.ocr-system { max-width: 1660px; aspect-ratio: 1660 / 720; margin-bottom: 5%; }
+.ocr-system .ocr-block {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4cqw;
+  color: #fff;
+  text-align: center;
+  font-size: clamp(10px, 1.25cqw, 21px);
+  font-weight: 700;
+  line-height: 1.2;
+  user-select: text;
+}
+.ocr-system .ocr-block.blue { background: #0b6bb5; }
+.ocr-system .ocr-block.red { background: #e00000; }
+.ocr-system .ocr-block.yellow { background: #ffe500; color: #111; }
+.ocr-system .ocr-connector {
+  position: absolute;
+  z-index: 3;
+  width: 0.85cqw;
+  height: 0.85cqw;
+  border: 0.12cqw solid #222;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.ocr-system .ocr-long-label {
+  position: absolute;
+  z-index: 4;
+  transform: translateX(-50%);
+  width: 42%;
+  text-align: center;
+  font-size: clamp(9px, 0.98cqw, 17px);
+  color: #333;
+  line-height: 1.25;
+  user-select: text;
+}
+
+@media (max-width: 700px) {
+  .ocr-diagram .ocr-text,
+  .ocr-diagram .ocr-node,
+  .ocr-comparison .ocr-compare-label,
+  .ocr-comparison .ocr-compare-caption,
+  .ocr-flow .ocr-kicker,
+  .ocr-flow .ocr-flow-title,
+  .ocr-flow .ocr-flow-frame-title,
+  .ocr-flow .ocr-alert,
+  .ocr-system .ocr-block,
+  .ocr-system .ocr-long-label { font-size: clamp(8px, 1.65cqw, 14px); }
+  .ocr-flow .ocr-alert b { font-size: clamp(8px, 1.8cqw, 15px); }
+}
+
+/* The legacy AOS fade on these three content rows must not hide selectable OCR text. */
+.aos-init:has(.ocr-diagram),
+.aos-animate:has(.ocr-diagram) {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+.ocr-diagram { opacity: 1 !important; transform: none !important; }
+
+/* English labels are longer; reduce their size without moving any element. */
+.ocr-diagram.lang-en .ocr-text,
+.ocr-diagram.lang-en .ocr-node,
+.ocr-diagram.lang-en .ocr-compare-label,
+.ocr-diagram.lang-en .ocr-compare-caption,
+.ocr-diagram.lang-en .ocr-flow-frame-title,
+.ocr-diagram.lang-en .ocr-alert,
+.ocr-diagram.lang-en .ocr-system .ocr-block,
+.ocr-diagram.lang-en .ocr-long-label { font-size: clamp(8px, 0.88cqw, 15px); }
+.ocr-diagram.lang-en .ocr-flow-title { font-size: clamp(12px, 1.28cqw, 24px); }
+.ocr-diagram.lang-en .ocr-kicker { font-size: clamp(7px, 0.62cqw, 11px); }
+.ocr-diagram.lang-en .ocr-alert b { font-size: clamp(9px, 0.98cqw, 17px); }

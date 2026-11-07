@@ -1,0 +1,654 @@
+[
+ {
+  "id": "e0000",
+  "text": "1000M màu xanh，100M màu trắng、màu đỏ khi lỗi"
+ },
+ {
+  "id": "e0001",
+  "text": "Zoom vô cấp 10–12X"
+ },
+ {
+  "id": "e0002",
+  "text": "Màn hình cảm ứng điện dung 13.3 inch"
+ },
+ {
+  "id": "e0003",
+  "text": "Màn hình cảm ứng điện dung 14 inch"
+ },
+ {
+  "id": "e0004",
+  "text": "Giám sát 1 lần"
+ },
+ {
+  "id": "e0005",
+  "text": "2 triệu/5 triệu"
+ },
+ {
+  "id": "e0006",
+  "text": "Giám sát 2 lần"
+ },
+ {
+  "id": "e0007",
+  "text": "Giảm nhiễu 3D"
+ },
+ {
+  "id": "e0008",
+  "text": "Kiểu tách rời 3 bộ phận"
+ },
+ {
+  "id": "e0009",
+  "text": "Tích hợp nhất thể 3 trong 1"
+ },
+ {
+  "id": "e0010",
+  "text": "4 cái"
+ },
+ {
+  "id": "e0011",
+  "text": "8 triệu pixel (3840*2140) tương thích ngược"
+ },
+ {
+  "id": "e0012",
+  "text": "Chức năng thu nhận hình ảnh tự động bằng AI"
+ },
+ {
+  "id": "e0013",
+  "text": "Chức năng thời gian chụp ảnh tự động bằng AI"
+ },
+ {
+  "id": "e0014",
+  "text": "AI thu nhận hình ảnh và thời gian chụp ảnh tự động;"
+ },
+ {
+  "id": "e0015",
+  "text": "Thiết bị giám sát khuôn IMX-790"
+ },
+ {
+  "id": "e0016",
+  "text": "Hộp IO"
+ },
+ {
+  "id": "e0017",
+  "text": "IO dùng rơ-le cách ly bên trong trực tiếp, có thể kết nối trực tiếp với mạch tải của khách hàng；"
+ },
+ {
+  "id": "e0018",
+  "text": "Đầu vào IO：mỗi kênh là đầu vào độc lập, đấu dây linh hoạt và thuận tiện；"
+ },
+ {
+  "id": "e0019",
+  "text": "Đầu ra IO：tăng lên 6 kênh đầu ra, bổ sung cổng chức năng đầu ra ngoài báo động, khởi động chu kỳ và đẩy lại bằng chốt đẩy；"
+ },
+ {
+  "id": "e0020",
+  "text": "Camera bảo vệ khuôn V1PRO"
+ },
+ {
+  "id": "e0021",
+  "text": "Camera bảo vệ khuôn V1PRO độ phân giải cao hỗ trợ chụp ảnh tối đa 8 triệu pixel, có thể chọn chế độ đen trắng hoặc màu, thể hiện chính xác chi tiết hình ảnh. Nguồn sáng tích hợp hợp nhất nguồn sáng kép thành một khối, ánh sáng hồng ngoại/ánh sáng trắng đáp ứng được nhiều tình huống ứng dụng hơn. Lấy nét tự động"
+ },
+ {
+  "id": "e0022",
+  "text": "Thương hiệu sensor"
+ },
+ {
+  "id": "e0023",
+  "text": "•  Kích thước nhỏ gọn, cầm tay thuận tiện, máy chính trang bị 5 cổng mạng, linh hoạt bổ sung camera theo nhu cầu sản xuất và chừa sẵn cổng kết nối hệ thống MES；"
+ },
+ {
+  "id": "e0024",
+  "text": "•  Điều khiển hoàn toàn bằng màn hình cảm ứng, thao tác đơn giản, dễ dùng; tốc độ xử lý nhanh, thời gian kiểm tra hệ thống theo thiết lập vùng có thể đạt 0.03 giây;"
+ },
+ {
+  "id": "e0025",
+  "text": "◎ Đóng cửa an toàn"
+ },
+ {
+  "id": "e0026",
+  "text": "◎ Mở cửa an toàn"
+ },
+ {
+  "id": "e0027",
+  "text": "◎ Chuyển về trạng thái bình thường"
+ },
+ {
+  "id": "e0028",
+  "text": "Đèn nền chủ động của máy chính"
+ },
+ {
+  "id": "e0029",
+  "text": "Kiểm tra kích thước sản phẩm có đạt yêu cầu hay không và kiểm tra bavia của sản phẩm"
+ },
+ {
+  "id": "e0030",
+  "text": "Kiểm tra sản phẩm có được tách sản phẩm khỏi khuôn hoàn toàn không và sản phẩm có thiếu vật liệu không"
+ },
+ {
+  "id": "e0031",
+  "text": "Cấp nguồn"
+ },
+ {
+  "id": "e0032",
+  "text": "Lưu tệp"
+ },
+ {
+  "id": "e0033",
+  "text": "Quang học và thu nhận hình ảnh"
+ },
+ {
+  "id": "e0034",
+  "text": "Lấy nét tự động toàn cảnh/lấy nét tự động fov/lấy nét đa điểm"
+ },
+ {
+  "id": "e0035",
+  "text": "Có chức năng hiệu chỉnh độ sáng tự động, tránh báo động nhầm do thay đổi cường độ sáng trong điều kiện ánh sáng tự nhiên；"
+ },
+ {
+  "id": "e0036",
+  "text": "Nguồn sáng tích hợp"
+ },
+ {
+  "id": "e0037",
+  "text": "Truyền thông nội bộ, truyền thông tin trạng thái, tệp, dữ liệu, hình ảnh, v.v."
+ },
+ {
+  "id": "e0038",
+  "text": "Giảm sử dụng chất tách khuôn, phù hợp cho sản phẩm khó tách sản phẩm khỏi khuôn"
+ },
+ {
+  "id": "e0039",
+  "text": "Giảm số lần đẩy sản phẩm bằng chốt đẩy, cải thiện chu kỳ ép phun tạo hình，"
+ },
+ {
+  "id": "e0040",
+  "text": "Front-end"
+ },
+ {
+  "id": "e0041",
+  "text": "Quy trình giám sát thao tác"
+ },
+ {
+  "id": "e0042",
+  "text": "Camera công nghiệp Gigabit Ethernet"
+ },
+ {
+  "id": "e0043",
+  "text": "Thiết lập thông số, chỉnh sửa mẫu, thiết lập thuật toán... đều có thể đặt mật khẩu người dùng riêng biệt, tránh người không liên quan thao tác nhầm；"
+ },
+ {
+  "id": "e0044",
+  "text": "Có thể thêm ảnh tham chiếu thủ công, thực hiện học ảnh tham chiếu tĩnh trong trang thiết lập độ nhạy；"
+ },
+ {
+  "id": "e0045",
+  "text": "Có thể điều chỉnh độ nhạy ROI độc lập, số lượng ROI không bị giới hạn；"
+ },
+ {
+  "id": "e0046",
+  "text": "Trước khi đóng khuôn, tiến hành xác nhận lòng khuôn, lõi khuôn và sản phẩm tồn dư"
+ },
+ {
+  "id": "e0047",
+  "text": "Back-end"
+ },
+ {
+  "id": "e0048",
+  "text": "Điều chỉnh chất lượng hình ảnh"
+ },
+ {
+  "id": "e0049",
+  "text": "Xử lý làm sắc nét hình ảnh"
+ },
+ {
+  "id": "e0050",
+  "text": "Tăng độ sắc nét, HDR, độ tương phản, độ sáng, độ bão hòa, hiệu chỉnh Gamma, v.v."
+ },
+ {
+  "id": "e0051",
+  "text": "Trước xử lý"
+ },
+ {
+  "id": "e0052",
+  "text": "Sau xử lý"
+ },
+ {
+  "id": "e0053",
+  "text": "Kiểm tra thị giác đa tình huống"
+ },
+ {
+  "id": "e0054",
+  "text": "Kiểm tra sản phẩm nhiều lòng khuôn có bị thiếu hoặc tồn dư không"
+ },
+ {
+  "id": "e0055",
+  "text": "Kiểm tra việc phối màu của sản phẩm nhiều màu có đúng không"
+ },
+ {
+  "id": "e0056",
+  "text": "Tự động kiểm tra lại khi cửa an toàn thao tác"
+ },
+ {
+  "id": "e0057",
+  "text": "Đóng/mở cửa an toàn để xóa báo động、"
+ },
+ {
+  "id": "e0058",
+  "text": "Camera an ninh"
+ },
+ {
+  "id": "e0059",
+  "text": "Giám sát thời gian thực lòng khuôn, lõi khuôn, chi tiết chèn (insert), chốt đẩy, sản phẩm tồn dư và trạng thái tách sản phẩm khỏi khuôn, nhằm giảm nguy cơ hư hỏng khuôn."
+ },
+ {
+  "id": "e0060",
+  "text": "Thao tác lấy nét"
+ },
+ {
+  "id": "e0061",
+  "text": "Phương thức lấy nét"
+ },
+ {
+  "id": "e0062",
+  "text": "Bản vẽ kích thước lắp đặt.png"
+ },
+ {
+  "id": "e0063",
+  "text": "Độ phân giải màn hình"
+ },
+ {
+  "id": "e0064",
+  "text": "Giải pháp kiểm tra thị giác máy công nghiệp và tự động hóa"
+ },
+ {
+  "id": "e0065",
+  "text": "Thiết bị bảo vệ khuôn bằng thị giác công nghiệp"
+ },
+ {
+  "id": "e0066",
+  "text": "Mở khuôn xong"
+ },
+ {
+  "id": "e0067",
+  "text": "Xử lý bất thường hoàn tất"
+ },
+ {
+  "id": "e0068",
+  "text": "Xử lý khi xảy ra bất thường："
+ },
+ {
+  "id": "e0069",
+  "text": "Hỗ trợ màu"
+ },
+ {
+  "id": "e0070",
+  "text": "Chuyển đổi màu/đen trắng"
+ },
+ {
+  "id": "e0071",
+  "text": "Màu trắng khi chờ、màu xanh khi chạy、màu đỏ khi báo động"
+ },
+ {
+  "id": "e0072",
+  "text": "Tạo hình"
+ },
+ {
+  "id": "e0073",
+  "text": "Lấy nét thủ công"
+ },
+ {
+  "id": "e0074",
+  "text": "Điều chỉnh thủ công"
+ },
+ {
+  "id": "e0075",
+  "text": "Bảng thông số kỹ thuật"
+ },
+ {
+  "id": "e0076",
+  "text": "Trong ảnh báo động lưu các thông số như cấu hình thông số, trạng thái đầu ra IO lúc báo động, và có thể xuất báo cáo sang ổ USB chỉ với một phím."
+ },
+ {
+  "id": "e0077",
+  "text": "Nâng cao hiệu suất sản xuất"
+ },
+ {
+  "id": "e0078",
+  "text": "Hỗ trợ lắp camera tối đa 8 triệu pixel, tích hợp nguồn sáng kép hồng ngoại/trắng thành một khối, có thể chọn chế độ đen trắng & màu, thể hiện chính xác chi tiết hình ảnh; tích hợp ống kính lấy nét tự động điều chỉnh được 12 lần, không cần chỉnh thủ công vẫn khóa nhanh mục tiêu ở các khoảng cách khác nhau, với công nghệ hợp nhất độ sâu trường ảnh được cấp bằng sáng chế, nâng cao đáng kể hiệu quả thao tác；"
+ },
+ {
+  "id": "e0079",
+  "text": "Hỗ trợ chụp ảnh tối đa 8 triệu pixel, có thể chọn chế độ đen trắng hoặc màu, thể hiện chính xác chi tiết hình ảnh."
+ },
+ {
+  "id": "e0080",
+  "text": "Hỗ trợ lưu kết quả kiểm tra, ảnh báo động và dữ liệu sản xuất, làm cơ sở cho phân tích chất lượng."
+ },
+ {
+  "id": "e0081",
+  "text": "Số lượng camera hỗ trợ"
+ },
+ {
+  "id": "e0082",
+  "text": "Hỗ trợ vùng kiểm tra hình chữ nhật, elip và hình dạng bất kỳ, thích ứng với nhiều loại khuôn phức tạp；"
+ },
+ {
+  "id": "e0083",
+  "text": "Hỗ trợ kiểm tra thị giác trực tuyến tốc độ cao cho đầu nối, dải liệu dập, Insert Molding và chi tiết nhựa."
+ },
+ {
+  "id": "e0084",
+  "text": "Điều chỉnh độ phóng đại"
+ },
+ {
+  "id": "e0085",
+  "text": "Tệp、hình ảnh、video"
+ },
+ {
+  "id": "e0086",
+  "text": "Không"
+ },
+ {
+  "id": "e0087",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. - Nhà sản xuất nguồn sáng thị giác máy và thiết bị kiểm tra trực tuyến công nghiệp"
+ },
+ {
+  "id": "e0088",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. chuyên về thiết bị giám sát khuôn, cảm biến thị giác AI, máy phân loại thị giác, máy cấp liệu và xếp khay linh hoạt và thiết bị kiểm tra trực tuyến, cung cấp giải pháp kiểm tra thị giác máy ổn định, hiệu quả cao cho sản xuất ép nhựa, đầu nối, linh kiện điện tử và chi tiết chính xác."
+ },
+ {
+  "id": "e0089",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. chuyên về thiết bị giám sát khuôn, thiết bị kiểm tra trực tuyến CCD, máy phân loại thị giác và giải pháp thị giác máy công nghiệp, hỗ trợ bảo vệ khuôn máy ép nhựa và kiểm tra trực tuyến đầu nối, chi tiết nhựa."
+ },
+ {
+  "id": "e0090",
+  "text": "Kích thước hiển thị"
+ },
+ {
+  "id": "e0091",
+  "text": "Phơi sáng và cân bằng trắng"
+ },
+ {
+  "id": "e0092",
+  "text": "Hỗ trợ tối đa 8 triệu"
+ },
+ {
+  "id": "e0093",
+  "text": "Có"
+ },
+ {
+  "id": "e0094",
+  "text": "Có (công nghệ được cấp bằng sáng chế)"
+ },
+ {
+  "id": "e0095",
+  "text": "Có (gắn ngoài)"
+ },
+ {
+  "id": "e0096",
+  "text": "Có (màu/đen trắng)"
+ },
+ {
+  "id": "e0097",
+  "text": "Tích hợp tự động hóa linh hoạt"
+ },
+ {
+  "id": "e0098",
+  "text": "Xem sản phẩm →"
+ },
+ {
+  "id": "e0099",
+  "text": "Cấu hình camera, nguồn sáng và cơ cấu tự động hóa theo quy cách sản phẩm, nhịp sản xuất và điều kiện tại hiện trường."
+ },
+ {
+  "id": "e0100",
+  "text": "Cung cấp nhiều phương thức lắp đặt theo tình huống sản xuất của khách hàng."
+ },
+ {
+  "id": "e0101",
+  "text": "Nội dung kiểm tra"
+ },
+ {
+  "id": "e0102",
+  "text": "Đầu ra IO trong logic kiểm tra có thể thay đổi theo nhu cầu sử dụng；"
+ },
+ {
+  "id": "e0103",
+  "text": "Thiết bị giám sát và bảo vệ khuôn"
+ },
+ {
+  "id": "e0104",
+  "text": "Thiết bị giám sát khuôn-Kunshan Maibida Intelligent Equipment Co., Ltd."
+ },
+ {
+  "id": "e0105",
+  "text": "Nhà sản xuất thiết bị giám sát khuôn và thiết bị kiểm tra thị giác công nghiệp｜MAIBIDA"
+ },
+ {
+  "id": "e0106",
+  "text": "Công dụng và nội dung kiểm tra của thiết bị giám sát khuôn"
+ },
+ {
+  "id": "e0107",
+  "text": "Vận hành bình thường"
+ },
+ {
+  "id": "e0108",
+  "text": "Mỗi vùng kiểm tra có thể thiết lập độ nhạy và diện tích kiểm tra riêng；"
+ },
+ {
+  "id": "e0109",
+  "text": "Bảo vệ khuôn máy ép nhựa  |  Giải pháp kiểm tra InsertMolding  |  Giải pháp kiểm tra chi tiết chèn (insert) ép nhựa  |  Hệ thống kiểm tra tốc độ cao ngoài khuôn sau khi lấy sản phẩm ra khỏi máy ép nhựa"
+ },
+ {
+  "id": "e0110",
+  "text": "Ghi hình cục bộ dạng streaming"
+ },
+ {
+  "id": "e0111",
+  "text": "Loại bỏ ảnh hưởng của người trong môi trường xung quanh"
+ },
+ {
+  "id": "e0112",
+  "text": "Loại bỏ nhiễu ánh sáng bên ngoài nhà máy"
+ },
+ {
+  "id": "e0113",
+  "text": "Xác nhận vị trí con trượt, chốt đẩy bị gãy và vị trí hồi vị"
+ },
+ {
+  "id": "e0114",
+  "text": "Điều chỉnh tiêu cự, bộ xử lý tín hiệu hình ảnh"
+ },
+ {
+  "id": "e0115",
+  "text": "Tải lên thay đổi trạng thái、đẩy luồng video dạng streaming、lưu video cục bộ"
+ },
+ {
+  "id": "e0116",
+  "text": "Dữ liệu sản xuất có thể truy xuất"
+ },
+ {
+  "id": "e0117",
+  "text": "Lấy nét tự động bằng mô-tơ"
+ },
+ {
+  "id": "e0118",
+  "text": "Điều chỉnh bằng mô-tơ"
+ },
+ {
+  "id": "e0119",
+  "text": "Ánh sáng trắng"
+ },
+ {
+  "id": "e0120",
+  "text": "Nguồn sáng trắng/hồng ngoại (tổ hợp hai nguồn sáng)"
+ },
+ {
+  "id": "e0121",
+  "text": "Đèn nền chủ động của camera"
+ },
+ {
+  "id": "e0122",
+  "text": "Model camera"
+ },
+ {
+  "id": "e0123",
+  "text": "Nguồn sáng tích hợp trên camera"
+ },
+ {
+  "id": "e0124",
+  "text": "Cách kết hợp ống kính và nguồn sáng của camera"
+ },
+ {
+  "id": "e0125",
+  "text": "Ưu điểm phần cứng"
+ },
+ {
+  "id": "e0126",
+  "text": "Ưu điểm phần cứng•  Kích thước nhỏ gọn, cầm tay thuận tiện, máy chính trang bị 5 cổng mạng, linh hoạt bổ sung camera theo nhu cầu sản xuất và chừa sẵn cổng kết nối hệ thống MES；•Hỗ trợ camera tối đa 8 triệu pixel, tích hợp hồng ngoại/ánh sáng trắng"
+ },
+ {
+  "id": "e0127",
+  "text": "Cấm đóng khuôn"
+ },
+ {
+  "id": "e0128",
+  "text": "Cấm đẩy sản phẩm ra"
+ },
+ {
+  "id": "e0129",
+  "text": "Ánh sáng hồng ngoại"
+ },
+ {
+  "id": "e0130",
+  "text": "Kết hợp định vị thị giác với robot cấp liệu song song, thực hiện cấp liệu, gắp, phân loại và xếp khay linh hoạt cho sản phẩm nhiều quy cách."
+ },
+ {
+  "id": "e0131",
+  "text": "Chuẩn mạng"
+ },
+ {
+  "id": "e0132",
+  "text": "Lấy nét tự động"
+ },
+ {
+  "id": "e0133",
+  "text": "Lấy nét tự động/lấy nét chạm thủ công"
+ },
+ {
+  "id": "e0134",
+  "text": "Tự động phơi sáng、tự động cân bằng trắng"
+ },
+ {
+  "id": "e0135",
+  "text": "Xử lý màu sắc"
+ },
+ {
+  "id": "e0136",
+  "text": "Ma trận hiệu chỉnh màu、chuyển đổi màu/đen trắng"
+ },
+ {
+  "id": "e0137",
+  "text": "Bao gồm kiểm tra ngoại quan, kích thước, ký tự, vị trí, thiếu vật liệu, bavia và trạng thái lắp ráp."
+ },
+ {
+  "id": "e0138",
+  "text": "Truyền luồng video thời gian thực"
+ },
+ {
+  "id": "e0139",
+  "text": "Giải quyết ảnh hưởng của ánh sáng đèn bị phản xạ"
+ },
+ {
+  "id": "e0140",
+  "text": "Chứng nhận"
+ },
+ {
+  "id": "e0141",
+  "text": "Công nghệ hợp nhất siêu độ sâu trường ảnh"
+ },
+ {
+  "id": "e0142",
+  "text": "Chức năng phần mềm"
+ },
+ {
+  "id": "e0143",
+  "text": "Chức năng phần mềm•  Điều khiển hoàn toàn bằng màn hình cảm ứng, thao tác đơn giản, dễ dùng; tốc độ xử lý nhanh, thời gian kiểm tra hệ thống theo thiết lập vùng có thể đạt 0.03 giây;•Có thể điều chỉnh độ nhạy ROI độc lập, số lượng ROI không giới hạn；•AI thu nhận hình ảnh và"
+ },
+ {
+  "id": "e0144",
+  "text": "Thiết bị giám sát khuôn IMX-790 của MAIBIDA hỗ trợ nhiều camera, thu nhận hình ảnh AI và kiểm tra ROI, dùng cho bảo vệ khuôn máy ép nhựa, chi tiết chèn (insert) vào đúng vị trí, sản phẩm tồn dư và trạng thái tách sản phẩm khỏi khuôn."
+ },
+ {
+  "id": "e0145",
+  "text": "Tùy chọn thẻ SD, thẻ SD có thể dùng để lưu hình ảnh, đồng thời dùng để nâng cấp chương trình và cập nhật cấu hình logic I/O；"
+ },
+ {
+  "id": "e0146",
+  "text": "Thông dụng"
+ },
+ {
+  "id": "e0147",
+  "text": "Dịch vụ truyền thông"
+ },
+ {
+  "id": "e0148",
+  "text": "Trang bị chức năng lấy nét tự động thông minh, khóa nhanh đối tượng mục tiêu, bảo đảm hình ảnh rõ nét, sắc sảo."
+ },
+ {
+  "id": "e0149",
+  "text": "Độ phóng đại ống kính"
+ },
+ {
+  "id": "e0150",
+  "text": "Kiểm tra chi tiết chèn (insert) có vào đúng vị trí và có bị bỏ sót không"
+ },
+ {
+  "id": "e0151",
+  "text": "Ngăn ngừa hư hỏng khuôn, giảm chi phí sửa chữa khuôn, bảo đảm thời gian giao hàng, giảm chi phí sản xuất, nâng cao hiệu suất sản xuất"
+ },
+ {
+  "id": "e0152",
+  "text": "Giảm chi phí sản xuất"
+ },
+ {
+  "id": "e0153",
+  "text": "Giảm nhiễu và tăng cường"
+ },
+ {
+  "id": "e0154",
+  "text": "Hệ thống giám sát tập trung"
+ },
+ {
+  "id": "e0155",
+  "text": "Hệ thống giám sát tập trung cho phép thu thập tập trung dữ liệu thiết bị giám sát khuôn và chức năng bảng điều khiển dữ liệu lớn, giám sát thời gian thực dữ liệu thiết bị giám sát khuôn, và kết nối với hệ thống MES của khách hàng thông qua chương trình giám sát tập trung."
+ },
+ {
+  "id": "e0156",
+  "text": "Tích hợp năng lực thị giác AI và nhiều công cụ kiểm tra, phù hợp kiểm tra ký tự, ngoại quan, vị trí, số lượng và có/không có."
+ },
+ {
+  "id": "e0157",
+  "text": "Tích hợp nguồn sáng kép thành một khối, ánh sáng hồng ngoại/ánh sáng trắng đáp ứng được nhiều tình huống ứng dụng hơn."
+ },
+ {
+  "id": "e0158",
+  "text": "Dành cho nhiều loại chi tiết công nghiệp, thực hiện phát hiện lỗi ngoại quan, kiểm tra kích thước và phân loại tự động sản phẩm đạt/sản phẩm không đạt."
+ },
+ {
+  "id": "e0159",
+  "text": "Đẩy ra"
+ },
+ {
+  "id": "e0160",
+  "text": "Sau khi chốt đẩy lùi về"
+ },
+ {
+  "id": "e0161",
+  "text": "Độ phân giải cao"
+ },
+ {
+  "id": "e0162",
+  "text": "Đen trắng/màu (hai màu)"
+ }
+]

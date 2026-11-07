@@ -1,0 +1,106 @@
+# /etc/nginx/conf.d/maibida.conf  -- reference configuration for www.maibida.com
+#
+# BEFORE DEPLOYING:
+#   1. Point the DNS A/AAAA records of www.maibida.com (and maibida.com) at this
+#      host or CDN. The domain currently returns NXDOMAIN / 502 -- nothing below
+#      can work until DNS resolves.
+#   2. Replace the certificate paths and the web root.
+#   3. Copy nginx-security-headers.conf to /etc/nginx/snippets/maibida-security.conf
+#   4. If you keep the local Node message endpoint, run
+#        node tools/preview-server.js 8899
+#      behind a process manager, or replace /api/messages with your own backend.
+#   5. Add this ONCE to the http{} block of /etc/nginx/nginx.conf (rate limiting
+#      cannot be declared inside a server block):
+#        limit_req_zone $binary_remote_addr zone=msg_limit:10m rate=8r/m;
+#   6. Install the retention job:
+#        node tools/purge-expired-messages.js        # cron: monthly
+#   7. nginx -t && systemctl reload nginx
+#   8. sh tools/deploy/check-production.sh          # H1 go-live acceptance
+
+map $http_accept $webp_ext {
+    default   "";
+    "~*webp"  ".webp";
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name maibida.com www.maibida.com;
+    return 301 https://www.maibida.com$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    http2 on;
+    server_name www.maibida.com;
+
+    ssl_certificate     /etc/letsencrypt/live/www.maibida.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.maibida.com/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_timeout 1d;
+
+    root /var/www/maibida-ocr-rebuilt;
+    index index.html;
+    server_tokens off;                 # do not leak nginx version on error pages
+    include /etc/nginx/snippets/maibida-security.conf;
+
+    gzip on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/javascript application/javascript
+               application/json application/xml image/svg+xml;
+    # brotli on;  brotli_types text/plain text/css application/javascript application/json image/svg+xml;
+
+    # ---- retired locale editions: permanent redirect to the current edition
+    location = /index.en-AU.html                    { return 301 /index.en-SG.html; }
+    location = /product/10032.en-AU.html            { return 301 /product/10032.en-SG.html; }
+    location = /product/smart-camera.en-AU.html     { return 301 /product/smart-camera.en-SG.html; }
+    location = /product/smart-camera.es-ES.html     { return 301 /product/smart-camera.es-MX.html; }
+
+    # ---- never serve build tools, historical backups or private data
+    location ~ ^/(tools/|_bak_|productInfo_bak_seo/|UserFiles_bak_bigimg/) { return 404; }
+    location ~ /\.(env|git|htpasswd) { return 404; }
+    location ~ \.ndjson$             { return 404; }
+
+    # ---- message endpoint (only when the Node service is deployed)
+    location = /api/messages {
+        include /etc/nginx/snippets/maibida-security.conf;
+        limit_req zone=msg_limit burst=5 nodelay;   # edge-level rate limiting
+        limit_req_status 429;
+        proxy_pass http://127.0.0.1:8899;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        client_max_body_size 16k;
+        add_header Cache-Control "no-store" always;
+    }
+
+    # ---- WebP content negotiation; generated siblings are named "<file>.jpg.webp"
+    location ~* \.(?:png|jpe?g)$ {
+        include /etc/nginx/snippets/maibida-security.conf;
+        add_header Vary "Accept" always;
+        add_header Cache-Control "public, max-age=604800" always;
+        expires 7d;
+        try_files $uri$webp_ext $uri =404;
+    }
+
+    location ~* \.(?:webp|gif|svg|ico|mp4|webm|css|js|woff2?|ttf)$ {
+        include /etc/nginx/snippets/maibida-security.conf;
+        add_header Cache-Control "public, max-age=604800" always;
+        expires 7d;
+        try_files $uri =404;
+    }
+
+    location = /robots.txt  { include /etc/nginx/snippets/maibida-security.conf; try_files $uri =404; }
+    location = /sitemap.xml { include /etc/nginx/snippets/maibida-security.conf; try_files $uri =404; }
+
+    location / {
+        include /etc/nginx/snippets/maibida-security.conf;
+        add_header Cache-Control "no-cache" always;
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+    error_page 500 502 503 504 /50x.html;
+}

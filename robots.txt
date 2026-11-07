@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /ValidateCode.aspx
+Disallow: /plug-in/
+Disallow: /tools/
+Disallow: /_bak_footnav/
+Disallow: /_bak_foot_full/
+Disallow: /_bak_pathfix/
+Disallow: /_bak_wxqrcode/
+Disallow: /productInfo_bak_seo/
+Disallow: /UserFiles_bak_bigimg/
+
+# Auxiliary pages carry <meta name="robots" content="noindex"> instead of a
+# Disallow rule, so crawlers can actually read the noindex directive.
+
+Sitemap: https://www.maibida.com/sitemap.xml

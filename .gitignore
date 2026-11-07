@@ -1,0 +1,95 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+*.log
+logs/
+*.ndjson
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Frontend dependencies and build outputs
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.vite/
+.cache/
+.parcel-cache/
+coverage/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Python tooling caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Backup and intermediate working files
+*.bak
+*.bak*
+*.orig
+*.corrupted
+*.pre_textremove
+*.prev_repair
+*.delogo
+*.v3inpaint
+
+# Generated image variants; originals remain the source of record
+*.png.webp
+*.jpg.webp
+*.jpeg.webp
+*.png.avif
+*.jpg.avif
+*.jpeg.avif
+/cn/testimg/*_test.jpg
+
+# Packaged deliverables
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Top-level OCR and localization working artifacts
+/BACKUP_MANIFEST.json
+/localization-audit.json
+/localization-glossary.html
+/ocr-inventory.json
+/ocr-text.txt
+/_*.json
+/_*.jsonl
+/_*.txt
+/_*.png
+/_*.jpg
+/_*.jpeg
+
+# Generated localization backups and reports
+/product/*.hreflang.html
+/product/*localization-report.html
+
+# Generated tool reports, caches, manifests, and screenshots
+/tools/*.html
+/tools/*.json
+/tools/*.png
+/tools/__pycache__/

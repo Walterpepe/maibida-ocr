@@ -1,0 +1,654 @@
+[
+ {
+  "id": "e0000",
+  "text": "1000M en azul, 100M en blanco, rojo en caso de falla"
+ },
+ {
+  "id": "e0001",
+  "text": "Aumento variable continuo 10–12X"
+ },
+ {
+  "id": "e0002",
+  "text": "Pantalla táctil capacitiva de 13.3 pulgadas"
+ },
+ {
+  "id": "e0003",
+  "text": "Pantalla táctil capacitiva de 14 pulgadas"
+ },
+ {
+  "id": "e0004",
+  "text": "Monitoreo de 1 vez"
+ },
+ {
+  "id": "e0005",
+  "text": "2 millones/5 millones"
+ },
+ {
+  "id": "e0006",
+  "text": "Monitoreo de 2 veces"
+ },
+ {
+  "id": "e0007",
+  "text": "Reducción de ruido 3D"
+ },
+ {
+  "id": "e0008",
+  "text": "Tipo separado de 3 componentes"
+ },
+ {
+  "id": "e0009",
+  "text": "Integrado 3 en 1"
+ },
+ {
+  "id": "e0010",
+  "text": "4 unidades"
+ },
+ {
+  "id": "e0011",
+  "text": "8 millones de píxeles (3840*2140), retrocompatible"
+ },
+ {
+  "id": "e0012",
+  "text": "Función de adquisición automática de imágenes AI"
+ },
+ {
+  "id": "e0013",
+  "text": "Función de captura automática con temporización AI"
+ },
+ {
+  "id": "e0014",
+  "text": "Adquisición de imágenes AI y temporización de captura automática;"
+ },
+ {
+  "id": "e0015",
+  "text": "Monitor de moldes IMX-790"
+ },
+ {
+  "id": "e0016",
+  "text": "Caja IO"
+ },
+ {
+  "id": "e0017",
+  "text": "IO con relé de aislamiento interno directo, conectable directamente al circuito de carga del cliente;"
+ },
+ {
+  "id": "e0018",
+  "text": "Entradas IO: cada canal con entrada independiente, cableado flexible y sencillo;"
+ },
+ {
+  "id": "e0019",
+  "text": "Salidas IO: ampliadas a 6 salidas, con interfaces añadidas para salida externa de alarma, arranque de ciclo y re-expulsión del pasador eyector;"
+ },
+ {
+  "id": "e0020",
+  "text": "Cámara de protección de moldes V1PRO"
+ },
+ {
+  "id": "e0021",
+  "text": "La cámara de protección de moldes V1PRO de alta resolución admite capturas de hasta 8 millones de píxeles, con modos blanco y negro o color para reproducir con precisión los detalles de la imagen. La fuente de luz integrada combina una fuente dual infrarroja/luz blanca para cubrir más escenarios de aplicación. Enfoque automático"
+ },
+ {
+  "id": "e0022",
+  "text": "Marca del sensor"
+ },
+ {
+  "id": "e0023",
+  "text": "•  Diseño compacto y ligero, cómodo de operar con una mano; la unidad principal cuenta con 5 puertos de red para añadir cámaras con flexibilidad según las necesidades de producción, con interfaz reservada para conexión al sistema MES;"
+ },
+ {
+  "id": "e0024",
+  "text": "•  Control totalmente táctil, sencillo e intuitivo; alta velocidad de procesamiento, con un tiempo de detección del sistema de hasta 0.03 segundos según la configuración de zonas;"
+ },
+ {
+  "id": "e0025",
+  "text": "◎ Cerrar puerta de seguridad"
+ },
+ {
+  "id": "e0026",
+  "text": "◎ Abrir puerta de seguridad"
+ },
+ {
+  "id": "e0027",
+  "text": "◎ Ajustar al estado normal"
+ },
+ {
+  "id": "e0028",
+  "text": "Luz ambiental activa de la unidad principal"
+ },
+ {
+  "id": "e0029",
+  "text": "Verificación de la conformidad dimensional del producto y detección de rebabas"
+ },
+ {
+  "id": "e0030",
+  "text": "Verificación del desmoldeo completo del producto y detección de falta de material"
+ },
+ {
+  "id": "e0031",
+  "text": "Alimentación"
+ },
+ {
+  "id": "e0032",
+  "text": "Guardar archivo"
+ },
+ {
+  "id": "e0033",
+  "text": "Óptica y captura de imágenes"
+ },
+ {
+  "id": "e0034",
+  "text": "Enfoque automático panorámico/enfoque automático fov/enfoque multipunto"
+ },
+ {
+  "id": "e0035",
+  "text": "Cuenta con corrección automática de brillo, que evita falsas alarmas por variaciones de intensidad lumínica en condiciones de luz natural;"
+ },
+ {
+  "id": "e0036",
+  "text": "Fuente de luz integrada"
+ },
+ {
+  "id": "e0037",
+  "text": "Comunicación interna: transmite información de estado, archivos, datos, imágenes, etc."
+ },
+ {
+  "id": "e0038",
+  "text": "Reduce el uso de agente desmoldeante, adecuado para productos de desmoldeo difícil"
+ },
+ {
+  "id": "e0039",
+  "text": "Reduce el número de expulsiones del pasador eyector y mejora el ciclo de moldeo por inyección,"
+ },
+ {
+  "id": "e0040",
+  "text": "Front-end"
+ },
+ {
+  "id": "e0041",
+  "text": "Flujo de monitoreo de acciones"
+ },
+ {
+  "id": "e0042",
+  "text": "Cámara industrial Gigabit Ethernet"
+ },
+ {
+  "id": "e0043",
+  "text": "La configuración de parámetros, la edición de plantillas y el ajuste de algoritmos pueden protegerse con contraseñas de usuario independientes para evitar operaciones indebidas por personal no autorizado;"
+ },
+ {
+  "id": "e0044",
+  "text": "Permite añadir imágenes de referencia manualmente y realizar el aprendizaje estático de la imagen de referencia en la página de configuración de sensibilidad;"
+ },
+ {
+  "id": "e0045",
+  "text": "Permite ajustar la sensibilidad de ROI de forma independiente, sin límite en el número de ROI;"
+ },
+ {
+  "id": "e0046",
+  "text": "Antes del cierre del molde, verificación de cavidades, núcleos y residuos de producto"
+ },
+ {
+  "id": "e0047",
+  "text": "Back-end"
+ },
+ {
+  "id": "e0048",
+  "text": "Ajuste de calidad de imagen"
+ },
+ {
+  "id": "e0049",
+  "text": "Procesamiento de nitidez de imagen"
+ },
+ {
+  "id": "e0050",
+  "text": "Mejora de nitidez, HDR, contraste, brillo, saturación, corrección Gamma, etc."
+ },
+ {
+  "id": "e0051",
+  "text": "Antes del procesamiento"
+ },
+ {
+  "id": "e0052",
+  "text": "Después del procesamiento"
+ },
+ {
+  "id": "e0053",
+  "text": "Inspección por visión para múltiples escenarios"
+ },
+ {
+  "id": "e0054",
+  "text": "Detección de piezas faltantes y residuos en productos de múltiples cavidades"
+ },
+ {
+  "id": "e0055",
+  "text": "Verificación de la correcta mezcla de colores en productos multicolor"
+ },
+ {
+  "id": "e0056",
+  "text": "Revisión automática del movimiento de la puerta de seguridad"
+ },
+ {
+  "id": "e0057",
+  "text": "La apertura y el cierre de la puerta de seguridad eliminan la alarma,"
+ },
+ {
+  "id": "e0058",
+  "text": "Cámara de seguridad"
+ },
+ {
+  "id": "e0059",
+  "text": "Monitoreo en tiempo real de cavidades, núcleos, insertos, pasadores eyectores, residuos de producto y estado de desmoldeo, para reducir el riesgo de daños en el molde."
+ },
+ {
+  "id": "e0060",
+  "text": "Operación de enfoque"
+ },
+ {
+  "id": "e0061",
+  "text": "Método de enfoque"
+ },
+ {
+  "id": "e0062",
+  "text": "Diagrama de dimensiones de instalación.png"
+ },
+ {
+  "id": "e0063",
+  "text": "Resolución de pantalla"
+ },
+ {
+  "id": "e0064",
+  "text": "Soluciones de inspección por visión artificial industrial y automatización"
+ },
+ {
+  "id": "e0065",
+  "text": "Equipo de protección de moldes por visión industrial"
+ },
+ {
+  "id": "e0066",
+  "text": "Apertura del molde completada"
+ },
+ {
+  "id": "e0067",
+  "text": "Tratamiento de anomalías completado"
+ },
+ {
+  "id": "e0068",
+  "text": "Tratamiento en caso de anomalía:"
+ },
+ {
+  "id": "e0069",
+  "text": "Compatibilidad con color"
+ },
+ {
+  "id": "e0070",
+  "text": "Conmutación entre color y blanco y negro"
+ },
+ {
+  "id": "e0071",
+  "text": "Blanco en espera, azul en funcionamiento, rojo en alarma"
+ },
+ {
+  "id": "e0072",
+  "text": "Moldeo"
+ },
+ {
+  "id": "e0073",
+  "text": "Enfoque manual"
+ },
+ {
+  "id": "e0074",
+  "text": "Ajuste manual"
+ },
+ {
+  "id": "e0075",
+  "text": "Tabla de especificaciones técnicas"
+ },
+ {
+  "id": "e0076",
+  "text": "En las imágenes de alarma se guardan la configuración de parámetros, el estado de las salidas IO durante la alarma y otros datos, con exportación del informe a una memoria USB con un solo clic."
+ },
+ {
+  "id": "e0077",
+  "text": "Mejora de la eficiencia de producción"
+ },
+ {
+  "id": "e0078",
+  "text": "Admite cámaras de hasta 8 millones de píxeles, integra una fuente de luz dual infrarroja/blanca, ofrece modos blanco y negro & color y reproduce con precisión los detalles de la imagen; incorpora un lente de enfoque automático ajustable de 12x que fija rápidamente objetivos a distintas distancias sin ajuste manual, y la tecnología patentada de integración de profundidad de campo mejora notablemente la eficiencia operativa;"
+ },
+ {
+  "id": "e0079",
+  "text": "Admite capturas de hasta 8 millones de píxeles, con modos blanco y negro o color para reproducir con precisión los detalles de la imagen."
+ },
+ {
+  "id": "e0080",
+  "text": "Permite guardar los resultados de inspección, las imágenes de alarma y los datos de producción como base para el análisis de calidad."
+ },
+ {
+  "id": "e0081",
+  "text": "Número de cámaras admitidas"
+ },
+ {
+  "id": "e0082",
+  "text": "Admite zonas de inspección rectangulares, elípticas y de cualquier forma, para adaptarse a moldes complejos;"
+ },
+ {
+  "id": "e0083",
+  "text": "Permite la inspección visual en línea de alta velocidad de conectores, tiras estampadas, Insert Molding y piezas plásticas."
+ },
+ {
+  "id": "e0084",
+  "text": "Ajuste del aumento"
+ },
+ {
+  "id": "e0085",
+  "text": "Archivos, imágenes, video"
+ },
+ {
+  "id": "e0086",
+  "text": "No"
+ },
+ {
+  "id": "e0087",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. - Fabricante de fuentes de luz para visión artificial y equipos industriales de inspección en línea"
+ },
+ {
+  "id": "e0088",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. se especializa en monitor de moldes, sensores de visión AI, máquinas clasificadoras por visión, sistemas flexibles de alimentación y acomodo en charolas y equipos de inspección en línea, y ofrece soluciones de inspección por visión artificial estables y eficientes para la producción de moldeo por inyección, conectores, componentes electrónicos y piezas de precisión."
+ },
+ {
+  "id": "e0089",
+  "text": "Kunshan Maibida Intelligent Equipment Co., Ltd. se especializa en monitor de moldes, equipos de inspección en línea CCD, máquinas clasificadoras por visión y soluciones de visión artificial industrial, con soporte para protección de moldes de inyección e inspección en línea de conectores y piezas plásticas."
+ },
+ {
+  "id": "e0090",
+  "text": "Tamaño de pantalla"
+ },
+ {
+  "id": "e0091",
+  "text": "Exposición y balance de blancos"
+ },
+ {
+  "id": "e0092",
+  "text": "Hasta 8 millones de píxeles"
+ },
+ {
+  "id": "e0093",
+  "text": "Sí"
+ },
+ {
+  "id": "e0094",
+  "text": "Sí (tecnología patentada)"
+ },
+ {
+  "id": "e0095",
+  "text": "Sí (externo)"
+ },
+ {
+  "id": "e0096",
+  "text": "Sí (color/blanco y negro)"
+ },
+ {
+  "id": "e0097",
+  "text": "Integración de automatización flexible"
+ },
+ {
+  "id": "e0098",
+  "text": "Ver producto →"
+ },
+ {
+  "id": "e0099",
+  "text": "Configura cámaras, fuentes de luz y mecanismos de automatización según las especificaciones del producto, el ritmo de producción y las condiciones in situ."
+ },
+ {
+  "id": "e0100",
+  "text": "Ofrece diversas opciones de instalación según el escenario de producción del cliente."
+ },
+ {
+  "id": "e0101",
+  "text": "Contenido de inspección"
+ },
+ {
+  "id": "e0102",
+  "text": "Las salidas IO de la lógica de inspección pueden modificarse según las necesidades de uso;"
+ },
+ {
+  "id": "e0103",
+  "text": "Sistema de monitoreo y protección de moldes"
+ },
+ {
+  "id": "e0104",
+  "text": "Monitor de moldes - Kunshan Maibida Intelligent Equipment Co., Ltd."
+ },
+ {
+  "id": "e0105",
+  "text": "Fabricante de monitor de moldes y equipos de inspección por visión industrial | MAIBIDA"
+ },
+ {
+  "id": "e0106",
+  "text": "Aplicaciones y contenido de inspección del monitor de moldes"
+ },
+ {
+  "id": "e0107",
+  "text": "Funcionamiento normal"
+ },
+ {
+  "id": "e0108",
+  "text": "Cada zona de inspección permite configurar de forma independiente la sensibilidad y el área de detección;"
+ },
+ {
+  "id": "e0109",
+  "text": "Protección de moldes para máquinas de inyección  |  Solución de inspección InsertMolding  |  Solución de inspección de moldeo con insertos  |  Sistema de inspección de alta velocidad fuera del molde para máquinas de inyección"
+ },
+ {
+  "id": "e0110",
+  "text": "Grabación local por streaming"
+ },
+ {
+  "id": "e0111",
+  "text": "Elimina la influencia del personal del entorno circundante"
+ },
+ {
+  "id": "e0112",
+  "text": "Elimina la interferencia de luz externa a la planta"
+ },
+ {
+  "id": "e0113",
+  "text": "Verificación de la posición de la corredera, rotura del pasador eyector y posición de retorno"
+ },
+ {
+  "id": "e0114",
+  "text": "Ajuste de distancia focal, procesador de señal de imagen"
+ },
+ {
+  "id": "e0115",
+  "text": "Carga de cambios de estado, transmisión de video por streaming y guardado local de video"
+ },
+ {
+  "id": "e0116",
+  "text": "Datos de producción trazables"
+ },
+ {
+  "id": "e0117",
+  "text": "Enfoque automático motorizado"
+ },
+ {
+  "id": "e0118",
+  "text": "Ajuste motorizado"
+ },
+ {
+  "id": "e0119",
+  "text": "Luz blanca"
+ },
+ {
+  "id": "e0120",
+  "text": "Fuente de luz blanca/infrarroja (combinación dual)"
+ },
+ {
+  "id": "e0121",
+  "text": "Luz ambiental activa de la cámara"
+ },
+ {
+  "id": "e0122",
+  "text": "Modelo de cámara"
+ },
+ {
+  "id": "e0123",
+  "text": "Fuente de luz incorporada en la cámara"
+ },
+ {
+  "id": "e0124",
+  "text": "Combinación de lente y fuente de luz de la cámara"
+ },
+ {
+  "id": "e0125",
+  "text": "Ventajas de hardware"
+ },
+ {
+  "id": "e0126",
+  "text": "Ventajas de hardware•  Diseño compacto y ligero, cómodo de operar con una mano; la unidad principal cuenta con 5 puertos de red para añadir cámaras con flexibilidad según las necesidades de producción, con interfaz reservada para conexión al sistema MES;•Admite cámaras de hasta 8 millones de píxeles, con fuente de luz dual infrarroja/blanca integrada"
+ },
+ {
+  "id": "e0127",
+  "text": "Prohibir cierre del molde"
+ },
+ {
+  "id": "e0128",
+  "text": "Prohibir expulsión"
+ },
+ {
+  "id": "e0129",
+  "text": "Luz infrarroja"
+ },
+ {
+  "id": "e0130",
+  "text": "Combina el posicionamiento por visión con un robot paralelo para lograr alimentación flexible, agarre, clasificación y acomodo en charolas de productos de múltiples especificaciones."
+ },
+ {
+  "id": "e0131",
+  "text": "Estándar de red"
+ },
+ {
+  "id": "e0132",
+  "text": "Enfoque automático"
+ },
+ {
+  "id": "e0133",
+  "text": "Enfoque automático/enfoque táctil manual"
+ },
+ {
+  "id": "e0134",
+  "text": "Exposición automática, balance de blancos automático"
+ },
+ {
+  "id": "e0135",
+  "text": "Procesamiento de color"
+ },
+ {
+  "id": "e0136",
+  "text": "Matriz de corrección de color, conversión color/blanco y negro"
+ },
+ {
+  "id": "e0137",
+  "text": "Cubre la inspección de apariencia, dimensiones, caracteres, posición, falta de material, rebabas y estado de ensamble."
+ },
+ {
+  "id": "e0138",
+  "text": "Transmisión de video en tiempo real"
+ },
+ {
+  "id": "e0139",
+  "text": "Contrarresta la influencia de la luz reflejada"
+ },
+ {
+  "id": "e0140",
+  "text": "Certificación"
+ },
+ {
+  "id": "e0141",
+  "text": "Tecnología de fusión de profundidad de campo extendida"
+ },
+ {
+  "id": "e0142",
+  "text": "Funciones de software"
+ },
+ {
+  "id": "e0143",
+  "text": "Funciones de software•  Control totalmente táctil, sencillo e intuitivo; alta velocidad de procesamiento, con un tiempo de detección del sistema de hasta 0.03 segundos según la configuración de zonas;•Permite ajustar la sensibilidad de ROI de forma independiente, sin límite en el número de ROI;•Adquisición de imágenes AI y"
+ },
+ {
+  "id": "e0144",
+  "text": "El monitor de moldes IMX-790 de MAIBIDA admite múltiples cámaras, adquisición de imágenes AI y detección por ROI; se emplea para la protección de moldes de inyección y la detección de la colocación de insertos, residuos de producto y estado de desmoldeo."
+ },
+ {
+  "id": "e0145",
+  "text": "Tarjeta SD opcional: la tarjeta SD permite almacenar imágenes y también actualizar el programa y la configuración de lógica I/O;"
+ },
+ {
+  "id": "e0146",
+  "text": "General"
+ },
+ {
+  "id": "e0147",
+  "text": "Servicios de comunicación"
+ },
+ {
+  "id": "e0148",
+  "text": "Cuenta con enfoque automático inteligente que fija rápidamente el objeto objetivo para garantizar imágenes nítidas y definidas."
+ },
+ {
+  "id": "e0149",
+  "text": "Aumento del lente"
+ },
+ {
+  "id": "e0150",
+  "text": "Verificación de la colocación correcta y detección de insertos omitidos"
+ },
+ {
+  "id": "e0151",
+  "text": "Evita daños en el molde, reduce los costos de mantenimiento del molde, garantiza los plazos de entrega del producto, disminuye los costos de producción y mejora la eficiencia productiva"
+ },
+ {
+  "id": "e0152",
+  "text": "Reducción de costos de producción"
+ },
+ {
+  "id": "e0153",
+  "text": "Reducción de ruido y realce"
+ },
+ {
+  "id": "e0154",
+  "text": "Sistema de monitoreo centralizado"
+ },
+ {
+  "id": "e0155",
+  "text": "El sistema de monitoreo centralizado permite la recopilación centralizada de datos del monitor de moldes y funciones de tablero de big data, supervisa en tiempo real los datos del monitor de moldes y se conecta al sistema MES del cliente mediante el programa de monitoreo centralizado."
+ },
+ {
+  "id": "e0156",
+  "text": "Integra capacidades de visión AI y diversas herramientas de inspección, adecuado para detectar caracteres, apariencia, posición, cantidad y presencia/ausencia."
+ },
+ {
+  "id": "e0157",
+  "text": "Integra una fuente de luz dual, infrarroja/blanca, para cubrir más escenarios de aplicación."
+ },
+ {
+  "id": "e0158",
+  "text": "Realiza la detección de defectos de apariencia y de dimensiones, así como la clasificación automática de piezas conformes y piezas no conformes, para diversos componentes industriales."
+ },
+ {
+  "id": "e0159",
+  "text": "Expulsión"
+ },
+ {
+  "id": "e0160",
+  "text": "Tras el retroceso del pasador eyector"
+ },
+ {
+  "id": "e0161",
+  "text": "Alta resolución"
+ },
+ {
+  "id": "e0162",
+  "text": "Blanco y negro/color (bicolor)"
+ }
+]

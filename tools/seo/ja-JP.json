@@ -1,0 +1,10 @@
+[
+  {"page": "index.html", "title": "金型モニター・産業用ビジョン検査装置メーカー | MAIBIDA", "description": "MAIBIDAは金型モニター、AIビジョンセンサー、画像選別機、インライン検査装置を提供し、射出成形・コネクタ・精密部品の品質検査を支援します。"},
+  {"page": "product/10032.html", "title": "IMX-790 金型モニター | 射出成形の金型保護 | MAIBIDA", "description": "IMX-790金型モニターは複数カメラ、AI画像取得、ROI検査に対応し、インサート不良・製品残留・離型状態をリアルタイムに検出して金型損傷を防ぎます。"},
+  {"page": "product/smart-camera.html", "title": "V3 Pro AIビジョンセンサー | 産業用スマートカメラ | MAIBIDA", "description": "V3 Pro AIビジョンセンサーはオートフォーカス、二重光源、高解像度撮影を備え、外観・文字・位置・有無の検査設定を効率化します。"},
+  {"page": "productlist/10029.html", "title": "SIF/SIS フレキシブル供給・トレー整列装置 | MAIBIDA", "description": "SIF/SISシリーズはビジョン搭載パラレル供給ロボットとAtomCV位置決めを組み合わせ、多品種ワークの高速供給・整列を実現します。"},
+  {"page": "productlist/10030.html", "title": "コネクタ インライン検査装置 | 高速外観検査 | MAIBIDA", "description": "コネクタ端子、プレスフープ材、インサート成形品の外観・寸法・欠損を高速インライン検査し、不良品の流出を抑制します。"},
+  {"page": "productlist/10034.html", "title": "Insert Molding 帯材検査装置 | MAIBIDA", "description": "Insert Moldingのキャリアテープ・帯材を対象に、インサート位置、欠品、外観不良をインラインで検査する装置です。"},
+  {"page": "productlist/10036.html", "title": "プラスチック部品 インライン検査装置 | MAIBIDA", "description": "射出成形品の外観、寸法、ショートショット、位置を全数検査し、成形機・取出しロボットと連携して検査データを保存します。"},
+  {"page": "productlist/10039.html", "title": "画像選別機 | 良品・不良品の自動選別 | MAIBIDA", "description": "画像選別機は外観欠陥、寸法、文字、位置を検査し、良品と不良品を自動で分類・排出して精密部品の全数検査を支援します。"}
+]
