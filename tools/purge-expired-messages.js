@@ -9,7 +9,10 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const file = path.resolve(root, '..', 'maibida-ocr-rebuilt_messages', 'messages.ndjson');
+const messageDir = process.env.MAIBIDA_MESSAGE_DIR
+  ? path.resolve(process.env.MAIBIDA_MESSAGE_DIR)
+  : path.resolve(root, '..', 'maibida-ocr-rebuilt_messages');
+const file = path.join(messageDir, 'messages.ndjson');
 const dry = process.argv.includes('--dry-run');
 
 if (!fs.existsSync(file)) {

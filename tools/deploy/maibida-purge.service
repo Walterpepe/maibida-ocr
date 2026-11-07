@@ -1,0 +1,17 @@
+[Unit]
+Description=Purge expired Maibida inquiry messages
+After=network.target
+
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/maibida/current
+Environment=MAIBIDA_MESSAGE_DIR=/var/lib/maibida/messages
+ExecStart=/usr/bin/node /var/www/maibida/current/tools/purge-expired-messages.js
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/maibida/messages

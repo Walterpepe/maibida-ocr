@@ -3,7 +3,8 @@ const fs=require('fs');
 const path=require('path');
 const crypto=require('crypto');
 const root=path.resolve(__dirname,'..');
-const port=Number(process.argv[2]||8899);
+const port=Number(process.env.PORT||process.argv[2]||8899);
+const host=process.env.HOST||'127.0.0.1';
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.gif':'image/gif','.webp':'image/webp','.avif':'image/avif','.ico':'image/x-icon','.mp4':'video/mp4','.svg':'image/svg+xml','.txt':'text/plain; charset=utf-8','.xml':'application/xml; charset=utf-8'};
 const API='/api/messages';
 const MAX_BODY=16*1024;
@@ -11,12 +12,17 @@ const POLICY_VERSION='1.0';
 const RETENTION_MONTHS=24;
 const RATE_MAX=8;                 // submissions per IP per window
 const RATE_WINDOW=60*1000;
+const configuredOrigins=String(process.env.MAIBIDA_ALLOWED_ORIGINS||'')
+  .split(',').map(s=>s.trim()).filter(Boolean);
 const ALLOWED_ORIGINS=new Set([
   'https://www.maibida.com','https://maibida.com',
-  'http://127.0.0.1:'+port,'http://localhost:'+port
+  'http://127.0.0.1:'+port,'http://localhost:'+port,
+  ...configuredOrigins
 ]);
 // Personal data must not be reachable as a static asset: keep it outside root.
-const messageDir=path.resolve(root,'..','maibida-ocr-rebuilt_messages');
+const messageDir=process.env.MAIBIDA_MESSAGE_DIR
+  ? path.resolve(process.env.MAIBIDA_MESSAGE_DIR)
+  : path.resolve(root,'..','maibida-ocr-rebuilt_messages');
 const messageFile=path.join(messageDir,'messages.ndjson');
 
 // Prelaunch remediation: security response headers. CSP allows inline
@@ -179,4 +185,4 @@ http.createServer((req,res)=>{
   res.writeHead(200,headers(extra));
   if(req.method==='HEAD') return res.end();
   fs.createReadStream(served).on('error',()=>res.end()).pipe(res);
-}).listen(port,'127.0.0.1',()=>console.log(`Preview: http://127.0.0.1:${port}/index.html`));
+}).listen(port,host,()=>console.log(`Maibida server listening on http://${host}:${port}/`));
