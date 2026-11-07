@@ -133,10 +133,10 @@ headers that can pass through unchanged.
 
 ## SEO Controls
 
-- The canonical host is `https://www.maibida.com`.
+- The canonical host and Chinese homepage URL are `https://www.maibida.com/`.
 - The apex domain and HTTP traffic use 301 redirects.
-- `/` redirects to `/index.html`, matching the existing canonical tags and
-  sitemap entries.
+- Nginx serves `/` without exposing `/index.html`; the old `/index.html` URL
+  uses a 301 redirect to `/`.
 - Retired locale URLs use permanent redirects.
 - `robots.txt` allows search entry points and points to the XML sitemap.
 - Custom error pages send `X-Robots-Tag: noindex, follow`.

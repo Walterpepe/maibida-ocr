@@ -28,9 +28,9 @@ case "$code" in 301|302|307|308) ok "HTTP redirects to HTTPS ($code)";; *) bad "
 
 # 3. HTTPS reachable through the canonical homepage URL
 code=$(probe -I "$BASE/")
-case "$code" in 301|302|307|308) ok "root path redirects ($code)";; *) bad "root path returned $code (expected redirect)";; esac
-code=$(probe "$BASE/index.html")
-[ "$code" = 200 ] && ok "HTTPS canonical homepage 200" || bad "HTTPS canonical homepage returned $code"
+[ "$code" = "200" ] && ok "HTTPS canonical homepage 200" || bad "HTTPS canonical homepage returned $code"
+code=$(probe -I "$BASE/index.html")
+case "$code" in 301|302|307|308) ok "old index.html URL redirects ($code)";; *) bad "old index.html URL returned $code (expected redirect)";; esac
 
 # 4. TLS certificate chain
 if curl -sS -o /dev/null --max-time 15 "$BASE/" 2>/dev/null; then
@@ -52,7 +52,7 @@ code=$(probe "$BASE/sitemap.xml")
 [ "$code" = 200 ] && ok "sitemap.xml 200" || bad "sitemap.xml $code"
 
 # 7. Googlebot user agent must get the same content
-code=$(probe -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "$BASE/index.html")
+code=$(probe -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "$BASE/")
 [ "$code" = 200 ] && ok "Googlebot UA 200" || bad "Googlebot UA $code"
 
 # 8. Localized pages reachable in the six target markets

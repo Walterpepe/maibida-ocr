@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.maibida.com/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <loc>https://www.maibida.com/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.en-US.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.es-MX.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.en-SG.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.id-ID.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -77,7 +77,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.th-TH.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.vi-VN.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.ko-KR.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.ja-JP.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -137,7 +137,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.ms-MY.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://www.maibida.com/index.ru-RU.html</loc>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.maibida.com/"/>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://www.maibida.com/index.en-US.html"/>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://www.maibida.com/index.es-MX.html"/>
     <xhtml:link rel="alternate" hreflang="en-SG" href="https://www.maibida.com/index.en-SG.html"/>

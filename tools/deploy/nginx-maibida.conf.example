@@ -50,7 +50,8 @@ server {
                application/json application/xml image/svg+xml;
     # brotli on;  brotli_types text/plain text/css application/javascript application/json image/svg+xml;
 
-    # ---- retired locale editions: permanent redirect to the current edition
+    # ---- canonical homepage and retired locale editions
+    location = /index.html                         { return 301 /$is_args$args; }
     location = /index.en-AU.html                    { return 301 /index.en-SG.html; }
     location = /product/10032.en-AU.html            { return 301 /product/10032.en-SG.html; }
     location = /product/smart-camera.en-AU.html     { return 301 /product/smart-camera.en-SG.html; }

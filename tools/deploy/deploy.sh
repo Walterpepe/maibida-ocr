@@ -65,11 +65,11 @@ systemctl reload nginx
 if [[ -f "${CERT_FILE}" ]]; then
   curl --fail --silent --show-error --insecure \
     --resolve www.maibida.com:443:127.0.0.1 \
-    "https://www.maibida.com/index.html" >/dev/null
+    "https://www.maibida.com/" >/dev/null
 else
   curl --fail --silent --show-error \
     --resolve www.maibida.com:80:127.0.0.1 \
-    "http://www.maibida.com/index.html" >/dev/null
+    "http://www.maibida.com/" >/dev/null
 fi
 
 api_code="$(curl --silent --show-error --output /dev/null --write-out '%{http_code}' \

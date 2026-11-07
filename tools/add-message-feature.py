@@ -368,7 +368,7 @@ def page_rel(lang):
 
 
 def home_rel(lang):
-    return "index.html" if lang == "zh-CN" else f"index.{lang}.html"
+    return "/" if lang == "zh-CN" else f"index.{lang}.html"
 
 
 def formal_pages():

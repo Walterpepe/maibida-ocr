@@ -28,7 +28,7 @@ def rel(kind, lang):
 
 
 def home(lang):
-    return "index.html" if lang == "zh-CN" else f"index.{lang}.html"
+    return "/" if lang == "zh-CN" else f"index.{lang}.html"
 
 
 POLICY_CSS = """*{box-sizing:border-box}
