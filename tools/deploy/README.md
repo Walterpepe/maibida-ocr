@@ -97,6 +97,18 @@ Inquiry messages are stored in:
 The monthly systemd timer enforces the 24-month retention promise used by the
 privacy pages.
 
+## Local Firewall
+
+Enable the baseline firewall while preserving SSH access:
+
+```bash
+sudo tools/deploy/configure-firewall.sh
+```
+
+After choosing a CDN, replace the broad web rules with that provider's published
+origin IP ranges where practical, or use authenticated origin pulls. Keep port
+22 available for your SSH access path and port 80 open for certificate renewal.
+
 ## CDN Cutover
 
 Recommended CDN behavior:
