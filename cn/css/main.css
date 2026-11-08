@@ -293,7 +293,7 @@ body {
 .newadd {
 	width: 100%;
 	padding: 1px 0 4% 0;
-	background: url(../images/zzcbg1.jpg) center center no-repeat;
+	background: url(../images/zzcbg1.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -363,7 +363,7 @@ body {
 	line-height: 25px;
 	color: #fff;
 	display: block;
-	background: url(../images/earth.png) left center no-repeat;
+	background: url(../images/earth.webp) left center no-repeat;
 	padding: 0 0 0 30px;
 }
 
@@ -530,7 +530,7 @@ body {
 }
 
 .foot {
-	background: url(../images/footbg.jpg) center top no-repeat;
+	background: url(../images/footbg.webp) center top no-repeat;
 	padding: 5% 0 0 0;
 	position: relative;
 	background-size: cover;
@@ -675,7 +675,7 @@ body {
 
 .contact {
 	padding: 1px 0 5% 0;
-	background: url(../images/zzcbg2.jpg) center center no-repeat;
+	background: url(../images/zzcbg2.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -739,7 +739,7 @@ body {
 }
 
 .obrelc {
-	background: url(../images/zzcbg3.jpg) center center no-repeat;
+	background: url(../images/zzcbg3.webp) center center no-repeat;
 	background-size: cover;
 	padding: 1px 0 5% 0;
 }
@@ -848,7 +848,7 @@ body {
 }
 
 .lbopac {
-	background: url(../images/gybg2.jpg) center center no-repeat;
+	background: url(../images/gybg2.webp) center center no-repeat;
 	background-size: cover;
 	padding: 1px 0 8% 0;
 }
@@ -887,7 +887,7 @@ body {
 }
 
 .eubora {
-	background: url(../images/gybg3.jpg) center center no-repeat;
+	background: url(../images/gybg3.webp) center center no-repeat;
 	background-size: cover;
 	padding: 1px 0 6% 0;
 }
@@ -1024,12 +1024,12 @@ body {
 }
 
 .slick-prev {
-	background: url(../images/left3.png) no-repeat center center;
+	background: url(../images/left3.webp) no-repeat center center;
 	left: -43px;
 }
 
 .slick-next {
-	background: url(../images/right3.png) no-repeat center center;
+	background: url(../images/right3.webp) no-repeat center center;
 	right: -43px;
 }
 
@@ -1256,7 +1256,7 @@ body {
 }
 
 .develop {
-	background: url(../images/jjbg2.jpg) center center no-repeat;
+	background: url(../images/jjbg2.webp) center center no-repeat;
 	background-size: cover;
 	padding: 1px 0 2% 0;
 }
@@ -1275,7 +1275,7 @@ body {
 
 .index_case {
 	padding: 8% 0;
-	background: url(../images/2pic.jpg) center center no-repeat;
+	background: url(../images/2pic.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -1362,7 +1362,7 @@ body {
 }
 
 .speech {
-	background: url(../images/cv3bg1.jpg) center center no-repeat;
+	background: url(../images/cv3bg1.webp) center center no-repeat;
 	background-size: cover;
 	padding: 10% 0;
 }
@@ -1780,7 +1780,7 @@ display: -webkit-box;
 }
 
 .feedback {
-	background: url(../images/feedbg.jpg) center center no-repeat;
+	background: url(../images/feedbg.webp) center center no-repeat;
 	padding: 4% 0 0 0;
 }
 
@@ -1847,32 +1847,32 @@ display: -webkit-box;
 }
 
 .otebn li span.s1 {
-	background-image: url(../images/b1.jpg);
+	background-image: url(../images/b1.webp);
 }
 
 .otebn li span.s2 {
-	background-image: url(../images/b2.jpg);
+	background-image: url(../images/b2.webp);
 }
 
 .otebn li span.s3 {
-	background-image: url(../images/b3.jpg);
+	background-image: url(../images/b3.webp);
 }
 
 .otebn li span.s4 {
-	background-image: url(../images/b4.jpg);
+	background-image: url(../images/b4.webp);
 }
 
 .otebn li span.s5 {
-	background-image: url(../images/b5.jpg);
+	background-image: url(../images/b5.webp);
 	border: none;
 }
 
 .otebn li span.s7 {
-	background-image: url(../images/b7.jpg);
+	background-image: url(../images/b7.webp);
 }
 
 .otebn li span.s8 {
-	background-image: url(../images/b8.jpg);
+	background-image: url(../images/b8.webp);
 	border: none;
 }
 
@@ -1986,7 +1986,7 @@ display: -webkit-box;
 	display: inline-block;
 	width: 32px;
 	height: 32px;
-	background: url(../images/j.jpg) no-repeat center center;
+	background: url(../images/j.webp) no-repeat center center;
 	transition: all 0.5s ease;
 }
 
@@ -2218,7 +2218,7 @@ display: -webkit-box;
 
 .ny-navs {
 	width: 100%;
-	background: #f6f7f8 url(../images/jjry.png) 20px center no-repeat;
+	background: #f6f7f8 url(../images/jjry.webp) 20px center no-repeat;
 	border-radius: 6px;
 
 
@@ -2488,12 +2488,12 @@ display: -webkit-box;
 
 #certify .swiper-button-prev {
 	left: 45%;
-	background: url(../images/qzc4.jpg) no-repeat left center;
+	background: url(../images/qzc4.webp) no-repeat left center;
 }
 
 #certify .swiper-button-next {
 	right: 45%;
-	background: url(../images/qzc5.jpg) no-repeat left center;
+	background: url(../images/qzc5.webp) no-repeat left center;
 }
 
 #certify .swiper-button-prev,
@@ -2581,7 +2581,7 @@ display: -webkit-box;
 .lbutea {
 	display: none;
 	padding: 8% 0%;
-	background: url(../images/js.jpg) center center no-repeat;
+	background: url(../images/js.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -2712,7 +2712,7 @@ display: -webkit-box;
 .syfabox2 {
 	padding: 6% 0% 5% 0;
 	text-align: center;
-	background: url(../images/jjbg2.jpg) center center no-repeat;
+	background: url(../images/jjbg2.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -2726,7 +2726,7 @@ display: -webkit-box;
 	padding: 6% 0%;
 	text-align: center;
 	margin-top: 5%;
-	background: url(../images/kjbg.jpg) center center no-repeat;
+	background: url(../images/kjbg.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -2734,7 +2734,7 @@ display: -webkit-box;
 	padding: 6% 0%;
 	text-align: center;
 	margin-top: 0%;
-	background: url(../images/kjbg.jpg) center center no-repeat;
+	background: url(../images/kjbg.webp) center center no-repeat;
 	background-size: cover;
 }
 
@@ -3257,7 +3257,7 @@ canvas {
 	top: 0;
 	width: 30px;
 	height: 30px;
-	background: url(../images/icon30.png) no-repeat center center;
+	background: url(../images/icon30.webp) no-repeat center center;
 	cursor: pointer;
 }
 

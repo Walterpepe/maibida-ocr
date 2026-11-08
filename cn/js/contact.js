@@ -41,7 +41,7 @@
       body: JSON.stringify(d)
     };
     if (ctrl) opts.signal = ctrl.signal;
-    fetch('/api/messages', opts).then(function (r) {
+    fetch('https://www.maibida.com/api/messages', opts).then(function (r) {
       return r.json().then(function (j) { return { ok: r.ok && !!j.ok, status: r.status }; })
         .catch(function () { return { ok: false, status: r.status }; });
     }).then(function (r) {

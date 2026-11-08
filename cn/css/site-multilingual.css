@@ -131,3 +131,56 @@ body>.top,body>.top2{z-index:1000;overflow:visible;background:rgba(255,255,255,.
   .cf-head .wa-consult-trigger{font-size:12px;padding:6px 10px}
 }
 /* END whatsapp-consult-nav */
+
+
+/* MAIBIDA_CASE_LAYOUT_V1 - 应用案例板块占屏比例修正（幂等，勿重复追加） */
+body .syfabox2 {
+  padding: clamp(34px, 3.6vw, 58px) 0 clamp(30px, 3vw, 50px);
+  text-align: center;
+}
+body .syfabox2 h3 {
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.25;
+  margin: 0 0 clamp(18px, 2.2vw, 32px);
+}
+body .syfabox2 .wrap { max-width: 1240px; }
+body .syfabox2 .swiper08 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 46px;
+}
+body .syfabox2 .swiper08 .swiper-wrapper { align-items: stretch; }
+body .syfabox2 .swiper08 .swiper-slide { height: auto; }
+body .syfabox2 .swiper08 .swiper-slide a { display: block; }
+body .syfabox2 .swiper08 .swiper-slide .pic {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 300px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .syfabox2 .swiper08 .swiper-slide .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+body .syfabox2 .swiper08 .swiper-slide p { margin: 0; }
+body .syfabox2 .swiper08 .swiper-pagination { bottom: 10px; }
+@media (max-width: 767px) {
+  body .syfabox2 { padding: 32px 0 28px; }
+  body .syfabox2 h3 { font-size: 26px; margin: 0 0 18px; }
+  body .syfabox2 .swiper08 { padding-bottom: 38px; }
+  body .syfabox2 .swiper08 .swiper-slide .pic { aspect-ratio: 3 / 2; max-height: none; }
+  body .syfabox2 .swiper08 .swiper-pagination { bottom: 6px; }
+}
+/* /MAIBIDA_CASE_LAYOUT_V1 */
+
+/* MAIBIDA_CASE_EMPTY_V1 - 隐藏无图无内容的空应用案例板块 */
+body .syfabox2.case-empty { display: none; }
+/* /MAIBIDA_CASE_EMPTY_V1 */

@@ -358,8 +358,8 @@
 
 .fulode{ z-index:0;}
 .fulode .owl-prev,.fulode .owl-next{ position:absolute; display: block; height: 59px; width: 59px; line-height: 0; font-size: 0; cursor: pointer;  padding: 0; border: none; top:40%; background:no-repeat center center; transform:translateY(80px); transition:all 0.5s ease;}
-.fulode .owl-prev{transition:all 0.3s linear; background-image:url(../images/left3.png); left:3%;}
-.fulode .owl-next{transition:all 0.3s linear; background-image:url(../images/right3.png); right:3%;}
+.fulode .owl-prev{transition:all 0.3s linear; background-image:url(../images/left3.webp); left:3%;}
+.fulode .owl-next{transition:all 0.3s linear; background-image:url(../images/right3.webp); right:3%;}
 
 
 .fulode .pic{ background:no-repeat center center; background-size:cover; height:100vh; position:relative; z-index:-1}
@@ -375,7 +375,7 @@
 
 .plbaie{ padding:0 50px; margin-top:5%;}
 .plbaie .owl-prev,.plbaie .owl-next{ position:absolute; display: block; height: 30px; width: 40px; line-height: 0; font-size: 0; cursor: pointer;  padding: 0; border: none; top:50%; margin-top:-15px; background:no-repeat center center;transition:all 0.5s ease;}
-.plbaie .owl-prev{ background-image:url(../images/zb.png); left:0%;}
+.plbaie .owl-prev{ background-image:url(../images/zb.webp); left:0%;}
 .plbaie .owl-next{ background-image:url(../images/rb.png); right:0;}
 .plbaie .blsot{ padding:0 40px; text-align:center;}
 .plbaie .blsot .pic{ width:100%; height:280px; display:table;}
@@ -388,14 +388,14 @@
 .mlteab{ padding:0 50px;}
 .mlteab .blsot{ padding:0 15px;}
 .mlteab .owl-prev,.mlteab .owl-next{ position:absolute; display: block; height: 35px; width: 25px; line-height: 0; font-size: 0; cursor: pointer;  padding: 0; border: none; top:50%; margin-top:-17px; background:no-repeat center center;transition:all 0.5s ease;}
-.mlteab .owl-prev{ background-image:url(../images/left.png); left:0%;}
-.mlteab .owl-next{ background-image:url(../images/right.png); right:0;}
+.mlteab .owl-prev{ background-image:url(../images/left.webp); left:0%;}
+.mlteab .owl-next{ background-image:url(../images/right.webp); right:0;}
 
 
 
 @media (min-width: 1201px){
-.fulode .owl-prev:hover{ background-image:url(../images/left3.png);}
-.fulode .owl-next:hover{ background-image:url(../images/right3.png);}
+.fulode .owl-prev:hover{ background-image:url(../images/left3.webp);}
+.fulode .owl-next:hover{ background-image:url(../images/right3.webp);}
 /*.fulode .owl-prev:hover,.fulode .owl-next:hover{ background-color:rgba(255,255,255,0.6); transition:all 0.5s ease;}*/
 }
 
