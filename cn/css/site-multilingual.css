@@ -184,3 +184,35 @@ body .syfabox2 .swiper08 .swiper-pagination { bottom: 10px; }
 /* MAIBIDA_CASE_EMPTY_V1 - 隐藏无图无内容的空应用案例板块 */
 body .syfabox2.case-empty { display: none; }
 /* /MAIBIDA_CASE_EMPTY_V1 */
+
+/* MAIBIDA_FOV_FIGURE_V1 - CV3 Pro 视野曲线图组自适应 */
+.vp-fig-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.vp-fig-pair figure { margin: 0; min-width: 0; text-align: center; }
+.vp-fig-pair figcaption { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: #17352a; }
+.vp-fig-pair img { width: 100%; height: auto; object-fit: contain; display: block; }
+@media (max-width: 767px) {
+  .vp-fig-pair { grid-template-columns: 1fr; gap: 18px; }
+}
+/* /MAIBIDA_FOV_FIGURE_V1 */
+
+/* MAIBIDA_MOBILE_HEADER_V1 - 手机端 logo 与产品中心不重叠 */
+@media (max-width: 700px) {
+  .top .clear.wrap, .top2 .clear.wrap { gap: 3px; padding: 0 8px; }
+  .top .logo, .top2 .logo { flex: 0 0 auto; }
+  .top .logo img, .top2 .logo img { max-width: clamp(84px, 24vw, 130px); max-height: 34px; }
+  .top .vp-language-switch, .top2 .vp-language-switch { margin-left: 2px; }
+  .top .vp-nav-menu summary, .top2 .vp-nav-menu summary,
+  .top .vp-language-switch summary, .top2 .vp-language-switch summary { padding: 0 2px; font-size: 11px; }
+  .top .vp-contact-link, .top2 .vp-contact-link,
+  .top .vp-whatsapp-link, .top2 .vp-whatsapp-link { margin-left: 2px; }
+}
+@media (max-width: 360px) {
+  .top .vp-language-switch summary, .top2 .vp-language-switch summary { font-size: 0; }
+  .top .vp-language-switch summary::before, .top2 .vp-language-switch summary::before { content: "语言"; font-size: 11px; }
+}
+/* /MAIBIDA_MOBILE_HEADER_V1 */

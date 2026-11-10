@@ -41,6 +41,8 @@ fieldset, img {
 }
 img {
 	max-width:100%;
+	height:auto;
+	object-fit:contain;
 }
 ul, li {
 	list-style:none;
