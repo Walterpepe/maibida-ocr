@@ -680,10 +680,55 @@ body {
 }
 
 .eaoplc {
-
 	color: rgba(255, 255, 255, 0.4);
-	line-height: 50px;
 	font-size: 13px;
+	line-height: 1.6;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 6px 14px;
+	margin-top: 24px;
+	padding-top: 18px;
+	border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.eaoplc p {
+	margin: 0 !important;
+	line-height: 1.6;
+}
+
+.eaoplc p img {
+	vertical-align: middle;
+}
+
+/* 单行版权栏：版权-法律链接-ICP 靠左，CN 标识靠右 */
+.eaoplc .foot-legal {
+	order: 2;
+}
+
+.eaoplc .foot-icp {
+	order: 3;
+}
+
+.eaoplc > p:has(img) {
+	order: 4;
+	margin-left: auto !important;
+}
+
+/* es-ES 欧盟合规说明独占整行 */
+.eaoplc .eses-market-note {
+	order: -1;
+	flex: 0 0 100%;
+}
+
+/* 独立表单页简易页脚：版权与 ICP 并排单行 */
+.pl-copy,
+.pl-icp {
+	display: inline;
+}
+
+.pl-icp {
+	margin-left: 12px !important;
 }
 
 .labte {

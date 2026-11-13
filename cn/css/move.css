@@ -2167,11 +2167,21 @@
   }
   .eaoplc p {
     font-size: 12px;
-    line-height: 24px;
-    width: 100%;
+    line-height: 1.7;
+    width: auto;
   }
   .eaoplc {
     width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 4px 12px;
+  }
+  .eaoplc > p:has(img) {
+    margin-left: 0 !important;
+  }
+  .eaoplc .eses-market-note {
+    flex: 0 0 100%;
     text-align: center;
   }
   .sy-nav {

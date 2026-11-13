@@ -56,3 +56,9 @@ body{margin:0;background:#f6f9f7;color:#26313a;font-family:Arial,"Microsoft YaHe
   .cf-head .wa-consult-trigger{font-size:12px;padding:6px 10px}
 }
 /* END whatsapp-consult-nav */
+
+/* MAIBIDA_FOOT_INLINE_V1 - 版权与 ICP 备案单行排列 */
+.pl-copy,.pl-icp{display:inline}
+.pl-icp{margin-left:12px !important}
+@media(max-width:640px){.pl-copy,.pl-icp{display:block}.pl-icp{margin-left:0 !important;margin-top:6px !important}}
+/* /MAIBIDA_FOOT_INLINE_V1 */
