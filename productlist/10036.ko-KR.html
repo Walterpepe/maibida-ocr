@@ -12,15 +12,6 @@
 <link href="../cn/css/css.css" rel="stylesheet" type="text/css"/>
 <link href="../cn/css/main.css" rel="stylesheet" type="text/css"/>
 <link href="../cn/css/move.css" rel="stylesheet" type="text/css"/>
-<!--<link rel="stylesheet" href="../cn/css/owl.carousel.css">
-
-<link rel="stylesheet" href="../cn/css/swiper.min.css">
-
-<script type="text/javascript" src="../cn/js/jquery.min.js"></script>
-
-<script type="text/javascript" src="../cn/js/owl.carousel.js"></script>
-
--->
 <link href="../cn/css/swiper.min.css" rel="stylesheet"/>
 <script src="../cn/js/jquery.min.js" type="text/javascript"></script>
 <link href="../cn/css/swiper-bundle.min.css" rel="stylesheet"/>
@@ -152,6 +143,43 @@
 <div keyid="10007">
 </div>
 </div>
+<div class="wrap" keyid="tag">
+<div class="syfad2">
+<h3>기술 사양<!--<P>看看哪款产品适合您？</P>--></h3>
+</div>
+<div class="sjbox2">
+<div class="ny-navs flex jc2">
+<a class="cur" href="javascript:;">제품 사양서</a>
+</div>
+<div class="sjd2">
+<div class="bd none" style="display: block;">
+<section aria-label="검사 시스템 사양" class="ocr-table-wrap"><h3 class="ocr-table-title green">검사 시스템 사양</h3><table class="ocr-table"><thead><tr><th scope="col">항목</th><th scope="col">항목</th></tr></thead><tbody><tr><th scope="row">검사 속도</th><td>카메라 1대로 초당 제품 10개 검사</td></tr><tr><th scope="row">사이클 영향</th><td>0초(사이클에 영향 없음)</td></tr><tr><th scope="row">적용 사출 성형기</th><td>모든 브랜드</td></tr><tr><th scope="row">적용 로봇</th><td>서보 로봇 및 일부 공압 로봇</td></tr><tr><th scope="row">조작 설정</th><td>빠르고 간단하며 전문 기술 없이 조작 가능</td></tr><tr><th scope="row">카메라 구성</th><td>복수 카메라</td></tr><tr><th scope="row">카메라 해상도</th><td>200–500만 화소(선택 가능)</td></tr></tbody></table>
+<!-- spec-disclaimer -->
+<p class="spec-disclaimer" style="font-size:12px;line-height:1.7;color:#5c6871;margin:12px 0 0;padding:9px 12px;border-left:3px solid #009944;background:#f6f9f7">기술 고지: 위 값은 규정된 조건에서의 대표 참고값으로 선정 참고용이며 성능을 보증하지 않습니다. 실제 검출률, 정밀도 및 사이클 타임은 공작물, 조명, 지그 및 파라미터 설정에 따라 달라지며 서명된 기술 합의서와 검수 기준에 따릅니다. 사양은 예고 없이 변경될 수 있습니다. 판매 조건 및 기술 고지를 참조하십시오. <a href="../terms.ko-KR.html" style="color:#087b3d">기술 고지</a></p>
+<!-- /spec-disclaimer -->
+
+</section>
+</div>
+</div>
+<script>
+
+                $(function () {
+
+                    $(".ny-navs a").click(function () {
+
+                        var ind = $(this).index();
+
+                        $(this).addClass("cur").siblings().removeClass("cur");
+
+                        $(".sjd2 .bd").eq(ind).stop(false, true).fadeIn().siblings().hide();
+
+                    })
+
+                })
+
+            </script>
+</div>
+</div>
 <div class="syfabox2">
 <h3>산업 적용</h3>
 <div class="wrap">
@@ -271,43 +299,6 @@
                     },
 
                 });
-
-            </script>
-</div>
-</div>
-<div class="wrap" keyid="tag">
-<div class="syfad2">
-<h3>기술 사양<!--<P>看看哪款产品适合您？</P>--></h3>
-</div>
-<div class="sjbox2">
-<div class="ny-navs flex jc2">
-<a class="cur" href="javascript:;">제품 사양서</a>
-</div>
-<div class="sjd2">
-<div class="bd none" style="display: block;">
-<section aria-label="검사 시스템 사양" class="ocr-table-wrap"><h3 class="ocr-table-title green">검사 시스템 사양</h3><table class="ocr-table"><thead><tr><th scope="col">항목</th><th scope="col">항목</th></tr></thead><tbody><tr><th scope="row">검사 속도</th><td>카메라 1대로 초당 제품 10개 검사</td></tr><tr><th scope="row">사이클 영향</th><td>0초(사이클에 영향 없음)</td></tr><tr><th scope="row">적용 사출 성형기</th><td>모든 브랜드</td></tr><tr><th scope="row">적용 로봇</th><td>서보 로봇 및 일부 공압 로봇</td></tr><tr><th scope="row">조작 설정</th><td>빠르고 간단하며 전문 기술 없이 조작 가능</td></tr><tr><th scope="row">카메라 구성</th><td>복수 카메라</td></tr><tr><th scope="row">카메라 해상도</th><td>200–500만 화소(선택 가능)</td></tr></tbody></table>
-<!-- spec-disclaimer -->
-<p class="spec-disclaimer" style="font-size:12px;line-height:1.7;color:#5c6871;margin:12px 0 0;padding:9px 12px;border-left:3px solid #009944;background:#f6f9f7">기술 고지: 위 값은 규정된 조건에서의 대표 참고값으로 선정 참고용이며 성능을 보증하지 않습니다. 실제 검출률, 정밀도 및 사이클 타임은 공작물, 조명, 지그 및 파라미터 설정에 따라 달라지며 서명된 기술 합의서와 검수 기준에 따릅니다. 사양은 예고 없이 변경될 수 있습니다. 판매 조건 및 기술 고지를 참조하십시오. <a href="../terms.ko-KR.html" style="color:#087b3d">기술 고지</a></p>
-<!-- /spec-disclaimer -->
-
-</section>
-</div>
-</div>
-<script>
-
-                $(function () {
-
-                    $(".ny-navs a").click(function () {
-
-                        var ind = $(this).index();
-
-                        $(this).addClass("cur").siblings().removeClass("cur");
-
-                        $(".sjd2 .bd").eq(ind).stop(false, true).fadeIn().siblings().hide();
-
-                    })
-
-                })
 
             </script>
 </div>
