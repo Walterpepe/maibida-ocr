@@ -2172,17 +2172,17 @@
   }
   .eaoplc {
     width: 100%;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     align-items: center;
     gap: 4px 12px;
   }
   .eaoplc > p:has(img) {
-    margin-left: 0 !important;
+    margin-left: auto !important;
   }
   .eaoplc .eses-market-note {
     flex: 0 0 100%;
-    text-align: center;
+    text-align: left;
   }
   .sy-nav {
     width: 100%;
