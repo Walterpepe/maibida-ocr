@@ -2903,6 +2903,28 @@
     font-size: 14px;
     line-height: 30px;
   }
+  /* 手机端版权条固定两行：第一行版权独占，第二行法律链接+ICP 靠左、CN 标识靠右 */
+  .eaoplc {
+    padding-bottom: 64px;
+  }
+  .eaoplc > p:not([class]):not(:has(img)) {
+    flex: 0 0 100%;
+    order: 1;
+  }
+  .eaoplc .foot-legal {
+    order: 2;
+  }
+  .eaoplc .foot-icp {
+    order: 3;
+  }
+  .eaoplc > p:has(img) {
+    order: 4;
+    margin-left: auto !important;
+  }
+  .eaoplc .eses-market-note {
+    order: -1;
+    flex: 0 0 100%;
+  }
 }
 @media (max-width: 545px) {
 }
