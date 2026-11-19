@@ -34,11 +34,12 @@ const CSP=[
   "object-src 'none'",
   "frame-ancestors 'self'",
   "form-action 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com",
+  "frame-src https://www.googletagmanager.com",
   "media-src 'self'",
   "worker-src 'self' blob:"
 ].join('; ');
