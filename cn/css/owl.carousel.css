@@ -421,8 +421,9 @@
 .home-banner-play.is-paused .icon-pause{ display:block;}
 @media (max-width:768px){
   .home-banner-ctrl{ gap:10px; margin-top:10px;}
-  .home-banner-thumb{ width:88px;}
-  .home-banner-play{ width:38px; height:38px;}
+  .home-banner-thumbs{ flex:1 1 0; min-width:0; gap:6px; justify-content:stretch; overflow-x:hidden;}
+  .home-banner-thumb{ flex:1 1 0; width:auto; min-width:0; aspect-ratio:16/9;}
+  .home-banner-play{ flex:0 0 38px; width:38px; height:38px;}
 }
 .fulode .owl-prev,.fulode .owl-next{ position:absolute; display: block; height: 59px; width: 59px; line-height: 0; font-size: 0; cursor: pointer;  padding: 0; border: none; top:40%; background:no-repeat center center; transform:translateY(80px); transition:all 0.5s ease;}
 .fulode .owl-prev{transition:all 0.3s linear; background-image:url(../images/left3.webp); left:3%;}
