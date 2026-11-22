@@ -1,8 +1,8 @@
 # Maibida Production Deployment
 
 This setup is designed for a low-traffic static corporate website on Ubuntu 24.04.
-Nginx serves the public files, while a small dependency-free Node service handles
-only `POST /api/messages` inquiry submissions.
+EdgeOne serves cached public assets and runs a lightweight validation function for
+`POST /api/messages`. Nginx and the Node service remain the authoritative origin.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ only `POST /api/messages` inquiry submissions.
 Visitor / Googlebot
         |
         v
-Future CDN: TLS, global cache, WAF, rate limiting
+EdgeOne CDN / Edge Function
         |
         v
 Ubuntu origin: Nginx :80/:443
@@ -66,7 +66,10 @@ sudo tools/deploy/deploy.sh
 ```
 
 Each release is unpacked under `/var/www/maibida/releases/`. The live path is a
-symlink at `/var/www/maibida/current`.
+symlink at `/var/www/maibida/current`. During the release build, every CSS/JS
+reference is rewritten to the deployment minute (`v=YYYYMMDDHHMM`) before the
+symlink switches. This keeps HTML uncached while allowing assets to retain the
+seven-day cache policy.
 
 Roll back by pointing the symlink at an earlier release and restarting the local
 services:
@@ -154,3 +157,74 @@ sh tools/deploy/check-production.sh
 The check verifies DNS, redirects, TLS, security headers, localized pages,
 compliance pages, the inquiry API, private-data blocking, image delivery, and
 the SEO files.
+
+## EdgeOne Automation
+
+EdgeOne uses the Tencent Cloud `teo` API, version `2022-09-01`. The repository
+includes a dependency-free TC3-HMAC-SHA256 client plus purge and function
+deployment commands.
+
+Create a root-owned environment file outside the repository:
+
+```bash
+sudo install -d -m 755 /etc/maibida
+sudo install -m 600 tools/edgeone/edgeone.env.example /etc/maibida/edgeone.env
+sudo editor /etc/maibida/edgeone.env
+```
+
+Set `TENCENTCLOUD_SECRET_ID` and `TENCENTCLOUD_SECRET_KEY`. For an international
+Tencent Cloud account set `TENCENTCLOUD_REGION=intl`; for a mainland account
+use the default `https://teo.tencentcloudapi.com`. The configured zone is
+`zone-3x9ct40r4u3w` and the public host is `www.maibida.com`.
+
+The CAM policy needs these permissions:
+
+```text
+teo:CreatePurgeTask
+teo:DescribeFunctions
+teo:CreateFunction
+teo:ModifyFunction
+teo:DescribeFunctionRules
+teo:CreateFunctionRule
+teo:ModifyFunctionRule
+```
+
+Preview the exact requests without sending credentials or making changes:
+
+```bash
+node tools/edgeone/edgeone-purge.js --dry-run
+node tools/edgeone/deploy-function.js --dry-run
+```
+
+Deploy the contact API function:
+
+```bash
+sudo --preserve-env=EDGEONE_ENV_FILE \
+  node tools/edgeone/deploy-function.js
+```
+
+The first run discovers a function named `maibida-contact-api` or creates it,
+then creates a `www.maibida.com` + `/api/messages` trigger rule. Copy the returned
+function/rule IDs into `/etc/maibida/edgeone.env`; later deploys update the
+existing function deterministically.
+
+`tools/deploy/deploy.sh` invokes the function deployer and then submits separate
+EdgeOne URL/prefix purges for `/`, all `contact*` pages, `/cn/css/`, and
+`/cn/js/`. Missing EdgeOne
+credentials produce a warning; set `EDGEONE_FUNCTION_STRICT=1` or
+`EDGEONE_PURGE_STRICT=1` when a release must fail instead.
+
+Manual purge and targeted URL purge:
+
+```bash
+node tools/edgeone/edgeone-purge.js --dry-run
+node tools/edgeone/edgeone-purge.js
+node tools/edgeone/edgeone-purge.js \
+  --url https://www.maibida.com/contact.html
+```
+
+The Edge Function rejects non-POST requests and invalid content types, enforces
+the 16 KB body limit, validates required fields and consent, silently absorbs
+honeypot submissions, and applies a small per-isolate rate limit. Nginx and the
+origin Node API remain authoritative for persistence and the shared request
+limit. A function's in-memory limit is not a globally distributed quota.

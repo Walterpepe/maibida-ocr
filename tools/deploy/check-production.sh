@@ -61,6 +61,32 @@ for p in index.es-MX.html index.en-SG.html index.vi-VN.html index.th-TH.html ind
   [ "$code" = 200 ] && ok "locale page $p 200" || bad "locale page $p $code"
 done
 
+# 8b. Static HTML and form API must never be browser/CDN cached
+contact_hdr=$(curl -sSI --max-time 15 "$BASE/contact.html" 2>/dev/null | tr 'A-Z' 'a-z')
+case "$contact_hdr" in
+  *"cache-control:"*"no-cache"*) ok "contact.html is not CDN cached";;
+  *) bad "contact.html cache-control is missing no-cache";;
+esac
+
+api_hdr=$(curl -sSI --max-time 15 "$BASE/api/messages" 2>/dev/null | tr 'A-Z' 'a-z')
+case "$api_hdr" in
+  *"cache-control:"*"no-store"*) ok "/api/messages is not cached";;
+  *) bad "/api/messages cache-control is missing no-store";;
+esac
+
+asset_version=$(curl -sS --max-time 15 "$BASE/contact.html" 2>/dev/null \
+  | sed -n 's/.*contact\.css?v=\([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]\).*/\1/p' \
+  | head -1)
+if [ -n "$asset_version" ]; then
+  asset_hdr=$(curl -sSI --max-time 15 "$BASE/cn/css/contact.css?v=$asset_version" 2>/dev/null | tr 'A-Z' 'a-z')
+  case "$asset_hdr" in
+    *"cache-control:"*"max-age=604800"*) ok "minute-versioned CSS uses long-lived cache";;
+    *) bad "minute-versioned CSS cache-control is unexpected";;
+  esac
+else
+  bad "contact.html is missing a minute-level CSS version"
+fi
+
 # 9. Compliance pages reachable
 for p in privacy.html privacy.es-MX.html terms.html terms.es-MX.html; do
   code=$(probe "$BASE/$p")

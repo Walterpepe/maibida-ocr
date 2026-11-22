@@ -7,8 +7,10 @@ RELEASE_ROOT="${APP_ROOT}/releases"
 CURRENT_LINK="${APP_ROOT}/current"
 MESSAGE_DIR="/var/lib/maibida/messages"
 STAMP="$(date +%Y%m%d%H%M%S)"
+ASSET_VERSION="$(date +%Y%m%d%H%M)"
 RELEASE_DIR="${RELEASE_ROOT}/${STAMP}"
 CERT_FILE="/etc/letsencrypt/live/www.maibida.com/fullchain.pem"
+EDGEONE_ENV_FILE="${EDGEONE_ENV_FILE:-/etc/maibida/edgeone.env}"
 
 if [[ "${EUID}" -ne 0 ]]; then
   exec sudo -E "${BASH_SOURCE[0]}" "$@"
@@ -25,6 +27,10 @@ trap 'rm -f "${TARBALL}"' EXIT
 
 install -d -o root -g root -m 755 "${APP_ROOT}" "${RELEASE_ROOT}" "${RELEASE_DIR}"
 tar -xpf "${TARBALL}" -C "${RELEASE_DIR}"
+
+# Every release gets minute-level CSS/JS URLs, independent of browser caches.
+node "${RELEASE_DIR}/tools/bump-asset-version.js" "${ASSET_VERSION}"
+node "${RELEASE_DIR}/tools/verify-asset-versions.js"
 
 chown -R root:www-data "${RELEASE_DIR}"
 find "${RELEASE_DIR}" -type d -exec chmod 755 {} +
@@ -76,6 +82,14 @@ api_code="$(curl --silent --show-error --output /dev/null --write-out '%{http_co
   --request POST --header 'Content-Type: application/json' --data '{}' \
   http://127.0.0.1:8899/api/messages)"
 [[ "${api_code}" == "400" ]]
+
+EDGEONE_ARGS=()
+if [[ -f "${EDGEONE_ENV_FILE}" ]]; then
+  EDGEONE_ARGS=(--env-file "${EDGEONE_ENV_FILE}")
+fi
+
+node "${REPO_ROOT}/tools/edgeone/deploy-function.js" "${EDGEONE_ARGS[@]}"
+node "${REPO_ROOT}/tools/edgeone/edgeone-purge.js" --deploy "${EDGEONE_ARGS[@]}"
 
 printf '\nDeployed %s\nCurrent release: %s\nMessage store: %s\n' \
   "$(git -C "${REPO_ROOT}" rev-parse --short HEAD)" "${RELEASE_DIR}" "${MESSAGE_DIR}/messages.ndjson"
