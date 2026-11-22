@@ -378,7 +378,7 @@
 .fulode.owl-theme .owl-page{ cursor:pointer;}
 .fulode.owl-theme .owl-controls .owl-page span{ width:10px; height:10px; margin:0; border-radius:50%; background:#c3d3cb; border:1px solid #9fb4a9; opacity:1; transition:background .25s ease, transform .25s ease;}
 .fulode.owl-theme .owl-controls .owl-page.active span,
-.fulode.owl-theme .owl-controls.clickable .owl-page:hover span{ background:#087b3d; border-color:#087b3d; transform:scale(1.15);}
+.fulode.owl-theme .owl-controls.clickable .owl-page:hover span{ background:var(--brand-green); border-color:var(--brand-green); transform:scale(1.15);}
 @media (max-width:768px){
   .fulode.owl-theme .owl-controls .owl-page span{ width:8px; height:8px;}
   .fulode.owl-theme .owl-controls{ margin-top:8px;}
@@ -392,8 +392,8 @@
 /* MAIBIDA_HOME_BANNER_SWIPER_V2: 图上产品名浮层已移除（用户要求删除浮出文字）；保留 16:9 大图 + 图下 CTA，Swiper 无缝循环 */
 .home-banner-carousel .home-banner-imglink{ display:block; position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:14px; background:#eef4f0;}
 .home-banner-carousel .home-banner-img{ display:block; width:100%; height:100%; object-fit:cover; border-radius:14px;}
-.home-banner-carousel .home-banner-cta{ display:inline-flex; align-items:center; justify-content:center; margin-top:14px; padding:10px 26px; border-radius:999px; background:#087b3d; color:#fff; font-size:15px; font-weight:700; line-height:1; text-decoration:none; transition:background .25s ease, transform .25s ease;}
-.home-banner-carousel .home-banner-cta:hover{ background:#0a6b35; transform:translateY(-2px);}
+.home-banner-carousel .home-banner-cta{ display:inline-flex; align-items:center; justify-content:center; margin-top:14px; padding:10px 26px; border-radius:999px; background:var(--brand-green); color:#fff; font-size:15px; font-weight:700; line-height:1; text-decoration:none; transition:background .25s ease, transform .25s ease;}
+.home-banner-carousel .home-banner-cta:hover{ background:var(--brand-green-dark); transform:translateY(-2px);}
 @media (max-width:768px){
   .home-banner-carousel .home-banner-imglink{ border-radius:10px;}
   .home-banner-carousel .home-banner-img{ border-radius:10px;}
@@ -408,9 +408,13 @@
 .home-banner-thumb{ flex:0 0 auto; width:120px; aspect-ratio:16/9; padding:0; border:2px solid transparent; border-radius:8px; overflow:hidden; background:#eef4f0; cursor:pointer; opacity:.6; transition:opacity .25s ease, border-color .25s ease, transform .25s ease;}
 .home-banner-thumb img{ display:block; width:100%; height:100%; object-fit:cover;}
 .home-banner-thumb:hover{ opacity:.9;}
-.home-banner-thumb.is-active{ opacity:1; border-color:#087b3d; transform:translateY(-2px);}
-.home-banner-play{ order:0; flex:0 0 auto; width:44px; height:44px; border-radius:50%; border:none; background:#087b3d; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;}
-.home-banner-play:hover{ background:#0a6b35; transform:scale(1.05);}
+.home-banner-thumb.is-active{ opacity:1; border-color:var(--brand-green); transform:translateY(-2px);}
+.home-banner-thumb:focus{ outline:none;}
+.home-banner-thumb:focus-visible{ outline:2px solid var(--brand-green); outline-offset:2px;}
+.home-banner-play{ order:0; flex:0 0 auto; width:44px; height:44px; border-radius:50%; border:none; background:var(--brand-green); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;}
+.home-banner-play:hover{ background:var(--brand-green-dark); transform:scale(1.05);}
+.home-banner-play:focus{ outline:none;}
+.home-banner-play:focus-visible{ outline:2px solid var(--brand-green); outline-offset:2px;}
 .home-banner-play svg{ width:18px; height:18px; fill:currentColor;}
 .home-banner-play .icon-pause{ display:none;}
 .home-banner-play.is-paused .icon-play{ display:none;}

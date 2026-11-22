@@ -1,9 +1,19 @@
+/* MAIBIDA brand color tokens (变量化迁移，值与原 hex 严格一致，零视觉变化) */
+:root{
+  --brand-green-bright:#009944;
+  --brand-green:#087b3d;
+  --brand-green-dark:#0a6b35;
+  --brand-teal:#0e7268;
+  --brand-green-alt:#138d3f;
+  --brand-green-bright-2:#009b4e;
+  --brand-green-bright-3:#0b9e0e;
+}
 *{box-sizing:border-box}
 body{margin:0;background:#f6f9f7;color:#26313a;font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.75}
 .pl-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;background:#fff;border-bottom:1px solid #e4ebe7}
 .pl-head img{height:44px;width:auto;max-width:220px}
 .pl-nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.pl-nav a{color:#087b3d;text-decoration:none;font-size:14px;font-weight:700}
+.pl-nav a{color:var(--brand-green);text-decoration:none;font-size:14px;font-weight:700}
 .pl-nav a:hover,.pl-nav a:focus{text-decoration:underline}
 .pl-main{max-width:860px;margin:36px auto 72px;padding:0 20px}
 .pl-main h1{margin:0 0 12px;font-size:clamp(26px,3vw,34px);color:#17352a}
@@ -13,7 +23,7 @@ body{margin:0;background:#f6f9f7;color:#26313a;font-family:Arial,"Microsoft YaHe
 .pl-section p{margin:0;font-size:15px;color:#3b474f}
 .pl-meta{margin:22px 0 0;font-size:13px;color:#68747d;border-top:1px solid #dfe7e3;padding-top:16px}
 .pl-foot{margin:30px 0 0;display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
-.pl-foot a{color:#087b3d;text-decoration:none;font-weight:700}
+.pl-foot a{color:var(--brand-green);text-decoration:none;font-weight:700}
 @media(max-width:640px){.pl-head{padding:12px 16px}.pl-head img{height:34px}.pl-main{margin:24px auto 48px}.pl-section{padding:16px}}
 
 /* MAIBIDA_FOOT_INLINE_V1 - 版权与 ICP 备案单行排列 */

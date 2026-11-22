@@ -1,7 +1,7 @@
 .ocr-table-wrap{width:100%;margin:0 auto 2.5%;overflow-x:auto;color:#222;background:#fff;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}
 .ocr-table-title{margin:0;padding:1.2% 2%;font-size:clamp(24px,2.5vw,48px);font-weight:500;text-align:center;color:#fff;background:#3974b9}
 .ocr-table-title.green{padding:.7% 0;text-align:left;color:#1f1b1a;background:#fff;font-weight:700}
-.ocr-table-title.green::before{content:"";display:inline-block;width:58px;height:46px;margin-right:18px;vertical-align:middle;background:linear-gradient(90deg,#009b4e 0 22%,#fff 22% 31%,#009b4e 31%)}
+.ocr-table-title.green::before{content:"";display:inline-block;width:58px;height:46px;margin-right:18px;vertical-align:middle;background:linear-gradient(90deg,var(--brand-green-bright-2) 0 22%,#fff 22% 31%,var(--brand-green-bright-2) 31%)}
 .ocr-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:clamp(13px,1.35vw,26px);line-height:1.35}
 .ocr-table th,.ocr-table td{border:1px solid #777;padding:.8em .75em;text-align:left;vertical-align:middle;overflow-wrap:anywhere}
 .ocr-table th{font-weight:600;background:#e7e8eb}.ocr-table .label{width:16%;font-weight:400;background:#eeece7}.ocr-table .center{text-align:center}

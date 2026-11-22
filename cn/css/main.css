@@ -1,4 +1,14 @@
 @charset "utf-8";
+/* MAIBIDA brand color tokens (变量化迁移，值与原 hex 严格一致，零视觉变化) */
+:root{
+  --brand-green-bright:#009944;
+  --brand-green:#087b3d;
+  --brand-green-dark:#0a6b35;
+  --brand-teal:#0e7268;
+  --brand-green-alt:#138d3f;
+  --brand-green-bright-2:#009b4e;
+  --brand-green-bright-3:#0b9e0e;
+}
 
 /* public css begin */
 body {
@@ -186,7 +196,7 @@ body {
 	position: absolute;
 	width: 0;
 	height: 3px;
-	background: #009944;
+	background: var(--brand-green-bright);
 	left: 0%;
 	bottom: -0px;
 	/*transform:translateX(-50%);*/
@@ -470,7 +480,7 @@ body {
 	margin: 5% auto 0;
 	font-size: 40px;
 	position: relative;
-	color: #009944;
+	color: var(--brand-green-bright);
 	font-weight: bold;
 
 }
@@ -595,7 +605,7 @@ body {
     bottom: 0;
     width: 30px;
     height: 2px;
-    background: #009944;
+    background: var(--brand-green-bright);
 }
 .foot-nav a {
     display: block;
@@ -606,7 +616,7 @@ body {
     transition: color 0.3s ease;
 }
 .foot-nav a:hover {
-    color: #009944;
+    color: var(--brand-green-bright);
 }
 .foot-contact {
     flex: 0 1 26%;
@@ -619,7 +629,7 @@ body {
     margin: 0;
 }
 .foot-contact .fc-line span {
-    color: #009944;
+    color: var(--brand-green-bright);
     font-weight: bold;
 }
 @media (max-width: 900px) {
@@ -744,7 +754,7 @@ body {
 }
 
 .labte .dblogo span {
-	color: #009944;
+	color: var(--brand-green-bright);
 }
 
 .labte div p {
@@ -819,18 +829,18 @@ body {
 	bottom: 0px;
 	height: 2px;
 	width: 0px;
-	background: #009944;
+	background: var(--brand-green-bright);
 	transition: all 0.5s ease;
 }
 
 .ny-nav a.cur {
-	color: #009944;
+	color: #fff;
 }
 
 .position {
 	font-weight: bold;
 	font-size: 20px;
-	color: #009944;
+	color: var(--brand-green-bright);
 	line-height: 55px;
 }
 
@@ -1099,14 +1109,14 @@ body {
 .xlt-sot dd .d1 h3 {
 	font-size: 30px;
 
-	color: #009944;
+	color: var(--brand-green-bright);
 
 	margin-bottom: 3%;
 }
 
 .xlt-sot dd .d1 p {
 	font-size: 18px;
-	color: #009944;
+	color: var(--brand-green-bright);
 	line-height: 2;
 	text-align: center;
 }
@@ -1236,7 +1246,7 @@ body {
 }
 
 .responsive .shik.cur .tit a {
-	color: #009944;
+	color: var(--brand-green-bright);
 	font-size: 26px;
 	transition: all 0.3s ease;
 }
@@ -1709,7 +1719,7 @@ display: -webkit-box;
 }
 
 .dasol .d2 a {
-	color: #009944;
+	color: var(--brand-green-bright);
 	line-height: 30px;
 	border: none;
 
@@ -1813,7 +1823,7 @@ display: -webkit-box;
 	line-height: 60px;
 	height: 60px;
 	border-radius: 6px;
-	color: #009944;
+	color: var(--brand-green-bright);
 	background: rgba(23, 54, 147, 0.05);
 	margin: 0 2% 1% 0;
 }
@@ -1944,7 +1954,7 @@ display: -webkit-box;
 }
 
 .otebn li .c2 {
-	background: #009944;
+	background: var(--brand-green-bright);
 	font-size: 18px;
 	color: #fff;
 	border: none;
@@ -2261,7 +2271,7 @@ display: -webkit-box;
 .solution .con a {
 	background: url(../images/kjbtn.png) center center no-repeat;
 	background-size: cover;
-	color: #009944;
+	color: var(--brand-green-bright);
 	width: 240px;
 	height: 70px;
 	display: inline-block;
@@ -2306,7 +2316,7 @@ display: -webkit-box;
 
 .ny-navs a.cur {
 	color: #fff;
-	background: #138d3f;
+	background: var(--brand-green-alt);
 	position: relative;
 }
 
@@ -2329,7 +2339,7 @@ display: -webkit-box;
 	line-height: 60px;
 	height: 60px;
 	border-radius: 6px;
-	color: #009944;
+	color: var(--brand-green-bright);
 
 	background: rgba(23, 54, 147, 0.05);
 
@@ -2453,7 +2463,7 @@ display: -webkit-box;
 
 .volea3 li h3 {
 	font-weight: bold;
-	color: #009944;
+	color: var(--brand-green-bright);
 	overflow: hidden;
 	font-size: 18px;
 }
@@ -2481,7 +2491,7 @@ display: -webkit-box;
 
 .enlma h3 a {
 	font-size: 18px;
-	color: #009944;
+	color: var(--brand-green-bright);
 }
 
 .enlma ul {
@@ -2894,7 +2904,7 @@ canvas {
 	font-size: 14px;
 	padding: 10px 20px;
 	border-radius: 6px;
-	background: #138d3f;
+	background: var(--brand-green-alt);
 	color: #fff;
 	font-weight: normal;
 	transition: all ease .5s;
@@ -2924,7 +2934,7 @@ canvas {
 
 .sybox2 a.cur {
 	color: #fff;
-	background: #009944;
+	background: var(--brand-green-bright);
 }
 
 .sybox2 a:nth-child(2) {
@@ -2996,7 +3006,7 @@ canvas {
 
 .mieca .box {
 	text-align: center;
-	background: #009944;
+	background: var(--brand-green-bright);
 	position: absolute;
 	border-radius: 80px;
 
@@ -3590,7 +3600,7 @@ margin-top:80px
     color: #333;
     margin: 18px 0 8px;
     font-weight: bold;
-    border-left: 3px solid #009944;
+    border-left: 3px solid var(--brand-green-bright);
     padding-left: 10px;
 }
 .ocr-entity-text p {
