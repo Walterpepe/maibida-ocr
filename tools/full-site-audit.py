@@ -28,7 +28,7 @@ import sys
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import unquote, urlparse
+from urllib.parse import parse_qs, unquote, urlparse
 
 from bs4 import BeautifulSoup, Comment
 
@@ -185,6 +185,7 @@ class Audit:
 
         # ---- local references
         broken = []
+        cache_bust_bad = []
         for tag, attr in REF_TAGS:
             for el in soup.find_all(tag):
                 href = el.get(attr)
@@ -195,6 +196,13 @@ class Audit:
                 if href.startswith(("http://", "https://", "//")) and not href.startswith(BASE):
                     self.external_links += 1
                     continue
+                if kind != "tool" and tag in ("link", "script"):
+                    parsed = urlparse(href)
+                    clean_path = unquote(parsed.path).replace("\\", "/")
+                    if re.search(r"(?:^|/)cn/(?:css|js)/.+\.(?:css|js)$",
+                                 clean_path, re.IGNORECASE):
+                        if not parse_qs(parsed.query).get("v"):
+                            cache_bust_bad.append(href)
                 r = resolve_local(rel, href)
                 if r is None:
                     continue
@@ -202,6 +210,9 @@ class Audit:
                 if not exists:
                     broken.append(f"{tag}[{attr}]={href}")
         row["broken"] = len(broken)
+        if cache_bust_bad:
+            self.add("error", rel, "cache",
+                     "本地 CSS/JS 缺少 v 版本参数：" + "；".join(cache_bust_bad[:6]))
         if broken:
             level = "error" if kind in ("source", "locale") else "warn"
             label = {"source": "中文源页", "locale": "现行多语种页",

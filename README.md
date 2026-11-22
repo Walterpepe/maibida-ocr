@@ -35,6 +35,28 @@ http://127.0.0.1:8899/
 The preview server also exposes `POST /api/messages` and stores local test
 submissions outside the web root.
 
+## Asset Cache Busting
+
+The site has no bundler, so deployable HTML controls static asset versions.
+After changing files under `cn/css/` or `cn/js/`, and after regenerating any
+HTML pages, run the version bump before deploying:
+
+```bash
+node tools/bump-asset-version.js YYYYMMDDHHMM
+```
+
+Use the current local year, month, day, hour, and minute. The script adds or
+replaces `?v=YYYYMMDDHHMM` on local `cn/css/` and `cn/js/` references in
+deployable HTML. Existing relative paths, other query parameters, fragments,
+and file encodings are preserved. HTML remains `no-cache`, while versioned
+CSS and JavaScript can keep their long-lived cache policy.
+
+Verify the result with:
+
+```bash
+node tools/verify-asset-versions.js
+```
+
 ## Production Architecture
 
 ```text

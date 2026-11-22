@@ -93,7 +93,7 @@ def main():
                 panel_bad.append(rel + ":duplicate")
             if lang not in ("zh-CN", "ja-JP") and CJK.search(panel.get_text(" ", strip=True)):
                 cjk_bad.append(rel)
-        sc = s.select_one('script[src="' + prefix + 'cn/js/whatsapp-consult.js"]')
+        sc = s.select_one('script[src^="' + prefix + 'cn/js/whatsapp-consult.js"]')
         if not sc:
             script_bad.append(rel)
         block = re.search(r"<!-- BEGIN whatsapp-footer -->(.*?)<!-- END whatsapp-footer -->", t, re.S)
@@ -139,7 +139,7 @@ def main():
             policy_bad.append(rel)
         if len(s.find_all("h1")) != 1 or len(s.find_all("h2")) != 1:
             heading_bad.append(rel + ":headings")
-        if not s.select_one('script[src="cn/js/whatsapp-consult.js"]'):
+        if not s.select_one('script[src^="cn/js/whatsapp-consult.js"]'):
             widget_bad.append(rel + ":script")
     ck("11 个留言页已移除表单下方的旧咨询板块",
        not moved_bad, ", ".join(moved_bad[:5]) or "11/11")
