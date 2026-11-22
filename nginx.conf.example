@@ -2,24 +2,71 @@
 # NOTE: `include mime.types` keeps the default MIME table; the `types` block below only adds
 # extensions missing from older nginx builds. Without it, X-Content-Type-Options: nosniff
 # would cause CSS/JS to be rejected as application/octet-stream.
+#
+# 域名归一策略：所有访问最终 301 收敛到 https://www.maibida.com
+#   - HTTP(80) 裸域/www  -> https://www.maibida.com
+#   - HTTPS(443) 裸域    -> https://www.maibida.com（保留 request_uri）
+# 前提：SSL 证书必须同时覆盖 maibida.com 与 www.maibida.com（SAN 含两个域名），
+#       否则裸域 https 跳转会触发浏览器证书告警。下方两个 443 块复用同一套证书。
+
+# 1) HTTP(80)：裸域与 www 一律跳转到 https + www
 server {
     listen 80;
     server_name www.maibida.com maibida.com;
-    return 301 https://$host$request_uri;
+    return 301 https://www.maibida.com$request_uri;
 }
+
+# 2) HTTPS(443) 裸域：301 归一到 www（保留原始 URI 与查询串）
 server {
     listen 443 ssl http2;
-    server_name www.maibida.com maibida.com;
+    server_name maibida.com;
+
+    # 与主站共用同一套证书；证书 SAN 必须包含 maibida.com
+    # ssl_certificate     /etc/nginx/ssl/maibida.com.crt;
+    # ssl_certificate_key /etc/nginx/ssl/maibida.com.key;
+
+    return 301 https://www.maibida.com$request_uri;
+}
+
+# 3) HTTPS(443) 主站（www）
+server {
+    listen 443 ssl http2;
+    server_name www.maibida.com;
+
+    # ssl_certificate     /etc/nginx/ssl/maibida.com.crt;
+    # ssl_certificate_key /etc/nginx/ssl/maibida.com.key;
+
     include mime.types;
     default_type application/octet-stream;
     types { image/webp webp; video/mp4 mp4; }
+
+    # gzip 文本压缩：仅压可压缩文本，webp/png/jpg/ico/woff2/mp4 已是压缩格式不重复压
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 5;
+    gzip_min_length 256;
+    gzip_proxied any;
+    gzip_types
+        text/plain
+        text/css
+        text/xml
+        text/javascript
+        application/javascript
+        application/x-javascript
+        application/json
+        application/xml
+        application/xml+rss
+        image/svg+xml;
+
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
     add_header X-Content-Type-Options "nosniff" always;
+
     location ~* \.(webp|png|jpg|jpeg|gif|svg|ico|css|js|woff2|mp4)$ {
         expires 365d;
         add_header Cache-Control "public, immutable";
         add_header Accept-Ranges "bytes" always;
     }
+
     error_page 404 /404.html;
     location = /404.html { internal; }
 }

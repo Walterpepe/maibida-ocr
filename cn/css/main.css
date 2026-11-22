@@ -2134,6 +2134,27 @@ display: -webkit-box;
 	margin-top: 10%;
 }
 
+/* MAIBIDA_FEATURE_IMG: 10032 产品页 mjbh3/mjbh4 两图统一显示尺寸, contain 不裁切不变形。
+   选择器提升到 .flex.jc img.feature-img(优先级高于内联 .energy2 .flex.jc img), 固定相同盒尺寸 */
+.energy2 .flex.jc img.feature-img,
+.agbore2 .flex.jc img.feature-img {
+	flex: 0 0 auto;
+	width: 600px;
+	max-width: 100%;
+	height: 500px;
+	object-fit: contain;
+	object-position: center;
+	border-radius: 0;
+}
+@media (max-width: 768px){
+	.energy2 .flex.jc img.feature-img,
+	.agbore2 .flex.jc img.feature-img {
+		flex: 1 1 100%;
+		width: 100%;
+		height: 260px;
+	}
+}
+
 .energy {
 	position: relative;
 }

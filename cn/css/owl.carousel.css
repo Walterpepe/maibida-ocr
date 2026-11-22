@@ -365,6 +365,61 @@
 .fulode .owl-item,
 .fulode .article{ height:100%;}
 .fulode video{ display:block; width:100%; height:100%; object-fit:cover;}
+/* MAIBIDA_HOME_CAROUSEL_V2: 首页 fulode 由单视频改为 5 产品图轮播；图片 contain 完整居中、白底，沿用上方 aspect-ratio 首帧锁高防 CLS */
+.fulode .article{ display:flex; align-items:center; justify-content:center; background:#eef4f0; overflow:hidden;}
+/* MAIBIDA_HOME_CAROUSEL_V7: 参考应用案例统一等大盒子——4:3 盒子 + 浅绿灰底 #eef4f0（12 图已离线 pad 成 1280x960 同色底，背景一体无白框）+ contain 不裁切；单列大图，自动从右向左循环、可拖拽、分页点击 */
+.fulode .fulode-img{ display:block; width:100%; max-width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; border-radius:0;}
+@media (max-width:768px){
+  .fulode .fulode-img{ width:100%; max-width:100%;}
+}
+/* MAIBIDA_HOME_CAROUSEL_DOTS_V1: 浅绿灰底上的分页指示器——未选中描边灰点、当前项品牌绿高亮；可点击，自动播放/拖拽/分页由 owl 自动保持同步。选择器带 .owl-theme 提升特异性以覆盖默认蓝点样式 */
+.fulode.owl-theme .owl-controls{ position:relative; z-index:3; width:100%; text-align:center; margin-top:10px;}
+.fulode.owl-theme .owl-pagination{ display:flex; justify-content:center; align-items:center; gap:4px;}
+.fulode.owl-theme .owl-page{ cursor:pointer;}
+.fulode.owl-theme .owl-controls .owl-page span{ width:10px; height:10px; margin:0; border-radius:50%; background:#c3d3cb; border:1px solid #9fb4a9; opacity:1; transition:background .25s ease, transform .25s ease;}
+.fulode.owl-theme .owl-controls .owl-page.active span,
+.fulode.owl-theme .owl-controls.clickable .owl-page:hover span{ background:#087b3d; border-color:#087b3d; transform:scale(1.15);}
+@media (max-width:768px){
+  .fulode.owl-theme .owl-controls .owl-page span{ width:8px; height:8px;}
+  .fulode.owl-theme .owl-controls{ margin-top:8px;}
+}
+
+/* MAIBIDA_HOME_BANNER_SWIPER_V1: owl 迁移至 Swiper 10 真无缝循环(loop)。每个 slide 纵向 = 标题 + 16:9 大图 + CTA；图片区 aspect-ratio 锁高防 CLS，整图与 CTA 可点击，自动从右向左无缝循环、可拖拽 */
+.home-banner-carousel.swiper{ display:block; width:100%; max-width:1200px; margin:0 auto; overflow:hidden;}
+.home-banner-carousel .swiper-wrapper{ align-items:stretch;}
+.home-banner-carousel .swiper-slide{ height:auto;}
+.home-banner-carousel .article{ height:auto; display:flex; flex-direction:column; align-items:center; width:100%;}
+/* MAIBIDA_HOME_BANNER_SWIPER_V2: 图上产品名浮层已移除（用户要求删除浮出文字）；保留 16:9 大图 + 图下 CTA，Swiper 无缝循环 */
+.home-banner-carousel .home-banner-imglink{ display:block; position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:14px; background:#eef4f0;}
+.home-banner-carousel .home-banner-img{ display:block; width:100%; height:100%; object-fit:cover; border-radius:14px;}
+.home-banner-carousel .home-banner-cta{ display:inline-flex; align-items:center; justify-content:center; margin-top:14px; padding:10px 26px; border-radius:999px; background:#087b3d; color:#fff; font-size:15px; font-weight:700; line-height:1; text-decoration:none; transition:background .25s ease, transform .25s ease;}
+.home-banner-carousel .home-banner-cta:hover{ background:#0a6b35; transform:translateY(-2px);}
+@media (max-width:768px){
+  .home-banner-carousel .home-banner-imglink{ border-radius:10px;}
+  .home-banner-carousel .home-banner-img{ border-radius:10px;}
+  .home-banner-carousel .home-banner-cta{ margin-top:10px; padding:9px 20px; font-size:14px;}
+}
+
+/* MAIBIDA_HOME_BANNER_CTRL_V3: 控制区整体靠右——播放/暂停钮在最左(order:0)，缩略图条占剩余空间并右对齐(缩略图整体靠右)，可横滑/点击切换/高亮，与 Swiper 联动 */
+.home-banner-ctrl{ display:flex; align-items:center; gap:14px; max-width:1200px; margin:18px auto 0;}
+.home-banner-thumbs{ order:1; display:flex; justify-content:flex-end; gap:10px; overflow-x:auto; flex:1 1 auto; padding:4px 2px; scrollbar-width:thin; -webkit-overflow-scrolling:touch;}
+.home-banner-thumbs::-webkit-scrollbar{ height:6px;}
+.home-banner-thumbs::-webkit-scrollbar-thumb{ background:#c3d3cb; border-radius:3px;}
+.home-banner-thumb{ flex:0 0 auto; width:120px; aspect-ratio:16/9; padding:0; border:2px solid transparent; border-radius:8px; overflow:hidden; background:#eef4f0; cursor:pointer; opacity:.6; transition:opacity .25s ease, border-color .25s ease, transform .25s ease;}
+.home-banner-thumb img{ display:block; width:100%; height:100%; object-fit:cover;}
+.home-banner-thumb:hover{ opacity:.9;}
+.home-banner-thumb.is-active{ opacity:1; border-color:#087b3d; transform:translateY(-2px);}
+.home-banner-play{ order:0; flex:0 0 auto; width:44px; height:44px; border-radius:50%; border:none; background:#087b3d; color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .25s ease, transform .25s ease;}
+.home-banner-play:hover{ background:#0a6b35; transform:scale(1.05);}
+.home-banner-play svg{ width:18px; height:18px; fill:currentColor;}
+.home-banner-play .icon-pause{ display:none;}
+.home-banner-play.is-paused .icon-play{ display:none;}
+.home-banner-play.is-paused .icon-pause{ display:block;}
+@media (max-width:768px){
+  .home-banner-ctrl{ gap:10px; margin-top:10px;}
+  .home-banner-thumb{ width:88px;}
+  .home-banner-play{ width:38px; height:38px;}
+}
 .fulode .owl-prev,.fulode .owl-next{ position:absolute; display: block; height: 59px; width: 59px; line-height: 0; font-size: 0; cursor: pointer;  padding: 0; border: none; top:40%; background:no-repeat center center; transform:translateY(80px); transition:all 0.5s ease;}
 .fulode .owl-prev{transition:all 0.3s linear; background-image:url(../images/left3.webp); left:3%;}
 .fulode .owl-next{transition:all 0.3s linear; background-image:url(../images/right3.webp); right:3%;}

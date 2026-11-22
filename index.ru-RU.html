@@ -20,9 +20,9 @@ gtag('js', new Date());
 <link href="cn/css/main.css" rel="stylesheet" type="text/css"/>
 <link href="cn/css/move.css" rel="stylesheet" type="text/css"/>
 <link href="cn/css/swiper.min.css" rel="stylesheet"/>
-<script src="cn/js/jquery.min.js" type="text/javascript"></script>
+<script defer src="cn/js/jquery.min.js" type="text/javascript"></script>
 <link href="cn/css/swiper-bundle.min.css" rel="stylesheet"/>
-<script src="cn/js/swiper-bundle.min.js"></script>
+<script defer src="cn/js/swiper-bundle.min.js"></script>
 <style>
 
         video {
@@ -103,9 +103,7 @@ gtag('js', new Date());
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the typical lead time for a mold protection monitor or vision sensor order?", "acceptedAnswer": {"@type": "Answer", "text": "Lead time depends on model, configuration and order quantity. Please request a written quotation with the confirmed delivery schedule before placing an order."}}, {"@type": "Question", "name": "Can Maibida provide CE documentation for EU buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Compliance documents, including the EU declaration of conformity and test reports, are supplied on request for the delivered configuration. Website specifications are indicative only."}}, {"@type": "Question", "name": "Do you support sample testing before purchase?", "acceptedAnswer": {"@type": "Answer", "text": "Sample-based feasibility testing can be arranged for industrial vision inspection projects. Contact our technical team with sample parts and inspection requirements."}}, {"@type": "Question", "name": "Which languages are available for manuals and technical documents?", "acceptedAnswer": {"@type": "Answer", "text": "Technical documentation is available in Chinese and English, with Spanish documentation for customers in Spain and Latin America on request."}}]}
 </script>
 <link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "VideoObject", "@id": "https://www.maibida.com/index.ru-RU.html#video", "name": "Системы контроля пресс-форм и машинное зрение | MAIBIDA - Product Video", "description": "MAIBIDA поставляет системы контроля пресс-форм, датчики зрения и оборудование встроенного контроля для литья под давлением и точных деталей.", "thumbnailUrl": ["https://www.maibida.com/cn/testimg/mjbh1.webp"], "uploadDate": "2025-10-30", "duration": "PT2M1.5S", "contentUrl": "https://www.maibida.com/UserFiles/upload/file/20251030/V1-Pro-790-home-web.mp4", "embedUrl": "https://www.maibida.com/index.ru-RU.html", "publisher": {"@id": "https://www.maibida.com/#organization"}}
-</script>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 </head>
 <body><h1 class="sr-h1">MAIBIDA — Производитель источников света для систем технического зрения и промышленного оборудования для встроенного контроля</h1>
 <div class="top2">
@@ -141,44 +139,76 @@ gtag('js', new Date());
 <!-- top结束 -->
 <!-- 最新改海报 -->
 <link href="cn/css/owl.carousel.css" rel="stylesheet"/>
-<script src="cn/js/owl.carousel.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(function(){
-  if(window.jQuery && $('.fulode').length){
-    $('.fulode').owlCarousel({
-      items:1,
-      loop:false,
-      nav:false,
-      dots:false,
-      mouseDrag:false,
-      touchDrag:false,
-      pullDrag:false,
-      video:true,
-      animateOut:'fadeOut',
-      smartSpeed:500
+document.addEventListener('DOMContentLoaded',function(){
+  if(window.jQuery && $('.home-banner-carousel').length && window.Swiper){
+    var thumbs=document.querySelectorAll('.home-banner-thumb');
+    var playBtn=document.querySelector('.home-banner-play');
+    var bannerSwiper=new Swiper('.home-banner-carousel',{
+      slidesPerView:1,
+      speed:800,
+      loop:true,
+      allowTouchMove:true,
+      autoplay:{ delay:2500, disableOnInteraction:false, pauseOnMouseEnter:true },
+      on:{
+        slideChange:function(){
+          var real=this.realIndex;
+          thumbs.forEach(function(t,i){ t.classList.toggle('is-active', i===real); });
+        }
+      }
     });
+    if(thumbs.length){ thumbs[0].classList.add('is-active'); }
+    thumbs.forEach(function(btn){
+      btn.addEventListener('click',function(){ bannerSwiper.slideToLoop(Number(btn.dataset.idx)); });
+    });
+    if(playBtn){
+      playBtn.addEventListener('click',function(){
+        if(playBtn.classList.contains('is-playing')){
+          bannerSwiper.autoplay.stop(); playBtn.classList.remove('is-playing'); playBtn.setAttribute('aria-label','播放自动播放');
+        } else {
+          bannerSwiper.autoplay.start(); playBtn.classList.add('is-playing'); playBtn.setAttribute('aria-label','暂停自动播放');
+        }
+      });
+    }
   }
 });
 </script>
-<div class="owl-carousel fulode">
-<div class="article rel">
-<video autoplay="" height="512" id="vod" loop="" muted="" playsinline="" poster="cn/testimg/mjbh1.webp" preload="metadata" src="UserFiles/upload/file/20251030/V1-Pro-790-home-web.mp4" width="910">
-<source src="UserFiles/upload/file/20251030/V1-Pro-790-home-web.mp4" type="video/mp4"/>
-</video>
-</div>
-</div>
 <section aria-labelledby="home-seo-title" class="home-seo">
 <div class="home-seo-inner">
 <div class="home-seo-head">
 <h2 id="home-seo-title">Решения в области промышленного контроля техническим зрением и автоматизации</h2>
 <p>Kunshan Maibida Intelligent Equipment Co., Ltd. специализируется на системах контроля пресс-форм, датчиках технического зрения AI, машинах визуальной сортировки, гибких системах подачи и укладки на лотки и оборудовании для встроенного контроля, предлагая стабильные и эффективные решения визуального контроля для производства литья под давлением, соединителей, электронных компонентов и прецизионных деталей.</p>
 </div>
-<div class="home-product-grid">
-<a class="home-product-card" href="product/10032.ru-RU.html"><img class="home-card-img" src="cn/testimg/mjbh1.webp" alt="Система контроля пресс-форм" loading="lazy" decoding="async"/><h3>Система контроля пресс-форм</h3><p>Мониторинг в реальном времени гнезда формы, стержня формы, вставки (insert), толкателя, остатков изделия и состояния извлечения из формы, снижающий риск повреждения пресс-формы.</p><span>Смотреть продукцию →</span></a>
-<a class="home-product-card" href="product/smart-camera.ru-RU.html"><img class="home-card-img" src="UserFiles/upload/image/v3pro-site/camera-hero.webp" alt="Датчик технического зрения" loading="lazy" decoding="async"/><h3>Датчик технического зрения</h3><p>Интегрирует возможности технического зрения AI и различные инструменты контроля, подходит для контроля символов, внешнего вида, положения, количества и наличия/отсутствия.</p><span>Смотреть продукцию →</span></a>
-<a class="home-product-card" href="productlist/10039.ru-RU.html"><img class="home-card-img" src="cn/images/home-cards/card-sorter.webp" alt="Машина визуальной сортировки" loading="lazy" decoding="async"/><h3>Машина визуальной сортировки</h3><p>Для различных промышленных деталей выполняется выявление дефектов внешнего вида, контроль размеров и автоматическая сортировка годных деталей и бракованных деталей.</p><span>Смотреть продукцию →</span></a>
-<a class="home-product-card" href="productlist/10029.ru-RU.html"><img class="home-card-img" src="UserFiles/upload/image/feedplate/hero-robot.webp" alt="Гибкая система подачи и укладки на лотки" loading="lazy" decoding="async"/><h3>Гибкая система подачи и укладки на лотки</h3><p>Сочетание визуального позиционирования и робота параллельной кинематики обеспечивает гибкую подачу, захват, сортировку и укладку на лотки изделий различных типоразмеров.</p><span>Смотреть продукцию →</span></a>
-<a class="home-product-card" href="productlist/10030.ru-RU.html"><img class="home-card-img" src="UserFiles/upload/image/20251212/6390113110640403958074666.webp" alt="Оборудование для встроенного контроля" loading="lazy" decoding="async"/><h3>Оборудование для встроенного контроля</h3><p>Поддержка высокоскоростного встроенного визуального контроля соединителей, штампованных материальных лент, Insert Molding и пластиковых деталей.</p><span>Смотреть продукцию →</span></a>
+<div class="swiper home-banner-carousel"><div class="swiper-wrapper">
+<div class="swiper-slide"><div class="article rel">
+<a class="home-banner-imglink" href="product/10032.ru-RU.html"><img class="home-banner-img" src="cn/images/home-banner/ml/ru-RU/banner-01.webp" alt="Система контроля пресс-форм" fetchpriority="high" decoding="async"/ loading="eager"></a>
+<a class="home-banner-cta" href="product/10032.ru-RU.html">Смотреть продукт →</a>
+</div></div>
+<div class="swiper-slide"><div class="article rel">
+<a class="home-banner-imglink" href="product/smart-camera.ru-RU.html"><img class="home-banner-img" src="cn/images/home-banner/ml/ru-RU/banner-02.webp" alt="Датчик технического зрения" decoding="async"/ loading="lazy"></a>
+<a class="home-banner-cta" href="product/smart-camera.ru-RU.html">Смотреть продукт →</a>
+</div></div>
+<div class="swiper-slide"><div class="article rel">
+<a class="home-banner-imglink" href="productlist/10030.ru-RU.html"><img class="home-banner-img" src="cn/images/home-banner/ml/ru-RU/banner-03.webp" alt="Оборудование для встроенного контроля" decoding="async"/ loading="lazy"></a>
+<a class="home-banner-cta" href="productlist/10030.ru-RU.html">Смотреть продукт →</a>
+</div></div>
+<div class="swiper-slide"><div class="article rel">
+<a class="home-banner-imglink" href="productlist/10039.ru-RU.html"><img class="home-banner-img" src="cn/images/home-banner/ml/ru-RU/banner-04.webp" alt="Машина визуальной сортировки" decoding="async"/ loading="lazy"></a>
+<a class="home-banner-cta" href="productlist/10039.ru-RU.html">Смотреть продукт →</a>
+</div></div>
+<div class="swiper-slide"><div class="article rel">
+<a class="home-banner-imglink" href="productlist/10029.ru-RU.html"><img class="home-banner-img" src="cn/images/home-banner/ml/ru-RU/banner-05.webp" alt="Гибкая система подачи и укладки на лотки" decoding="async"/ loading="lazy"></a>
+<a class="home-banner-cta" href="productlist/10029.ru-RU.html">Смотреть продукт →</a>
+</div></div>
+</div></div><div class="home-banner-ctrl">
+<div class="home-banner-thumbs">
+<button type="button" class="home-banner-thumb" data-idx="0" aria-label="Система контроля пресс-форм"><img src="cn/images/home-banner/ml/ru-RU/banner-01.webp" alt="Система контроля пресс-форм" loading="lazy" decoding="async"/></button>
+<button type="button" class="home-banner-thumb" data-idx="1" aria-label="Датчик технического зрения"><img src="cn/images/home-banner/ml/ru-RU/banner-02.webp" alt="Датчик технического зрения" loading="lazy" decoding="async"/></button>
+<button type="button" class="home-banner-thumb" data-idx="2" aria-label="Оборудование для встроенного контроля"><img src="cn/images/home-banner/ml/ru-RU/banner-03.webp" alt="Оборудование для встроенного контроля" loading="lazy" decoding="async"/></button>
+<button type="button" class="home-banner-thumb" data-idx="3" aria-label="Машина визуальной сортировки"><img src="cn/images/home-banner/ml/ru-RU/banner-04.webp" alt="Машина визуальной сортировки" loading="lazy" decoding="async"/></button>
+<button type="button" class="home-banner-thumb" data-idx="4" aria-label="Гибкая система подачи и укладки на лотки"><img src="cn/images/home-banner/ml/ru-RU/banner-05.webp" alt="Гибкая система подачи и укладки на лотки" loading="lazy" decoding="async"/></button>
+</div>
+<button type="button" class="home-banner-play is-playing" aria-label="暂停自动播放" aria-pressed="false"><svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
 </div>
 <div class="home-advantages">
 <div class="home-advantage"><strong>Визуальный контроль в различных сценариях</strong><p>Охватывает контроль внешнего вида, размеров, символов, положения, недолива, заусенцев и состояния сборки.</p></div>
