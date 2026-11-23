@@ -90,8 +90,8 @@ body>.top,body>.top2{z-index:1000;overflow:visible;background:rgba(255,255,255,.
 
 /* BEGIN vp-contact-link (message form nav entry) */
 .top .vp-contact-link,.top2 .vp-contact-link,.top .vp-whatsapp-link,.top2 .vp-whatsapp-link{flex:0 0 auto;margin:0 0 0 10px;padding:5px 12px;border-radius:6px;color:#fff;font-size:13px;font-weight:700;line-height:22px;text-decoration:none;white-space:nowrap}
-.top .vp-contact-link,.top2 .vp-contact-link{background:var(--brand-green-bright)}
-.top .vp-whatsapp-link,.top2 .vp-whatsapp-link{margin-left:8px;background:#128c7e}
+.top .vp-contact-link,.top2 .vp-contact-link{background:var(--brand-green)}
+.top .vp-whatsapp-link,.top2 .vp-whatsapp-link{margin-left:8px;background:var(--brand-teal)}
 .top .vp-contact-link:hover,.top2 .vp-contact-link:hover,.top .vp-contact-link:focus,.top2 .vp-contact-link:focus{background:var(--brand-green);color:#fff}
 .top .vp-whatsapp-link:hover,.top2 .vp-whatsapp-link:hover,.top .vp-whatsapp-link:focus,.top2 .vp-whatsapp-link:focus{background:var(--brand-teal);color:#fff}
 @media(max-width:640px){

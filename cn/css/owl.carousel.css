@@ -416,9 +416,12 @@
 .home-banner-play:focus{ outline:none;}
 .home-banner-play:focus-visible{ outline:2px solid var(--brand-green); outline-offset:2px;}
 .home-banner-play svg{ width:18px; height:18px; fill:currentColor;}
-.home-banner-play .icon-pause{ display:none;}
-.home-banner-play.is-paused .icon-play{ display:none;}
-.home-banner-play.is-paused .icon-pause{ display:block;}
+.home-banner-play .icon-play{ display:none;}
+.home-banner-play .icon-pause{ display:block;}
+.home-banner-play.is-paused .icon-play,
+.home-banner-play:not(.is-playing) .icon-play{ display:block;}
+.home-banner-play.is-paused .icon-pause,
+.home-banner-play:not(.is-playing) .icon-pause{ display:none;}
 @media (max-width:768px){
   .home-banner-ctrl{ gap:10px; margin-top:10px;}
   .home-banner-thumbs{ flex:1 1 0; min-width:0; gap:6px; justify-content:stretch; overflow-x:hidden;}

@@ -578,7 +578,7 @@ body {
     text-transform: uppercase;
 }
 .foot-desc {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 13px;
     line-height: 1.9;
     margin: 0;
@@ -588,6 +588,8 @@ body {
     flex: 0 1 16%;
     min-width: 130px;
 }
+.foot-nav h3,
+.foot-contact h3,
 .foot-nav h4,
 .foot-contact h4 {
     color: #fff;
@@ -597,6 +599,8 @@ body {
     position: relative;
     font-weight: bold;
 }
+.foot-nav h3:after,
+.foot-contact h3:after,
 .foot-nav h4:after,
 .foot-contact h4:after {
     content: '';
@@ -609,7 +613,7 @@ body {
 }
 .foot-nav a {
     display: block;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 13px;
     line-height: 2.2;
     text-decoration: none;
@@ -623,13 +627,13 @@ body {
     min-width: 240px;
 }
 .foot-contact .fc-line {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.78);
     font-size: 13px;
     line-height: 2.2;
     margin: 0;
 }
 .foot-contact .fc-line span {
-    color: var(--brand-green-bright);
+    color: #6ee7a8;
     font-weight: bold;
 }
 @media (max-width: 900px) {
@@ -677,7 +681,7 @@ body {
 
 .foot ul li a {
 	font-size: 13px;
-	color: rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, 0.78);
 	line-height: 40px;
 	display: block;
 	transition: all 0.5s ease;
