@@ -8,6 +8,7 @@ const {
 
 const DEFAULT_ZONE_ID = "zone-3x9ct40r4u3w";
 const DEFAULT_HOST = "www.maibida.com";
+const PURGE_BATCH_SIZE = 50;
 
 function parseArgs(argv) {
   const args = {
@@ -20,6 +21,8 @@ function parseArgs(argv) {
     prefixes: [],
     hosts: [],
     all: false,
+    html: false,
+    repoRoot: process.cwd(),
     envFile: process.env.EDGEONE_ENV_FILE || "",
     zoneExplicit: false
   };
@@ -30,6 +33,10 @@ function parseArgs(argv) {
     else if (arg === "--deploy") args.deploy = true;
     else if (arg === "--strict") args.strict = true;
     else if (arg === "--all") args.all = true;
+    else if (arg === "--html") args.html = true;
+    else if (arg === "--repo-root" && argv[i + 1]) {
+      args.repoRoot = argv[++i];
+    }
     else if (arg === "--url" && argv[i + 1]) {
       args.urls.push(argv[++i]);
     } else if (arg === "--prefix" && argv[i + 1]) {
@@ -77,7 +84,8 @@ function buildOperations(args) {
     return [{ Type: "purge_all", Method: "delete" }];
   }
 
-  const explicit = args.urls.length || args.prefixes.length || args.hosts.length;
+  const explicit =
+    args.urls.length || args.prefixes.length || args.hosts.length;
   const urls = explicit ? args.urls : [`https://${args.host}/`];
   const prefixes = explicit
     ? args.prefixes
@@ -89,7 +97,13 @@ function buildOperations(args) {
   const operations = [];
 
   if (urls.length) {
-    operations.push({ Type: "purge_url", Method: "delete", Targets: urls });
+    for (let i = 0; i < urls.length; i += PURGE_BATCH_SIZE) {
+      operations.push({
+        Type: "purge_url",
+        Method: "delete",
+        Targets: urls.slice(i, i + PURGE_BATCH_SIZE)
+      });
+    }
   }
   if (prefixes.length) {
     operations.push({
@@ -108,12 +122,41 @@ function buildOperations(args) {
   return operations;
 }
 
+function discoverHtmlUrls(args) {
+  const fs = require("fs");
+  const path = require("path");
+  const urls = [];
+
+  function visit(directory) {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      if (entry.name === ".git" || entry.name === "node_modules") continue;
+      const fullPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        visit(fullPath);
+      } else if (
+        entry.isFile() &&
+        entry.name.toLowerCase().endsWith(".html")
+      ) {
+        const relative = path
+          .relative(args.repoRoot, fullPath)
+          .split(path.sep)
+          .join("/");
+        urls.push(`https://${args.host}/${relative}`);
+      }
+    }
+  }
+
+  visit(args.repoRoot);
+  return urls;
+}
+
 function usage() {
   return [
     "Usage:",
     "  node tools/edgeone/edgeone-purge.js --dry-run",
     "  node tools/edgeone/edgeone-purge.js --prefix https://www.maibida.com/cn/css/",
     "  node tools/edgeone/edgeone-purge.js --url https://www.maibida.com/contact.html",
+    "  node tools/edgeone/edgeone-purge.js --html --repo-root .",
     "  node tools/edgeone/edgeone-purge.js --host www.maibida.com",
     "  node tools/edgeone/edgeone-purge.js --all",
     "",
@@ -134,6 +177,10 @@ async function main() {
     loadEnvFile(args.envFile);
     if (!args.zoneExplicit) {
       args.zoneId = process.env.EDGEONE_ZONE_ID || args.zoneId;
+    }
+    args.host = process.env.EDGEONE_HOST || args.host;
+    if (args.html) {
+      args.urls = [`https://${args.host}/`].concat(discoverHtmlUrls(args));
     }
   } catch (error) {
     console.error(error.message);

@@ -68,8 +68,8 @@ sudo tools/deploy/deploy.sh
 Each release is unpacked under `/var/www/maibida/releases/`. The live path is a
 symlink at `/var/www/maibida/current`. During the release build, every CSS/JS
 reference is rewritten to the deployment minute (`v=YYYYMMDDHHMM`) before the
-symlink switches. This keeps HTML uncached while allowing assets to retain the
-seven-day cache policy.
+symlink switches. This keeps each release's assets unique while allowing the
+EdgeOne stable-mode HTML cache to avoid origin round trips for nearby visitors.
 
 Roll back by pointing the symlink at an earlier release and restarting the local
 services:
@@ -179,8 +179,12 @@ Recommended CDN behavior:
 - Use `https://www.maibida.com` as the canonical public hostname.
 - Configure the CDN origin with HTTPS, the `www.maibida.com` SNI/Host value, and
   the current origin certificate.
-- Cache images, video, PDFs, fonts, CSS, and JavaScript. Do not cache HTML,
-  `robots.txt`, `sitemap.xml`, or `/api/messages`.
+- Cache images, video, PDFs, fonts, CSS, and JavaScript for seven days.
+- During active development, do not cache HTML, `robots.txt`, `sitemap.xml`,
+  or `/api/messages`.
+- In stable mode, force a short EdgeOne node-cache TTL for `/` and `*.html`.
+  Browsers still receive `Cache-Control: no-cache` and revalidate with the
+  nearby edge node. Purge all HTML URLs immediately after every release.
 - Respect the origin's `Cache-Control` and `CDN-Cache-Control` headers.
 - Enable the CDN WAF, bot protection, and edge rate limiting for `/api/messages`.
 - Configure the provider's trusted IP ranges in Nginx with `set_real_ip_from`
@@ -218,6 +222,16 @@ The check verifies DNS, redirects, TLS, security headers, localized pages,
 compliance pages, the inquiry API, private-data blocking, image delivery, and
 the SEO files.
 
+Measure the live HTTP TTFB from six countries with Globalping:
+
+```bash
+node tools/measure-global-latency.js
+node tools/measure-global-latency.js --id MEASUREMENT_ID
+```
+
+The output includes `EO-Cache-Status`, DNS/TCP/TLS timings, first-byte latency,
+and total request time for each probe.
+
 ## EdgeOne Automation
 
 EdgeOne uses the Tencent Cloud `teo` API, version `2022-09-01`. The repository
@@ -247,6 +261,9 @@ teo:ModifyFunction
 teo:DescribeFunctionRules
 teo:CreateFunctionRule
 teo:ModifyFunctionRule
+teo:DescribeL7AccRules
+teo:CreateL7AccRules
+teo:ModifyL7AccRule
 ```
 
 Preview the exact requests without sending credentials or making changes:
@@ -254,6 +271,7 @@ Preview the exact requests without sending credentials or making changes:
 ```bash
 node tools/edgeone/edgeone-purge.js --dry-run
 node tools/edgeone/deploy-function.js --dry-run
+node tools/edgeone/configure-html-cache.js --dry-run
 ```
 
 Deploy the contact API function:
@@ -268,10 +286,21 @@ then creates a `www.maibida.com` + `/api/messages` trigger rule. Copy the return
 function/rule IDs into `/etc/maibida/edgeone.env`; later deploys update the
 existing function deterministically.
 
-`tools/deploy/deploy.sh` invokes the function deployer and then submits separate
-EdgeOne URL/prefix purges for `/`, all `contact*` pages, `/cn/css/`, and
-`/cn/js/`. Missing EdgeOne
-credentials produce a warning; set `EDGEONE_FUNCTION_STRICT=1` or
+Configure the HTML cache profile:
+
+```bash
+node tools/edgeone/configure-html-cache.js --mode stable --ttl 600
+node tools/edgeone/configure-html-cache.js --mode development
+```
+
+Stable mode forces node caching for `/` and `*.html`, while API and SEO paths
+keep their origin policies. Development mode disables that rule. The default
+`EDGEONE_HTML_CACHE_TTL` is 600 seconds; deployment purges override it.
+
+`tools/deploy/deploy.sh` invokes the function deployer, applies the configured
+HTML cache mode, and then purges the homepage plus every HTML URL in batches of
+50. Missing EdgeOne credentials produce a warning; set
+`EDGEONE_FUNCTION_STRICT=1`, `EDGEONE_HTML_CACHE_STRICT=1`, or
 `EDGEONE_PURGE_STRICT=1` when a release must fail instead.
 
 Manual purge and targeted URL purge:
@@ -279,6 +308,7 @@ Manual purge and targeted URL purge:
 ```bash
 node tools/edgeone/edgeone-purge.js --dry-run
 node tools/edgeone/edgeone-purge.js
+node tools/edgeone/edgeone-purge.js --html --repo-root .
 node tools/edgeone/edgeone-purge.js \
   --url https://www.maibida.com/contact.html
 ```

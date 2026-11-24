@@ -61,11 +61,11 @@ for p in index.es-MX.html index.en-SG.html index.vi-VN.html index.th-TH.html ind
   [ "$code" = 200 ] && ok "locale page $p 200" || bad "locale page $p $code"
 done
 
-# 8b. Static HTML and form API must never be browser/CDN cached
+# 8b. Browsers must revalidate HTML; EdgeOne may cache it at nearby nodes.
 contact_hdr=$(curl -sSI --max-time 15 "$BASE/contact.html" 2>/dev/null | tr 'A-Z' 'a-z')
 case "$contact_hdr" in
-  *"cache-control:"*"no-cache"*) ok "contact.html is not CDN cached";;
-  *) bad "contact.html cache-control is missing no-cache";;
+  *"cache-control:"*"no-cache"*) ok "contact.html requires browser revalidation";;
+  *) bad "contact.html cache-control is missing browser no-cache";;
 esac
 
 api_hdr=$(curl -sSI --max-time 15 "$BASE/api/messages" 2>/dev/null | tr 'A-Z' 'a-z')

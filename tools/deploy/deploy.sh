@@ -93,7 +93,9 @@ if [[ -f "${EDGEONE_ENV_FILE}" ]]; then
 fi
 
 node "${REPO_ROOT}/tools/edgeone/deploy-function.js" "${EDGEONE_ARGS[@]}"
-node "${REPO_ROOT}/tools/edgeone/edgeone-purge.js" --deploy "${EDGEONE_ARGS[@]}"
+node "${REPO_ROOT}/tools/edgeone/configure-html-cache.js" --deploy "${EDGEONE_ARGS[@]}"
+node "${REPO_ROOT}/tools/edgeone/edgeone-purge.js" --deploy --html \
+  --repo-root "${REPO_ROOT}" "${EDGEONE_ARGS[@]}"
 
 printf '\nDeployed %s\nCurrent release: %s\nMessage store: %s\n' \
   "$(git -C "${REPO_ROOT}" rev-parse --short HEAD)" "${RELEASE_DIR}" "${MESSAGE_DIR}/messages.ndjson"
