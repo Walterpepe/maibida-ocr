@@ -31,6 +31,8 @@ tar -xpf "${TARBALL}" -C "${RELEASE_DIR}"
 # Every release gets minute-level CSS/JS URLs, independent of browser caches.
 node "${RELEASE_DIR}/tools/bump-asset-version.js" "${ASSET_VERSION}"
 node "${RELEASE_DIR}/tools/verify-asset-versions.js"
+QUALITY_REPORT=/tmp/maibida-quality.json \
+  node "${RELEASE_DIR}/tools/check-website-quality.js" --static-only
 
 chown -R root:www-data "${RELEASE_DIR}"
 find "${RELEASE_DIR}" -type d -exec chmod 755 {} +

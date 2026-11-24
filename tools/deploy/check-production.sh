@@ -67,6 +67,16 @@ case "$contact_hdr" in
   *"cache-control:"*"no-cache"*) ok "contact.html requires browser revalidation";;
   *) bad "contact.html cache-control is missing browser no-cache";;
 esac
+contact_body=$(curl -sS --max-time 15 "$BASE/contact.html" 2>/dev/null)
+case "$contact_body" in
+  *'action="/api/messages"'*) ok "contact form uses the current origin endpoint";;
+  *) bad "contact form does not use action=/api/messages";;
+esac
+case "$contact_body" in
+  *'autocomplete="name"'*'autocomplete="email"'*'aria-describedby="form-status"'*)
+    ok "contact form exposes autocomplete and live error wiring";;
+  *) bad "contact form accessibility attributes are incomplete";;
+esac
 
 api_hdr=$(curl -sSI --max-time 15 "$BASE/api/messages" 2>/dev/null | tr 'A-Z' 'a-z')
 case "$api_hdr" in

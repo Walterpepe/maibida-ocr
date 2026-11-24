@@ -165,6 +165,21 @@ I18N = {
     },
 }
 
+SUBMITTING = {
+    "zh-CN": "正在提交…",
+    "en-US": "Sending…",
+    "en-SG": "Sending…",
+    "es-MX": "Enviando…",
+    "es-ES": "Enviando…",
+    "id-ID": "Mengirim…",
+    "th-TH": "กำลังส่ง…",
+    "vi-VN": "Đang gửi…",
+    "ko-KR": "전송 중…",
+    "ja-JP": "送信中…",
+    "ms-MY": "Menghantar…",
+    "ru-RU": "Отправка…",
+}
+
 # Prelaunch remediation: localized <meta description>, canonical URL and the
 # overseas WhatsApp entry point. Kept separate from I18N so the generator stays
 # idempotent and the 11 contact pages remain reproducible.
@@ -208,28 +223,32 @@ FALLBACK = {
 
 CONTACT_CSS = """*{box-sizing:border-box}
 body{margin:0;background:#f6f9f7;color:#26313a;font-family:Arial,"Microsoft YaHei","PingFang SC",sans-serif;line-height:1.6}
-.cf-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;background:#fff;border-bottom:1px solid #e4ebe7}
+.cf-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;padding:16px 24px;background:#fff;border-bottom:1px solid #e4ebe7}
 .cf-head img{height:44px;width:auto;max-width:220px}
-.cf-back{color:#009944;text-decoration:none;font-size:14px;font-weight:700}
+.cf-back{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;color:#009944;text-decoration:none;font-size:14px;font-weight:700}
 .cf-main{max-width:720px;margin:40px auto 72px;padding:0 20px}
 .cf-main h1{margin:0 0 10px;font-size:clamp(26px,3vw,34px);color:#17352a}
 .cf-intro{margin:0 0 28px;color:#5c6871}
 .cf-form{display:grid;gap:18px;padding:28px;background:#fff;border:1px solid #dfe7e3;border-radius:14px;box-shadow:0 10px 30px rgba(23,53,42,.06)}
 .cf-field{display:grid;gap:6px}
 .cf-field label{font-size:14px;font-weight:700;color:#17352a}
-.cf-field input,.cf-field textarea{width:100%;padding:10px 12px;border:1px solid #cfdcd4;border-radius:8px;font:inherit;font-size:15px;color:#26313a;background:#fff}
+.cf-field input,.cf-field textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid #cfdcd4;border-radius:8px;font:inherit;font-size:15px;color:#26313a;background:#fff}
 .cf-field textarea{min-height:130px;resize:vertical}
 .cf-field input:focus,.cf-field textarea:focus{outline:2px solid #009944;outline-offset:1px}
+.cf-field input[aria-invalid="true"],.cf-field textarea[aria-invalid="true"]{border-color:#b42318;box-shadow:0 0 0 1px #b42318}
 .cf-privacy{margin:0;font-size:13px;color:#68747d}
-.cf-form button{justify-self:start;padding:11px 26px;border:0;border-radius:8px;background:#009944;color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.cf-form button{justify-self:start;min-height:44px;padding:11px 26px;border:0;border-radius:8px;background:#009944;color:#fff;font:inherit;font-size:15px;font-weight:700;cursor:pointer}
 .cf-form button:hover{background:#087b3d}
 .cf-form button:disabled{opacity:.6;cursor:wait}
+.cf-back:focus-visible,.cf-form button:focus-visible,.wa-consult-close:focus-visible{outline:3px solid #009944;outline-offset:2px}
 .cf-status{margin:0;font-size:14px;font-weight:700;min-height:0}
 .cf-status.ok{color:#087b3d}
-.cf-status.err{color:#c0392b}
+.cf-status.err{color:#b42318}
+.cf-status.pending{color:#5c6871}
 .cf-consent{display:block}
-.cf-consent label{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:#4d5b64;cursor:pointer}
-.cf-consent input{flex:0 0 auto;width:17px;height:17px;margin:2px 0 0;accent-color:#009944}
+.cf-consent label{display:flex;min-height:44px;padding:4px 0;gap:10px;align-items:flex-start;font-weight:400;font-size:13px;color:#4d5b64;cursor:pointer}
+.cf-consent input{flex:0 0 auto;width:20px;height:20px;margin:0;accent-color:#009944}
+.cf-consent input[aria-invalid="true"]{outline:2px solid #b42318;outline-offset:2px}
 .cf-consent a,.cf-fallback a{color:#087b3d;text-decoration:underline}
 .cf-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
 .cf-fallback{margin:0;font-size:13px;color:#68747d}
@@ -243,12 +262,55 @@ CONTACT_JS = """(function () {
   var cfg = (document.currentScript && document.currentScript.dataset) || {};
   var btn = form.querySelector('button[type="submit"]');
   var consent = document.getElementById('cf-consent');
-  function show(ok, msg) {
-    out.className = 'cf-status ' + (ok ? 'ok' : 'err');
+  var endpoint = form.getAttribute('action') || '/api/messages';
+  var submitText = btn ? btn.textContent : '';
+
+  function setInvalid(field, invalid) {
+    if (!field) return;
+    if (invalid) field.setAttribute('aria-invalid', 'true');
+    else field.removeAttribute('aria-invalid');
+  }
+
+  function clearInvalid() {
+    ['name', 'email', 'phone', 'company', 'country', 'message', 'consent']
+      .forEach(function (key) {
+        setInvalid(form.elements[key], false);
+      });
+  }
+
+  function show(kind, msg) {
+    out.className = 'cf-status ' + kind;
     out.textContent = msg;
   }
+
+  function setBusy(busy) {
+    form.setAttribute('aria-busy', busy ? 'true' : 'false');
+    if (!btn) return;
+    btn.disabled = busy;
+    btn.textContent = busy ? (cfg.submitting || '...') : submitText;
+  }
+
+  function firstInvalid(fields) {
+    var first = fields.find(function (field) { return field; });
+    if (first && first.focus) first.focus();
+    return first;
+  }
+
+  form.addEventListener('input', function (e) {
+    if (e.target && e.target.getAttribute('aria-invalid') === 'true') {
+      setInvalid(e.target, false);
+    }
+  });
+
+  form.addEventListener('change', function (e) {
+    if (e.target && e.target.getAttribute('aria-invalid') === 'true') {
+      setInvalid(e.target, false);
+    }
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    clearInvalid();
     out.className = 'cf-status';
     out.textContent = '';
     var d = {};
@@ -256,13 +318,21 @@ CONTACT_JS = """(function () {
       var el = form.elements[k];
       d[k] = el ? String(el.value || '').trim() : '';
     });
-    if (!d.name || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(d.email) || !d.message) {
-      show(false, cfg.invalid || 'Invalid input');
+    var invalid = [
+      !d.name && form.elements.name,
+      !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(d.email) && form.elements.email,
+      !d.message && form.elements.message
+    ].filter(Boolean);
+    if (invalid.length) {
+      invalid.forEach(function (field) { setInvalid(field, true); });
+      firstInvalid(invalid);
+      show('err', cfg.invalid || 'Invalid input');
       return;
     }
     if (consent && !consent.checked) {
-      show(false, cfg.consentRequired || 'Please accept the privacy policy.');
+      setInvalid(consent, true);
       if (consent.focus) consent.focus();
+      show('err', cfg.consentRequired || 'Please accept the privacy policy.');
       return;
     }
     d.lang = document.documentElement.lang || 'zh-CN';
@@ -270,7 +340,8 @@ CONTACT_JS = """(function () {
     d.consent = 'yes';
     d.consentVersion = cfg.policyVersion || '1.0';
     d.website = form.elements['website'] ? String(form.elements['website'].value || '') : '';
-    btn.disabled = true;
+    setBusy(true);
+    show('pending', cfg.submitting || '...');
     var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 10000) : null;
     var opts = {
@@ -279,17 +350,22 @@ CONTACT_JS = """(function () {
       body: JSON.stringify(d)
     };
     if (ctrl) opts.signal = ctrl.signal;
-    fetch('/api/messages', opts).then(function (r) {
+    fetch(endpoint, opts).then(function (r) {
       return r.json().then(function (j) { return { ok: r.ok && !!j.ok, status: r.status }; })
         .catch(function () { return { ok: false, status: r.status }; });
     }).then(function (r) {
-      show(r.ok, r.ok ? (cfg.success || 'OK') : (cfg.error || 'Error'));
-      if (r.ok) form.reset();
+      if (r.ok) {
+        show('ok', cfg.success || 'OK');
+        form.reset();
+        clearInvalid();
+      } else {
+        show('err', cfg.error || 'Error');
+      }
     }).catch(function () {
-      show(false, cfg.error || 'Error');
+      show('err', cfg.error || 'Error');
     }).then(function () {
       if (timer) clearTimeout(timer);
-      btn.disabled = false;
+      setBusy(false);
     });
   });
 })();
@@ -312,17 +388,17 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <a class="cf-back" href="{home}">{back}</a>
 {wa_block}</header>
 <main class="cf-main">
-<h1>{heading}</h1>
+<h1 id="cf-form-heading">{heading}</h1>
 <p class="cf-intro">{intro}</p>
-<form class="cf-form" id="message-form" method="post" action="/api/messages" novalidate>
-<div class="cf-field"><label for="cf-name">{name}</label><input id="cf-name" name="name" type="text" maxlength="100" required/></div>
-<div class="cf-field"><label for="cf-email">{email}</label><input id="cf-email" name="email" type="email" maxlength="200" required/></div>
-<div class="cf-field"><label for="cf-phone">{phone}</label><input id="cf-phone" name="phone" type="tel" maxlength="50"/></div>
-<div class="cf-field"><label for="cf-company">{company}</label><input id="cf-company" name="company" type="text" maxlength="200"/></div>
-<div class="cf-field"><label for="cf-country">{country}</label><input id="cf-country" name="country" type="text" maxlength="100"/></div>
-<div class="cf-field"><label for="cf-message">{message}</label><textarea id="cf-message" name="message" maxlength="4000" placeholder="{placeholder}" required></textarea></div>
+<form class="cf-form" id="message-form" method="post" action="/api/messages" aria-labelledby="cf-form-heading" aria-busy="false" novalidate>
+<div class="cf-field"><label for="cf-name">{name}</label><input id="cf-name" name="name" type="text" maxlength="100" autocomplete="name" aria-describedby="form-status" required/></div>
+<div class="cf-field"><label for="cf-email">{email}</label><input id="cf-email" name="email" type="email" maxlength="200" autocomplete="email" aria-describedby="form-status" required/></div>
+<div class="cf-field"><label for="cf-phone">{phone}</label><input id="cf-phone" name="phone" type="tel" maxlength="50" autocomplete="tel"/></div>
+<div class="cf-field"><label for="cf-company">{company}</label><input id="cf-company" name="company" type="text" maxlength="200" autocomplete="organization"/></div>
+<div class="cf-field"><label for="cf-country">{country}</label><input id="cf-country" name="country" type="text" maxlength="100" autocomplete="country-name"/></div>
+<div class="cf-field"><label for="cf-message">{message}</label><textarea id="cf-message" name="message" maxlength="4000" placeholder="{placeholder}" aria-describedby="form-status" required></textarea></div>
 <input class="cf-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true"/>
-<div class="cf-field cf-consent"><label><input id="cf-consent" name="consent" type="checkbox" value="yes" required/><span>{consent}</span></label></div>
+<div class="cf-field cf-consent"><label><input id="cf-consent" name="consent" type="checkbox" value="yes" aria-describedby="form-status" required/><span>{consent}</span></label></div>
 <p class="cf-privacy">{privacy} <a href="{privacy_url}">{privacy_label}</a></p>
 <button type="submit">{submit}</button>
 <p class="cf-status" id="form-status" role="status" aria-live="polite"></p>
@@ -330,7 +406,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </form>
 </main>
 <script src="cn/js/whatsapp-consult.js" defer></script>
-<script src="cn/js/contact.js" data-success="{success}" data-error="{error}" data-invalid="{invalid}" data-consent-required="{consent_required}" data-policy-version="{policy_version}"></script>
+<script src="cn/js/contact.js" data-success="{success}" data-error="{error}" data-invalid="{invalid}" data-consent-required="{consent_required}" data-submitting="{submitting}" data-policy-version="{policy_version}"></script>
 </body>
 </html>
 """
@@ -408,6 +484,7 @@ def build_pages():
         d["privacy_url"] = privacy_url
         d["privacy_label"] = esc(privacy_label)
         d["fallback"] = esc(FALLBACK[lang])
+        d["submitting"] = esc(SUBMITTING[lang])
         d["policy_version"] = C.POLICY_VERSION
         d["wa_block"] = W.contact_widget(lang, privacy_url)
         html_text = PAGE_TEMPLATE.format(**d)

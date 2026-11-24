@@ -71,6 +71,11 @@ reference is rewritten to the deployment minute (`v=YYYYMMDDHHMM`) before the
 symlink switches. This keeps each release's assets unique while allowing the
 EdgeOne stable-mode HTML cache to avoid origin round trips for nearby visitors.
 
+Before the symlink switches, `deploy.sh` runs the static website-quality gate.
+It blocks releases that lose contact-form accessibility metadata, explicit
+labels, same-origin submission, safe external links, image alternatives, or
+required page metadata.
+
 Roll back by pointing the symlink at an earlier release and restarting the local
 services:
 
@@ -220,7 +225,8 @@ sh tools/deploy/check-production.sh
 
 The check verifies DNS, redirects, TLS, security headers, localized pages,
 compliance pages, the inquiry API, private-data blocking, image delivery, and
-the SEO files.
+the SEO files. It also verifies that the release contact form is same-origin and
+retains the autocomplete and live-error accessibility wiring.
 
 Measure the live HTTP TTFB from six countries with Globalping:
 

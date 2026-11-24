@@ -60,6 +60,31 @@ Verify the result with:
 node tools/verify-asset-versions.js
 ```
 
+## Website Quality Checks
+
+Run the dependency-free static gate:
+
+```bash
+node tools/check-website-quality.js --static-only
+```
+
+This checks all deployable HTML for baseline metadata, image alternatives and
+safe external links. It also verifies every contact page has explicit labels,
+autocomplete hints, same-origin submission, a named form, live status output,
+and accessible invalid/loading states.
+
+The full check starts an isolated local preview server, intercepts form API
+responses so no test inquiry is written, and exercises contact pages at 320,
+390, 768 and 1440 pixel widths:
+
+```bash
+node tools/check-website-quality.js
+```
+
+The full check requires Playwright. If it is installed outside this repository,
+set `NODE_PATH` to the installation's `node_modules` directory. Reports are
+written to `tools/website-quality.json`; set `QUALITY_REPORT=off` to suppress it.
+
 ## Production Architecture
 
 ```text
