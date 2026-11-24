@@ -23,8 +23,11 @@ The site has no build step. Run the Node.js preview server from the repository
 root:
 
 ```bash
-node tools/preview-server.js 8899
+node tools/run-local.js
 ```
+
+`tools/run-local.js` loads optional local settings from `.env.local` (ignored by
+Git) before starting the preview server. The default local port is `8899`.
 
 Then open:
 
