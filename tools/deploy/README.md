@@ -100,6 +100,45 @@ Inquiry messages are stored in:
 The monthly systemd timer enforces the 24-month retention promise used by the
 privacy pages.
 
+## Inquiry Notifications
+
+Notifications run only after the inquiry has been appended to
+`messages.ndjson`. They are asynchronous, so a failed notification never turns
+a successful form submission into an error. Configure either or both channels
+in a root-owned environment file:
+
+```bash
+sudo install -d -m 755 /etc/maibida
+sudo install -m 600 tools/deploy/notifications.env.example /etc/maibida/notifications.env
+sudo editor /etc/maibida/notifications.env
+sudo systemctl restart maibida-api.service
+```
+
+For WeChat delivery, create a WeCom group robot and set
+`MAIBIDA_WECOM_WEBHOOK_URL`. The service posts a Markdown summary to the group
+robot. Personal WeChat accounts cannot be automated through an official
+standalone bot API; WeCom group robots, WeChat Official Accounts, or enterprise
+WeChat APIs are the supported paths.
+
+For email delivery through SMTP, set `MAIBIDA_SMTP_HOST`,
+`MAIBIDA_SMTP_USER`, `MAIBIDA_SMTP_PASS`, `MAIBIDA_SMTP_FROM`, and
+`MAIBIDA_EMAIL_TO`. The default SMTP port is 465 with implicit TLS. The
+notification uses the installed `curl` client and writes credentials to a
+mode-0600 file inside the service's private temporary directory only for the
+duration of the send.
+
+Preview formatting without sending:
+
+```bash
+node tools/test-notifications.js
+```
+
+Send a sample through the configured real channels:
+
+```bash
+MAIBIDA_NOTIFY_LIVE=1 node tools/test-notifications.js
+```
+
 ## Local Firewall
 
 Enable the baseline firewall while preserving SSH access:

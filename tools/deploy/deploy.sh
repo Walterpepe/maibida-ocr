@@ -38,6 +38,10 @@ find "${RELEASE_DIR}" -type f -exec chmod 644 {} +
 chmod 755 "${RELEASE_DIR}"/tools/deploy/*.sh
 
 install -d -o www-data -g www-data -m 750 "${MESSAGE_DIR}"
+install -d -o root -g root -m 755 /etc/maibida
+if [[ ! -f /etc/maibida/notifications.env ]]; then
+  install -m 600 "${RELEASE_DIR}/tools/deploy/notifications.env.example" /etc/maibida/notifications.env
+fi
 
 ln -sfn "${RELEASE_DIR}" "${CURRENT_LINK}.tmp"
 mv -Tf "${CURRENT_LINK}.tmp" "${CURRENT_LINK}"
