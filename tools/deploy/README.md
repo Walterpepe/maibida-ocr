@@ -120,12 +120,24 @@ robot. Personal WeChat accounts cannot be automated through an official
 standalone bot API; WeCom group robots, WeChat Official Accounts, or enterprise
 WeChat APIs are the supported paths.
 
+Typical WeCom setup:
+
+1. Open the target group in WeCom.
+2. Open group settings, add a group robot, and copy its webhook URL.
+3. Set `MAIBIDA_WECOM_WEBHOOK_URL` in `/etc/maibida/notifications.env`.
+4. Restart `maibida-api.service`.
+
 For email delivery through SMTP, set `MAIBIDA_SMTP_HOST`,
 `MAIBIDA_SMTP_USER`, `MAIBIDA_SMTP_PASS`, `MAIBIDA_SMTP_FROM`, and
 `MAIBIDA_EMAIL_TO`. The default SMTP port is 465 with implicit TLS. The
 notification uses the installed `curl` client and writes credentials to a
 mode-0600 file inside the service's private temporary directory only for the
 duration of the send.
+
+For Tencent Exmail, use `smtp.exmail.qq.com` on port `465`, the full mailbox
+address as `MAIBIDA_SMTP_USER` and `MAIBIDA_SMTP_FROM`, and the mailbox SMTP
+authorization code as `MAIBIDA_SMTP_PASS`. QQ Mail and other providers work the
+same way when they support implicit-TLS SMTP on port 465.
 
 Preview formatting without sending:
 
@@ -137,6 +149,16 @@ Send a sample through the configured real channels:
 
 ```bash
 MAIBIDA_NOTIFY_LIVE=1 node tools/test-notifications.js
+```
+
+Because systemd keeps the production credentials in its own environment, a
+server-side live test can be run without exposing them in shell history:
+
+```bash
+sudo systemd-run --quiet --wait --pipe --collect \
+  --property=EnvironmentFile=/etc/maibida/notifications.env \
+  --property=Environment=MAIBIDA_NOTIFY_LIVE=1 \
+  /usr/bin/node /home/ubuntu/maibida-ocr/tools/test-notifications.js
 ```
 
 ## Local Firewall
