@@ -2,10 +2,9 @@
 
 const fs = require("fs");
 const https = require("https");
-const os = require("os");
-const path = require("path");
+const net = require("net");
+const tls = require("tls");
 const crypto = require("crypto");
-const { spawn } = require("child_process");
 const { URL } = require("url");
 
 const WECOM_HOST = "qyapi.weixin.qq.com";
@@ -158,10 +157,6 @@ function formatEmailMessage(rec, from, to) {
     .replace(/\n/g, "\r\n");
 }
 
-function curlQuote(value) {
-  return String(value).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
-}
-
 function smtpConfig() {
   const host = cleanHeader(process.env.MAIBIDA_SMTP_HOST);
   const user = String(process.env.MAIBIDA_SMTP_USER || "");
@@ -188,69 +183,144 @@ function smtpConfig() {
   };
 }
 
-function runCurl(args, input, timeoutMs) {
-  return new Promise((resolve, reject) => {
-    const child = spawn("curl", args, { stdio: ["pipe", "pipe", "pipe"] });
-    let stderr = "";
-    const timer = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("SMTP notification timed out"));
-    }, timeoutMs + 5000);
-    child.stderr.on("data", chunk => {
-      stderr += chunk.toString("utf8").slice(0, 1000);
+class SmtpSession {
+  constructor(socket, timeoutMs) {
+    this.socket = socket;
+    this.timeoutMs = timeoutMs;
+    this.buffer = "";
+    this.lines = [];
+    this.responses = [];
+    this.waiters = [];
+    this.error = null;
+    this.attach(socket);
+  }
+
+  attach(socket) {
+    socket.setTimeout(this.timeoutMs);
+    socket.on("data", chunk => this.onData(chunk));
+    socket.on("timeout", () => socket.destroy(new Error("SMTP timed out")));
+    socket.on("error", error => this.fail(error));
+    socket.on("close", () => {
+      if (this.waiters.length && !this.error) {
+        this.fail(new Error("SMTP connection closed"));
+      }
     });
-    child.on("error", error => {
-      clearTimeout(timer);
-      reject(error);
+  }
+
+  detach() {
+    this.socket.removeAllListeners("data");
+    this.socket.removeAllListeners("timeout");
+    this.socket.removeAllListeners("error");
+    this.socket.removeAllListeners("close");
+  }
+
+  fail(error) {
+    this.error = error;
+    while (this.waiters.length) this.waiters.shift().reject(error);
+    this.socket.destroy();
+  }
+
+  onData(chunk) {
+    this.buffer += chunk.toString("utf8");
+    let newline;
+    while ((newline = this.buffer.indexOf("\n")) >= 0) {
+      const line = this.buffer.slice(0, newline).replace(/\r$/, "");
+      this.buffer = this.buffer.slice(newline + 1);
+      const match = /^(\d{3})([ -])(.*)$/.exec(line);
+      if (!match) continue;
+      this.lines.push(line);
+      if (match[2] === "-") continue;
+      const response = {
+        code: Number(match[1]),
+        lines: this.lines.slice()
+      };
+      this.lines = [];
+      const waiter = this.waiters.shift();
+      if (waiter) waiter.resolve(response);
+      else this.responses.push(response);
+    }
+  }
+
+  nextResponse() {
+    if (this.error) return Promise.reject(this.error);
+    if (this.responses.length) return Promise.resolve(this.responses.shift());
+    return new Promise((resolve, reject) => {
+      this.waiters.push({ resolve, reject });
     });
-    child.on("exit", code => {
-      clearTimeout(timer);
-      if (code === 0) resolve();
-      else reject(new Error(`curl SMTP failed with exit ${code}: ${stderr.trim()}`));
+  }
+
+  async command(line, expectedCodes) {
+    if (this.waiters.length) throw new Error("SMTP command overlap");
+    this.socket.write(`${line}\r\n`);
+    const response = await this.nextResponse();
+    if (!expectedCodes.includes(response.code)) {
+      throw new Error(`SMTP ${response.code}: ${response.lines.join(" | ")}`);
+    }
+    return response;
+  }
+
+  upgrade() {
+    this.detach();
+    const secureSocket = tls.connect({
+      socket: this.socket,
+      servername: this.host,
+      rejectUnauthorized: true
     });
-    child.stdin.end(input);
-  });
+    this.socket = secureSocket;
+    this.attach(secureSocket);
+  }
+
+  close() {
+    this.socket.end();
+  }
 }
 
 async function sendEmail(rec) {
   const config = smtpConfig();
   if (!config) return;
   const timeoutMs = Number(process.env.MAIBIDA_NOTIFY_TIMEOUT_MS || 15000);
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "maibida-mail-"));
-  const configFile = path.join(tempDir, "curl.conf");
+  const implicitTls = config.port === 465;
+  const socket = implicitTls
+    ? tls.connect({
+        host: config.host,
+        port: config.port,
+        servername: config.host,
+        rejectUnauthorized: true
+      })
+    : net.connect({ host: config.host, port: config.port });
+  const session = new SmtpSession(socket, timeoutMs);
+  session.host = config.host;
+
   try {
-    fs.writeFileSync(
-      configFile,
-      `user = "${curlQuote(config.user)}:${curlQuote(config.pass)}"\n`,
-      { encoding: "utf8", mode: 0o600 }
-    );
-    const args = [
-      "--silent",
-      "--show-error",
-      "--ssl-reqd",
-      "--connect-timeout",
-      "10",
-      "--max-time",
-      String(Math.ceil(timeoutMs / 1000)),
-      "--config",
-      configFile,
-      "--url",
-      `smtps://${config.host}:${config.port}`,
-      "--mail-from",
-      config.from,
-      "--upload-file",
-      "-"
-    ];
-    for (const recipient of config.recipients) {
-      args.push("--mail-rcpt", recipient);
+    const greeting = await session.nextResponse();
+    if (greeting.code !== 220) {
+      throw new Error(`SMTP ${greeting.code}: ${greeting.lines.join(" | ")}`);
     }
-    await runCurl(
-      args,
-      formatEmailMessage(rec, config.from, config.recipients),
-      timeoutMs
-    );
+    await session.command("EHLO maibida.local", [250]);
+    if (!implicitTls) {
+      await session.command("STARTTLS", [220]);
+      session.upgrade();
+      await session.command("EHLO maibida.local", [250]);
+    }
+
+    await session.command("AUTH LOGIN", [334]);
+    await session.command(Buffer.from(config.user).toString("base64"), [334]);
+    await session.command(Buffer.from(config.pass).toString("base64"), [235]);
+    await session.command(`MAIL FROM:<${config.from}>`, [250]);
+    for (const recipient of config.recipients) {
+      await session.command(`RCPT TO:<${recipient}>`, [250, 251]);
+    }
+    await session.command("DATA", [354]);
+
+    const message = formatEmailMessage(rec, config.from, config.recipients);
+    session.socket.write(`${message.replace(/\r\n$/, "")}\r\n.\r\n`);
+    const response = await session.nextResponse();
+    if (response.code !== 250) {
+      throw new Error(`SMTP ${response.code}: ${response.lines.join(" | ")}`);
+    }
+    await session.command("QUIT", [221]);
   } finally {
-    fs.rmSync(tempDir, { recursive: true, force: true });
+    session.close();
   }
 }
 

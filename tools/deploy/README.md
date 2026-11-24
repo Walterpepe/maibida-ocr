@@ -129,15 +129,14 @@ Typical WeCom setup:
 
 For email delivery through SMTP, set `MAIBIDA_SMTP_HOST`,
 `MAIBIDA_SMTP_USER`, `MAIBIDA_SMTP_PASS`, `MAIBIDA_SMTP_FROM`, and
-`MAIBIDA_EMAIL_TO`. The default SMTP port is 465 with implicit TLS. The
-notification uses the installed `curl` client and writes credentials to a
-mode-0600 file inside the service's private temporary directory only for the
-duration of the send.
+`MAIBIDA_EMAIL_TO`. Port 465 uses implicit TLS and port 587 uses STARTTLS. The
+notification uses a dependency-free Node SMTP client; credentials remain in
+process memory and are never written to a temporary file.
 
-For Tencent Exmail, use `smtp.exmail.qq.com` on port `465`, the full mailbox
+For Tencent Exmail, use `smtp.exmail.qq.com` on port `465` or `587`, the full mailbox
 address as `MAIBIDA_SMTP_USER` and `MAIBIDA_SMTP_FROM`, and the mailbox SMTP
 authorization code as `MAIBIDA_SMTP_PASS`. QQ Mail and other providers work the
-same way when they support implicit-TLS SMTP on port 465.
+same way when they support SMTP on port 465 or port 587.
 
 Preview formatting without sending:
 
