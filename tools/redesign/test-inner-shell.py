@@ -2,11 +2,19 @@
 
 from __future__ import annotations
 
+import re
 import runpy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "apply-inner-shell.py"))
+CSS = (ROOT / "cn" / "css" / "vision-inner.css").read_text(encoding="utf-8")
+
+assert re.search(
+    r"body\.vision-policy \.pl-section\s*\{[^}]*padding:\s*28px 24px",
+    CSS,
+    re.S,
+)
 
 for relative in G["PAGES"]:
     path = ROOT / relative

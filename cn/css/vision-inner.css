@@ -480,6 +480,10 @@ body.vision-inner .float-sild img {
     padding: 40px 16px 56px;
   }
 
+  body.vision-inner .pl-section {
+    padding: 16px 18px;
+  }
+
   body.vision-inner .cf-head,
   body.vision-inner .pl-head {
     padding: 10px 14px;
@@ -828,7 +832,7 @@ body.vision-policy .pl-lead {
 body.vision-policy .pl-section {
   max-width: 820px;
   margin: 0 0 0 160px;
-  padding: 28px 0;
+  padding: 28px 24px;
   border: 0;
   border-top: 1px solid var(--vh-line, #d2d2d7);
   border-radius: 0;
@@ -1018,7 +1022,7 @@ body.vision-product .vision-page .vp-ai-card {
   }
 
   body.vision-policy .pl-section {
-    padding: 24px 0;
+    padding: 24px 18px;
   }
 
   body.vision-product [keyid="10001"] .strategic2 {

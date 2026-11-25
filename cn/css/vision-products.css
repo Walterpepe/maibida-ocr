@@ -624,6 +624,11 @@ body.vp2-page summary {
   line-height: 1.07;
 }
 
+.vp2-section-intro {
+  box-sizing: border-box;
+  padding-inline: 36px;
+}
+
 .vp2-specifications {
   padding: 96px 0;
   background: #fff;
@@ -703,6 +708,11 @@ body.vp2-page summary {
 .vp2-dossier-head {
   padding: 86px 0 36px;
   background: var(--vp2-paper);
+}
+
+.vp2-dossier-head > .vp2-wrap {
+  box-sizing: border-box;
+  padding-inline: 36px;
 }
 
 .vp2-dossier-head h2 {
@@ -915,13 +925,17 @@ body.vp2-page summary {
 }
 
 .vp2-legacy .spec-disclaimer {
-  max-width: 920px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
   margin: 18px 0 0 !important;
-  padding: 12px 0 0 !important;
+  padding: 14px 20px 16px !important;
   border: 0 !important;
-  background: transparent !important;
+  border-top: 1px solid var(--vp2-line) !important;
+  border-radius: 0 0 var(--vp2-radius) var(--vp2-radius);
+  background: #fafafa !important;
   color: var(--vp2-muted) !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   line-height: 1.6 !important;
 }
 
@@ -1253,6 +1267,14 @@ body.vp2-page button:focus-visible {
     padding: 72px 0;
   }
 
+  .vp2-section-intro {
+    padding-inline: 18px;
+  }
+
+  .vp2-dossier-head > .vp2-wrap {
+    padding-inline: 18px;
+  }
+
   .vp2-detail-group {
     padding: 24px;
   }
@@ -1283,6 +1305,10 @@ body.vp2-page button:focus-visible {
 
   .vp2-spec-table td {
     font-size: 13px;
+  }
+
+  .vp2-legacy .spec-disclaimer {
+    padding: 12px 16px 14px !important;
   }
 
   .vp2-section-intro h2,

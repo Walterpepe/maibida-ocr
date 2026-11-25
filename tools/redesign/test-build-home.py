@@ -9,6 +9,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "build-home.py"))
+CSS = (ROOT / "cn" / "css" / "vision-home.css").read_text(encoding="utf-8")
+
+for selector in (
+    ".vh-manifesto-inner",
+    ".vh-section-head",
+    ".vh-tech-inner",
+    ".vh-applications-layout",
+):
+    assert re.search(
+        rf"{re.escape(selector)}\s*\{{[^}}]*padding-inline:\s*36px",
+        CSS,
+        re.S,
+    ), selector
 
 for code, data in G["LOCALES"].items():
     source = subprocess.check_output(

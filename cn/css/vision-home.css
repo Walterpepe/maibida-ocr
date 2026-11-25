@@ -275,6 +275,8 @@ body.vision-home summary {
 .vh-hero-copy {
   width: min(1240px, 100%);
   margin: 0 auto;
+  padding-inline: 36px;
+  box-sizing: border-box;
 }
 
 .vh-eyebrow {
@@ -416,6 +418,8 @@ html[lang="zh-CN"] .vh-hero h1 {
   align-items: end;
   width: min(1240px, 100%);
   margin: 0 auto;
+  padding-inline: 36px;
+  box-sizing: border-box;
   column-gap: 72px;
 }
 
@@ -480,8 +484,10 @@ html[lang="zh-CN"] .vh-hero h1 {
 }
 
 .vh-section-head {
-  width: min(1040px, 100%);
+  width: min(1240px, 100%);
   margin: 0 auto 54px;
+  padding-inline: 36px;
+  box-sizing: border-box;
 }
 
 .vh-section-head h2 {
@@ -672,6 +678,8 @@ html[lang="zh-CN"] .vh-hero h1 {
   align-items: center;
   width: min(1240px, 100%);
   margin: 0 auto;
+  padding-inline: 36px;
+  box-sizing: border-box;
   gap: 72px;
 }
 
@@ -753,6 +761,8 @@ html[lang="zh-CN"] .vh-hero h1 {
   align-items: start;
   width: min(1240px, 100%);
   margin: 0 auto;
+  padding-inline: 36px;
+  box-sizing: border-box;
   gap: 72px;
 }
 
@@ -761,6 +771,7 @@ html[lang="zh-CN"] .vh-hero h1 {
   top: 104px;
   width: auto;
   margin: 0;
+  padding-inline: 0;
 }
 
 .vh-applications .vh-section-head h2 {
@@ -1051,6 +1062,14 @@ body.vision-home summary:focus-visible {
 @media (max-width: 734px) {
   .vh-nav {
     width: calc(100% - 28px);
+  }
+
+  .vh-hero-copy,
+  .vh-manifesto-inner,
+  .vh-section-head,
+  .vh-tech-inner,
+  .vh-applications-layout {
+    padding-inline: 18px;
   }
 
   .vh-brand img {

@@ -2,11 +2,21 @@
 
 from __future__ import annotations
 
+import re
 import runpy
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "build-product-pages.py"))
+CSS = (ROOT / "cn" / "css" / "vision-products.css").read_text(encoding="utf-8")
+
+assert re.search(r"\.vp2-section-intro\s*\{[^}]*padding-inline:\s*36px", CSS, re.S)
+assert re.search(r"\.vp2-dossier-head > \.vp2-wrap\s*\{[^}]*padding-inline:\s*36px", CSS, re.S)
+assert re.search(
+    r"\.vp2-legacy \.spec-disclaimer\s*\{[^}]*padding:\s*14px 20px 16px !important",
+    CSS,
+    re.S,
+)
 
 for slug, entry in G["PAGES"].items():
     for lang_key in ("zh", "en"):
