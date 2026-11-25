@@ -559,7 +559,7 @@ html[lang="zh-CN"] .vh-hero h1 {
 }
 
 .vh-product-meta span:first-child {
-  color: var(--vh-ink);
+  display: none;
 }
 
 .vh-feature-points {
@@ -573,9 +573,7 @@ html[lang="zh-CN"] .vh-hero h1 {
 
 .vh-feature-points span {
   padding: 5px 9px;
-  border: 1px solid var(--vh-line);
-  border-radius: 4px;
-  color: var(--vh-ink);
+  color: var(--vh-muted);
   font-size: 11px;
   font-weight: 600;
 }
@@ -709,7 +707,7 @@ html[lang="zh-CN"] .vh-hero h1 {
 }
 
 .vh-capabilities span {
-  color: var(--vh-green);
+  color: var(--vh-muted);
   font-size: 13px;
   font-weight: 700;
 }
@@ -790,7 +788,7 @@ html[lang="zh-CN"] .vh-hero h1 {
 }
 
 .vh-application span {
-  color: var(--vh-muted);
+  color: var(--vh-soft);
   font-size: 12px;
   font-weight: 700;
 }

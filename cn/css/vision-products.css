@@ -374,8 +374,8 @@ body.vp2-page summary {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-column: 1 / -1;
   margin-top: 42px;
-  border-top: 1px solid var(--vp2-line);
-  border-bottom: 1px solid var(--vp2-line);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .vp2-theme-dark .vp2-stats {
@@ -385,7 +385,7 @@ body.vp2-page summary {
 .vp2-stat {
   min-height: 86px;
   padding: 18px 20px;
-  border-right: 1px solid var(--vp2-line);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .vp2-theme-dark .vp2-stat {
@@ -400,7 +400,8 @@ body.vp2-page summary {
   display: block;
   margin-bottom: 4px;
   color: var(--vp2-ink);
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: 700;
   line-height: 1.15;
 }
 
@@ -421,9 +422,9 @@ body.vp2-page summary {
   min-width: 0;
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: var(--vp2-radius);
-  background: #efeff1;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .vp2-theme-dark .vp2-hero-media {
@@ -434,7 +435,8 @@ body.vp2-page summary {
 .vp2-hero-media img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
 .vp2-wrap {
@@ -464,7 +466,7 @@ body.vp2-page summary {
 .vp2-feature small {
   display: block;
   margin-top: 0;
-  color: var(--vp2-ink);
+  color: var(--vp2-muted);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -473,7 +475,7 @@ body.vp2-page summary {
 
 .vp2-feature h3 {
   margin: 38px 0 12px;
-  font-size: 28px;
+  font-size: 30px;
   line-height: 1.18;
 }
 
@@ -542,7 +544,7 @@ body.vp2-page summary {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--vp2-green);
+  background: #c7c7cc;
 }
 
 .vp2-detail-gallery {
@@ -555,22 +557,23 @@ body.vp2-page summary {
 .vp2-detail-gallery figure {
   margin: 0;
   overflow: hidden;
-  border: 1px solid var(--vp2-line);
-  border-radius: var(--vp2-radius);
-  background: var(--vp2-paper);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .vp2-detail-gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: contain;
-  background: #fff;
+  mix-blend-mode: multiply;
+  background: transparent;
 }
 
 .vp2-detail-gallery figcaption {
   padding: 12px 14px;
   color: var(--vp2-muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .vp2-variants {
@@ -601,7 +604,7 @@ body.vp2-page summary {
 .vp2-variant span {
   display: block;
   margin-top: 4px;
-  color: var(--vp2-green);
+  color: var(--vp2-muted);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -643,9 +646,10 @@ body.vp2-page summary {
 
 .vp2-spec-table-wrap {
   overflow: hidden;
-  border: 1px solid var(--vp2-line);
-  border-radius: var(--vp2-radius);
-  background: #fff;
+  border-top: 1px solid var(--vp2-line);
+  border-bottom: 1px solid var(--vp2-line);
+  border-radius: 0;
+  background: transparent;
 }
 
 .vp2-spec-table {

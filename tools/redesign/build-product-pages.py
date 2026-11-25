@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611260025"
+VERSION = "202611260046"
 HOME_MARKER = "<!-- BEGIN VP2 PRODUCT PAGE -->"
 HOME_END = "<!-- END VP2 PRODUCT PAGE -->"
 CTA_MARKER = "<!-- BEGIN VP2 CTA -->"
