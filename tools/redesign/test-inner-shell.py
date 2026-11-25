@@ -1,0 +1,23 @@
+"""Static regression checks for the bilingual interior redesign shell."""
+
+from __future__ import annotations
+
+import runpy
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+G = runpy.run_path(str(ROOT / "tools" / "redesign" / "apply-inner-shell.py"))
+
+for relative in G["PAGES"]:
+    path = ROOT / relative
+    text = path.read_text(encoding="utf-8")
+    assert "vision-inner" in text.split("<body", 1)[1].split(">", 1)[0], relative
+    prefix = "../" if "/" in relative else ""
+    assert (
+        f'href="{prefix}cn/css/vision-inner.css?v={G["VERSION"]}"' in text
+    ), relative
+    assert (
+        f'src="{prefix}cn/js/vision-inner.js?v={G["VERSION"]}"' in text
+    ), relative
+
+print(f"PASS interior shell applied to {len(G['PAGES'])} bilingual pages")
