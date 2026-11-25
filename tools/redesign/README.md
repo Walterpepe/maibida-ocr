@@ -1,7 +1,9 @@
-# Apple-Grade Homepage Experiment
+# Commercial Product Site Redesign
 
-This directory contains the local-only redesign pipeline for the Chinese and
-US English editions.
+This directory contains the local-only commercial redesign pipeline for the
+Chinese and US English editions. The visual direction is product-led: dense
+merchandising, direct specifications, technical proof and clear selection
+paths rather than an editorial, whitespace-heavy presentation.
 
 ## Scope
 

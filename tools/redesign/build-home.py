@@ -1,4 +1,4 @@
-"""Build the experimental Apple-grade flagship homepage.
+"""Build the commercial, product-led flagship homepage.
 
 Only index.html (zh-CN) and index.en-US.html are generated. Existing SEO
 metadata and canonical/hreflang declarations are preserved from the current
@@ -13,7 +13,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611260135"
+VERSION = "202611260152"
 BASE_COMMIT = "86f6b2e"
 
 LANGUAGES = [
@@ -43,27 +43,27 @@ LOCALES = {
         "language": "语言",
         "quote": "获取报价",
         "menu": "菜单",
-        "eyebrow": "IMX-790 · 工业机器视觉平台",
+        "eyebrow": "IMX-790 SERIES · 工业机器视觉平台",
         "hero_actions": ("探索产品", "联系工程团队"),
-        "manifesto_eyebrow": "为真实产线而生",
-        "manifesto_title": "视觉判断，融入每一次生产节拍。",
-        "manifesto_body": "MAIBIDA 将光学、AI 与自动化执行整合为可落地的检测平台，从单点识别延伸到整线质量控制。",
+        "manifesto_eyebrow": "MAIBIDA INDUSTRIAL VISION",
+        "manifesto_title": "工业视觉检测平台",
+        "manifesto_body": "从模具保护、边缘 AI 视觉传感到在线筛选与柔性上料，按工件、公差和生产节拍组合成可落地的检测系统。",
         "hero_facts": [
-            ("多相机", "同步成像"),
-            ("实时 I/O", "产线联动"),
+            ("0.03 s", "视觉判断"),
+            ("8 MP", "工业成像"),
             ("MES", "数据追溯"),
         ],
-        "proof_eyebrow": "从图像到动作",
-        "proof_title": "看到问题，只是开始。",
-        "proof_body": "更重要的是在同一节拍内完成判断、输出与追溯，让检测真正进入生产控制，而不只是停留在结果查看。",
+        "proof_eyebrow": "检测结果直接进入产线动作",
+        "proof_title": "判断、报警、剔除、追溯，在一个节拍内完成。",
+        "proof_body": "相机、算法与 I/O 协同工作，检测结果可连接报警、剔除、分流和 MES，不停留在单张图像。",
         "metrics": [
             ("0.03s", "快速视觉判断"),
             ("100%", "在线全检覆盖"),
             ("MES", "检测数据连接"),
         ],
-        "products_eyebrow": "产品家族",
-        "products_title": "五类平台，一套完整检测链。",
-        "products_body": "从防护、识别到筛选与上料，每个系统围绕真实生产节拍设计，并可组合成完整的自动化检测流程。",
+        "products_eyebrow": "产品矩阵",
+        "products_title": "按检测任务选型，而不是从参数表猜方案。",
+        "products_body": "五大产品族覆盖模具保护、边缘 AI、尺寸外观检测、视觉筛选和柔性上料，可按产线接口组合。",
         "learn_more": "了解更多",
         "product_kickers": [
             "模具防护",
@@ -72,7 +72,6 @@ LOCALES = {
             "柔性上料",
             "在线检测",
         ],
-        "feature_points": ["多相机成像", "实时 I/O", "MES 接口"],
         "products": [
             ("模具监视器", "实时识别模具异常，降低压模风险与停机损失。", "product/10032.html"),
             ("视觉传感器", "边缘 AI 视觉传感器，兼顾速度、精度与部署灵活性。", "product/smart-camera.html"),
@@ -80,10 +79,18 @@ LOCALES = {
             ("柔性上料摆盘机", "视觉引导的高速上料与摆盘，适配多规格柔性生产。", "productlist/10029.html"),
             ("在线检测设备", "在线完成外观、尺寸与缺陷检测，并联动剔除与追溯。", "productlist/10030.html"),
         ],
+        "product_specs": [
+            ("0.03 s", "8 MP", "5 路相机"),
+            ("15 s 找图", "3 s 参数生成", "IP65"),
+            ("60 件/min", "0.0007 mm", "360°"),
+            ("±0.05 mm", "4500 件/h", "8 型号"),
+            ("10 件/s", "±0.02 mm", "1–6 CCD"),
+        ],
+        "catalog_label": "快速查看产品族",
         "feature_caption": "IMX-790 系列工业视觉平台",
-        "tech_eyebrow": "核心技术",
-        "tech_title": "视觉不只是一张图片，而是一次实时决策。",
-        "tech_body": "光学、算法与执行机构在同一节拍下协同，让检测结果不只知道“有没有问题”，还能进入生产决策。",
+        "tech_eyebrow": "工程能力",
+        "tech_title": "光学、算法与 I/O，在同一节拍协同。",
+        "tech_body": "平台围绕工件、光源、治具与产线接口配置，把成像、判断和控制放在现场完成。",
         "capabilities": [
             ("边缘 AI 视觉", "将识别判断放在生产现场，减少链路延迟。"),
             ("亚秒级响应", "高速拍摄与处理，匹配连续生产节拍。"),
@@ -91,8 +98,8 @@ LOCALES = {
         ],
         "tech_image_alt": "MAIBIDA AI 视觉传感器与智能相机",
         "applications_eyebrow": "应用场景",
-        "applications_title": "从微小连接，到精密组件。",
-        "applications_body": "同一套视觉能力，适配不同材料、尺寸、表面与生产速度。",
+        "applications_title": "按材料与工件，快速匹配检测方案。",
+        "applications_body": "同一套视觉能力，适配不同材料、尺寸、表面条件与生产速度。",
         "applications": [
             ("01", "注塑成型", "模具状态、缺料、毛刺与产品尺寸在线判断。"),
             ("02", "连接器", "端子变形、缺料、间距与外观缺陷全检。"),
@@ -100,8 +107,8 @@ LOCALES = {
             ("04", "精密零部件", "复杂轮廓与关键尺寸的稳定重复检测。"),
         ],
         "cta_eyebrow": "从样品开始",
-        "cta_title": "告诉我们，您需要检测什么。",
-        "cta_body": "提供样品与检测需求，我们将给出选型、节拍与集成建议。",
+        "cta_title": "上传工件信息，获取平台与集成建议。",
+        "cta_body": "提供样品、目标缺陷、公差与节拍，我们将给出平台配置、成像路径与接口建议。",
         "cta_button": "开始沟通",
         "footer_tagline": "为每一条产线，提供可靠的视觉判断。",
         "footer_products": "产品",
@@ -123,27 +130,27 @@ LOCALES = {
         "language": "Language",
         "quote": "Request a Quote",
         "menu": "Menu",
-        "eyebrow": "IMX-790 · INDUSTRIAL MACHINE VISION",
+        "eyebrow": "IMX-790 SERIES · INDUSTRIAL MACHINE VISION",
         "hero_actions": ("Explore products", "Talk to engineering"),
-        "manifesto_eyebrow": "BUILT FOR THE LINE",
-        "manifesto_title": "Vision intelligence, built into every cycle.",
-        "manifesto_body": "MAIBIDA combines optics, AI and automated action into practical inspection platforms that scale from one station to the entire quality flow.",
+        "manifesto_eyebrow": "MAIBIDA INDUSTRIAL VISION",
+        "manifesto_title": "Industrial vision platforms",
+        "manifesto_body": "Mold protection, edge AI sensing, inline inspection, sorting and flexible feeding, configured around the part, tolerance and production cycle.",
         "hero_facts": [
-            ("Multi-camera", "synchronised imaging"),
-            ("Real-time I/O", "line control"),
+            ("0.03 s", "vision decision"),
+            ("8 MP", "industrial imaging"),
             ("MES", "traceable results"),
         ],
-        "proof_eyebrow": "FROM IMAGE TO ACTION",
-        "proof_title": "Seeing the defect is only the beginning.",
-        "proof_body": "The value is in making a reliable decision, triggering the right I/O and preserving the result trace within the same production cycle.",
+        "proof_eyebrow": "RESULTS MOVE THE LINE",
+        "proof_title": "Judge, alarm, reject and trace within one cycle.",
+        "proof_body": "Cameras, algorithms and I/O work together, connecting inspection results to alarms, rejection, sorting and MES instead of stopping at an image.",
         "metrics": [
             ("0.03s", "Vision decision cycle"),
             ("100%", "Inline inspection coverage"),
             ("MES", "Inspection data connection"),
         ],
-        "products_eyebrow": "THE PRODUCT FAMILY",
-        "products_title": "Five platforms. One inspection chain.",
-        "products_body": "From protection and recognition to sorting and feeding, every system is designed around real production speed and can work as one automated inspection flow.",
+        "products_eyebrow": "PRODUCT MATRIX",
+        "products_title": "Start with the inspection task, not the data sheet.",
+        "products_body": "Five product families cover mold protection, edge AI, dimensional and cosmetic inspection, sorting and flexible feeding, with line interfaces selected per application.",
         "learn_more": "Learn more",
         "product_kickers": [
             "Mold protection",
@@ -152,7 +159,6 @@ LOCALES = {
             "Flexible feeding",
             "Inline inspection",
         ],
-        "feature_points": ["Multi-camera imaging", "Real-time I/O", "MES interface"],
         "products": [
             ("Mold Protection Monitor", "Real-time mold protection that reduces crash risk and unplanned downtime.", "product/10032.en-US.html"),
             ("Vision Sensor", "Edge AI vision sensing with a balance of speed, accuracy and deployment flexibility.", "product/smart-camera.en-US.html"),
@@ -160,10 +166,18 @@ LOCALES = {
             ("Flexible Feeding System", "Vision-guided high-speed feeding and tray loading for flexible, multi-product production.", "productlist/10029.en-US.html"),
             ("Inline Inspection Equipment", "Inline appearance, dimensional and defect inspection connected to rejection and traceability.", "productlist/10030.en-US.html"),
         ],
+        "product_specs": [
+            ("0.03 s", "8 MP", "5-camera I/O"),
+            ("15 s setup", "3 s recipe", "IP65"),
+            ("60 ppm", "0.0007 mm", "360°"),
+            ("±0.05 mm", "4500 pcs/h", "8 models"),
+            ("10 pcs/s", "±0.02 mm", "1–6 CCD"),
+        ],
+        "catalog_label": "Browse product families",
         "feature_caption": "IMX-790 industrial vision platform",
-        "tech_eyebrow": "THE CORE",
-        "tech_title": "Vision is not an image. It is a decision in motion.",
-        "tech_body": "Optics, AI and actuation work on the same production rhythm, turning every inspection result into an actionable line decision.",
+        "tech_eyebrow": "ENGINEERING",
+        "tech_title": "Optics, AI and I/O on one production cycle.",
+        "tech_body": "Each platform is configured around the part, illumination, fixture and line interface, with imaging and judgment completed on site.",
         "capabilities": [
             ("Edge AI vision", "Keep classification and judgment close to the production line."),
             ("Sub-second response", "High-speed capture and processing designed for continuous production."),
@@ -171,7 +185,7 @@ LOCALES = {
         ],
         "tech_image_alt": "MAIBIDA AI vision sensor and smart camera",
         "applications_eyebrow": "APPLICATIONS",
-        "applications_title": "From tiny connectors to precision components.",
+        "applications_title": "Match the inspection to the part.",
         "applications_body": "One vision platform, tuned for different materials, tolerances, surface conditions and line speeds.",
         "applications": [
             ("01", "Injection Molding", "Inline mold status, part presence, flash and dimensional judgment."),
@@ -180,8 +194,8 @@ LOCALES = {
             ("04", "Precision Parts", "Stable, repeatable inspection of complex contours and critical dimensions."),
         ],
         "cta_eyebrow": "START WITH A SAMPLE",
-        "cta_title": "Tell us what needs to be inspected.",
-        "cta_body": "Share a sample and your production requirement. We will recommend the platform, cycle strategy and integration path.",
+        "cta_title": "Get a platform and integration recommendation.",
+        "cta_body": "Share the sample, target defect, tolerance and cycle. We will recommend the platform, imaging path and line interface.",
         "cta_button": "Talk to an engineer",
         "footer_tagline": "Reliable vision intelligence, built for the production line.",
         "footer_products": "Products",
@@ -238,79 +252,35 @@ def product_cards(data):
     hrefs = [item[2] for item in data["products"]]
     kickers = data["product_kickers"]
     learn = escape(data["learn_more"])
-    feature_points = "".join(
-        f"<span>{escape(point)}</span>" for point in data["feature_points"]
-    )
-    feature = f"""
-<div class="vh-product-feature" data-reveal>
-  <div class="vh-product-copy">
-    <div class="vh-product-meta"><span>01</span><span>{escape(kickers[0])}</span></div>
-    <h3>{escape(names[0])}</h3>
-    <p>{escape(descriptions[0])}</p>
-    <a class="vh-product-link" href="{escape(hrefs[0])}">{learn}</a>
-    <div class="vh-feature-points" aria-label="{escape(names[0])}">{feature_points}</div>
-  </div>
-  <figure>
-    <img src="cn/images/redesign/product-monitor.webp?v={VERSION}"
-      width="542" height="530" loading="lazy" decoding="async"
-      alt="{escape(names[0])}">
-  </figure>
-</div>"""
-
-    cards = []
     images = [
+        ("product-monitor.webp", 542, 530),
         ("product-camera.webp", 970, 970),
         ("product-inline.webp", 970, 900),
-    ]
-    for (name, description, href), (image, width, height) in zip(
-        data["products"][1:3], images
-    ):
-        index = len(cards) + 2
-        cards.append(
-            f"""
-<article class="vh-product-card" data-reveal>
-  <figure><img src="cn/images/redesign/{image}?v={VERSION}" width="{width}" height="{height}"
-    loading="lazy" decoding="async" alt="{escape(name)}"></figure>
-  <div class="vh-product-copy">
-    <div class="vh-product-meta"><span>{index:02d}</span><span>{escape(kickers[index - 1])}</span></div>
-    <h3>{escape(name)}</h3>
-    <p>{escape(description)}</p>
-    <a class="vh-product-link" href="{escape(href)}">{learn}</a>
-  </div>
-</article>"""
-        )
-
-    pair = []
-    images = [
         ("product-sorter.webp", 685, 470),
         ("product-feeder.webp", 810, 1020),
     ]
-    for (name, description, href), (image, width, height) in zip(
-        data["products"][3:5], images
+    variants = ("vh-product-card--hero", "vh-product-card--feature", "vh-product-card--tile")
+    cards = []
+    for index, ((name, description, href), (image, width, height), specs) in enumerate(
+        zip(data["products"], images, data["product_specs"]), 1
     ):
-        index = len(pair) + 4
-        pair.append(
+        variant = variants[0] if index == 1 else variants[1] if index == 2 else variants[2]
+        spec_items = "".join(f"<span>{escape(spec)}</span>" for spec in specs)
+        cards.append(
             f"""
-<article class="vh-product-card" data-reveal>
+<article class="vh-product-card {variant}" data-reveal>
   <figure><img src="cn/images/redesign/{image}?v={VERSION}" width="{width}" height="{height}"
     loading="lazy" decoding="async" alt="{escape(name)}"></figure>
   <div class="vh-product-copy">
     <div class="vh-product-meta"><span>{index:02d}</span><span>{escape(kickers[index - 1])}</span></div>
     <h3>{escape(name)}</h3>
     <p>{escape(description)}</p>
-    <a class="vh-product-link" href="{escape(href)}">{learn}</a>
+    <div class="vh-card-specs" aria-label="{escape(name)}">{spec_items}</div>
+    <a class="vh-product-link" href="{escape(href)}"><span>{learn}</span><span aria-hidden="true">&rarr;</span></a>
   </div>
 </article>"""
         )
-    return (
-        feature
-        + '<div class="vh-product-grid">'
-        + "".join(cards)
-        + "</div>"
-        + '<div class="vh-product-pair">'
-        + "".join(pair)
-        + "</div>"
-    )
+    return '<div class="vh-product-grid">' + "".join(cards) + "</div>"
 
 
 def build_head(source: str, data):
@@ -365,7 +335,7 @@ def build_head(source: str, data):
         flags=re.I,
     )
     additions = f'''
-<meta name="theme-color" content="#f5f5f7"/>
+<meta name="theme-color" content="#07111f"/>
 <link rel="preload" as="image" href="cn/images/redesign/hero-monitor-lineup.webp?v={VERSION}" fetchpriority="high"/>
 <link rel="stylesheet" href="cn/css/vision-home.css?v={VERSION}"/>
 '''
@@ -400,6 +370,10 @@ def build_body(data):
     products_footer = "".join(
         f'<a href="{escape(href)}">{escape(label)}</a>'
         for label, _, href in data["products"][:5]
+    )
+    catalog_links = "".join(
+        f'<a href="{escape(href)}"><span>{escape(label)}</span><small>{escape(kicker)}</small></a>'
+        for (label, _, href), kicker in zip(data["products"], data["product_kickers"])
     )
     primary_action, secondary_action = data["hero_actions"]
     contact_path = "contact.html" if lang == "zh-CN" else "contact.en-US.html"
@@ -445,41 +419,46 @@ def build_body(data):
 
 <main id="main-content">
   <section class="vh-hero" aria-labelledby="vh-hero-title">
-    <div class="vh-hero-copy" data-reveal>
-      <p class="vh-eyebrow"><span class="vh-eyebrow-mark" aria-hidden="true"></span>{escape(data["eyebrow"])}</p>
-      <h1 id="vh-hero-title">{escape(data["manifesto_title"])}</h1>
-      <p class="vh-hero-body">{escape(data["manifesto_body"])}</p>
-      <div class="vh-actions-row">
-        <a class="vh-button" href="#products">{escape(primary_action)}</a>
-        <a class="vh-text-link" href="{contact_path}">{escape(secondary_action)}</a>
+    <div class="vh-hero-shell">
+      <div class="vh-hero-copy" data-reveal>
+        <p class="vh-eyebrow"><span class="vh-eyebrow-mark" aria-hidden="true"></span>{escape(data["eyebrow"])}</p>
+        <h1 id="vh-hero-title">{escape(data["manifesto_title"])}</h1>
+        <p class="vh-hero-body">{escape(data["manifesto_body"])}</p>
+        <div class="vh-actions-row">
+          <a class="vh-button" href="#products">{escape(primary_action)}</a>
+          <a class="vh-text-link" href="{contact_path}">{escape(secondary_action)}</a>
+        </div>
+        <ul class="vh-hero-facts" aria-label="{escape(data["manifesto_eyebrow"])}">{hero_facts}</ul>
       </div>
-      <ul class="vh-hero-facts" aria-label="{escape(data["manifesto_eyebrow"])}">{hero_facts}</ul>
-    </div>
-    <figure class="vh-hero-figure" data-reveal>
-      <img src="cn/images/redesign/hero-monitor-lineup.webp?v={VERSION}"
-        width="1600" height="530" fetchpriority="high" decoding="async"
-        alt="{escape(data["hero_image_alt"])}">
-      <figcaption>{escape(data["feature_caption"])}</figcaption>
-    </figure>
-  </section>
-
-  <section class="vh-manifesto" aria-labelledby="vh-manifesto-title">
-    <div class="vh-manifesto-inner" data-reveal>
-      <p class="vh-section-eyebrow">{escape(data["proof_eyebrow"])}</p>
-      <h2 id="vh-manifesto-title">{escape(data["proof_title"])}</h2>
-      <p>{escape(data["proof_body"])}</p>
+      <figure class="vh-hero-figure" data-reveal>
+        <img src="cn/images/redesign/hero-monitor-lineup.webp?v={VERSION}"
+          width="1600" height="530" fetchpriority="high" decoding="async"
+          alt="{escape(data["hero_image_alt"])}">
+        <figcaption><span>IMX-790</span>{escape(data["feature_caption"])}</figcaption>
+      </figure>
     </div>
   </section>
 
-  <div class="vh-metrics" aria-label="{escape(data["metrics"][0][1])}">
-    {metrics}
-  </div>
+  <section class="vh-proof" aria-labelledby="vh-proof-title">
+    <div class="vh-proof-inner">
+      <div class="vh-proof-copy" data-reveal>
+        <p class="vh-section-eyebrow">{escape(data["proof_eyebrow"])}</p>
+        <h2 id="vh-proof-title">{escape(data["proof_title"])}</h2>
+        <p>{escape(data["proof_body"])}</p>
+      </div>
+      <div class="vh-metrics" aria-label="{escape(data["metrics"][0][1])}">
+        {metrics}
+      </div>
+    </div>
+  </section>
 
   <section class="vh-section vh-products" id="products" aria-labelledby="vh-products-title">
     <div class="vh-section-head" data-reveal>
+      <p class="vh-section-eyebrow">{escape(data["products_eyebrow"])}</p>
       <h2 id="vh-products-title">{escape(data["products_title"])}</h2>
       <p>{escape(data["products_body"])}</p>
     </div>
+    <nav class="vh-product-catalog" aria-label="{escape(data["catalog_label"])}">{catalog_links}</nav>
     {cards}
   </section>
 

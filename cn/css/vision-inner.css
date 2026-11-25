@@ -1034,3 +1034,213 @@ body.vision-product .vision-page .vp-ai-card {
     font-size: 38px;
   }
 }
+
+/* Commercial direction for contact and policy pages. */
+:root {
+  --vh-ink: #101722;
+  --vh-muted: #5d6877;
+  --vh-paper: #f1f4f7;
+  --vh-surface: #ffffff;
+  --vh-line: #dbe1e8;
+  --vh-blue: #0b5cff;
+  --vh-blue-deep: #0747c7;
+  --vh-orange: #ff5a1f;
+  --vh-dark: #07111f;
+  --vh-radius: 7px;
+}
+
+body.vision-inner {
+  background: var(--vh-paper);
+  color: var(--vh-ink);
+  font-family: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial,
+    sans-serif;
+  line-height: 1.6;
+}
+
+body.vision-inner .top,
+body.vision-inner .top2,
+body.vision-inner .cf-head,
+body.vision-inner .pl-head {
+  border-bottom-color: rgba(16, 23, 34, 0.1);
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.vision-inner .top .logo img,
+body.vision-inner .top2 .logo img,
+body.vision-inner .cf-head img,
+body.vision-inner .pl-head img {
+  width: 106px;
+}
+
+body.vision-inner .T-nav li > a,
+body.vision-inner .T-nav li a span {
+  color: #273243 !important;
+  font-size: 12px !important;
+  font-weight: 600;
+}
+
+body.vision-inner .T-nav li > a:hover,
+body.vision-inner .T-nav li > a.cur,
+body.vision-inner .T-nav li a:hover {
+  color: var(--vh-blue) !important;
+}
+
+body.vision-inner .vp-contact-link,
+body.vision-inner .cf-head .wa-consult-trigger,
+body.vision-contact .cf-form button {
+  border-radius: 5px !important;
+  background: var(--vh-blue) !important;
+}
+
+body.vision-inner .vp-whatsapp-link {
+  border-color: var(--vh-line) !important;
+  color: var(--vh-blue) !important;
+}
+
+body.vision-inner .cf-head .cf-back,
+body.vision-inner .pl-head .pl-nav a {
+  color: var(--vh-blue) !important;
+  font-weight: 600;
+}
+
+body.vision-contact .cf-main {
+  margin-top: 38px;
+  margin-bottom: 64px;
+}
+
+body.vision-contact .cf-info .cf-languages,
+body.vision-contact .cf-info .pl-lang {
+  flex-wrap: wrap !important;
+  overflow-x: visible;
+}
+
+body.vision-contact .cf-info .cf-languages a,
+body.vision-contact .cf-info .pl-lang a {
+  border-color: #314259;
+  border-radius: 3px;
+}
+
+body.vision-contact .cf-layout {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  min-height: 680px;
+  border-color: var(--vh-line);
+  border-radius: var(--vh-radius);
+  box-shadow: 0 18px 46px rgba(9, 23, 43, 0.1);
+}
+
+body.vision-contact .cf-info {
+  padding: 36px 38px;
+  background: var(--vh-dark);
+}
+
+body.vision-contact .cf-info h1 {
+  font-size: 43px;
+  line-height: 1.1;
+}
+
+body.vision-contact .cf-intro {
+  color: #a6b3c4;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+body.vision-contact .cf-direct p {
+  color: #9caabd;
+}
+
+body.vision-contact .cf-form-pane {
+  padding: 42px 40px;
+}
+
+body.vision-contact .cf-form-heading h2 {
+  color: var(--vh-ink);
+  font-size: 34px;
+}
+
+body.vision-contact .cf-form {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+body.vision-contact .cf-form input:focus,
+body.vision-contact .cf-form textarea:focus,
+body.vision-contact .cf-form select:focus {
+  border-color: var(--vh-blue);
+  box-shadow: 0 0 0 3px rgba(11, 92, 255, 0.13);
+}
+
+body.vision-policy .pl-main h1,
+body.vision-policy .pl-main h2 {
+  color: var(--vh-ink);
+}
+
+body.vision-policy .pl-main h1 {
+  font-size: 43px;
+  line-height: 1.12;
+}
+
+body.vision-policy .pl-section {
+  padding: 24px 24px;
+  border-top-color: var(--vh-line);
+  background: #fff;
+}
+
+body.vision-policy .pl-section h2 {
+  font-size: 22px;
+}
+
+body.vision-policy .pl-copy,
+body.vision-policy .pl-section p {
+  color: var(--vh-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+body.vision-inner .foot {
+  background: var(--vh-dark);
+}
+
+@media (max-width: 900px) {
+  body.vision-contact .cf-layout {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  body.vision-contact .cf-info {
+    padding: 38px 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.vision-contact .cf-main {
+    margin-top: 24px;
+  }
+
+  body.vision-contact .cf-info {
+    padding: 30px 24px;
+  }
+
+  body.vision-contact .cf-info h1 {
+    font-size: 36px;
+  }
+
+  body.vision-contact .cf-form-pane {
+    padding: 32px 22px 36px;
+  }
+
+  body.vision-contact .cf-form-heading h2 {
+    font-size: 29px;
+  }
+
+  body.vision-policy .pl-main h1 {
+    font-size: 35px;
+  }
+
+  body.vision-policy .pl-section {
+    padding: 21px 18px;
+  }
+
+  body.vision-policy .pl-section h2 {
+    font-size: 19px;
+  }
+}

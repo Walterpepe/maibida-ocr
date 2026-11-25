@@ -10,8 +10,19 @@ ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "apply-inner-shell.py"))
 CSS = (ROOT / "cn" / "css" / "vision-inner.css").read_text(encoding="utf-8")
 
+assert re.search(r"--vh-orange:\s*#ff5a1f", CSS, re.I)
 assert re.search(
-    r"body\.vision-policy \.pl-section\s*\{[^}]*padding:\s*28px 24px",
+    r"body\.vision-contact \.cf-info\s*\{[^}]*background:\s*var\(--vh-dark\)",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"body\.vision-policy \.pl-section\s*\{[^}]*border-top-color:\s*var\(--vh-line\)",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"body\.vision-contact \.cf-info \.pl-lang\s*\{[^}]*flex-wrap:\s*wrap",
     CSS,
     re.S,
 )

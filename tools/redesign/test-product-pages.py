@@ -10,10 +10,23 @@ ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "build-product-pages.py"))
 CSS = (ROOT / "cn" / "css" / "vision-products.css").read_text(encoding="utf-8")
 
-assert re.search(r"\.vp2-section-intro\s*\{[^}]*padding-inline:\s*36px", CSS, re.S)
-assert re.search(r"\.vp2-dossier-head > \.vp2-wrap\s*\{[^}]*padding-inline:\s*36px", CSS, re.S)
 assert re.search(
-    r"\.vp2-legacy \.spec-disclaimer\s*\{[^}]*padding:\s*14px 20px 16px !important",
+    r"\.vp2-hero\s*\{[^}]*grid-template-columns:\s*minmax\(0,\s*0\.88fr\)",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"\.vp2-product-rail\s*\{[^}]*position:\s*sticky",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"\.vp2-model-line\s*\{[^}]*display:\s*flex",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"body\.vp2-page \.vp2-dossier-head h2\s*\{[^}]*color:\s*#f7f9fc",
     CSS,
     re.S,
 )
@@ -48,6 +61,25 @@ for slug, entry in G["PAGES"].items():
         assert "vp2-loop" not in text, relative
         assert 'class="vp2-feature"><span>' not in text, relative
         assert 'href="#vp2-family"' not in text, relative
+        assert 'class="vp2-model-line"' in text, relative
+        assert '<div class="vp2-hero-tags">' in text, relative
+        assert 'class="vp2-product-rail"' in text, relative
+        assert 'class="vp2-wrap vp2-rail-inner"' in text, relative
+        assert 'id="vp2-overview"' in text, relative
+        rail = text.split('vp2-rail-inner">', 1)[1].split("</div>", 1)[0]
+        assert rail.count('href="') == 4, relative
+        expected_detail = (
+            '#vp2-detail'
+            if G["DETAILS"].get(slug, {}).get(lang_key)
+            else '#vp2-details'
+        )
+        assert f'href="{expected_detail}"' in rail, relative
+        expected_specs = (
+            '#vp2-specs'
+            if entry[lang_key].get("specs")
+            else '#vp2-details'
+        )
+        assert f'href="{expected_specs}"' in rail, relative
         assert f'href="../index{"" if lang_key == "zh" else ".en-US"}.html#products"' in text, relative
         assert text.lower().count("<h1") == 1, relative
         assert '<h1 id="vp2-product-title">' in text, relative
@@ -55,9 +87,9 @@ for slug, entry in G["PAGES"].items():
         assert 'class="float-sild"' not in text, relative
         assert "function scrollToTop()" not in text, relative
         if slug in G["DETAILS"]:
-            assert '<section class="vp2-detail">' in text, relative
+            assert 'section class="vp2-detail" id="vp2-detail"' in text, relative
         if slug == "sorter":
-            assert '<section class="vp2-specifications"' in text, relative
+            assert 'id="vp2-specs"' in text, relative
             assert '<table class="vp2-spec-table">' in text, relative
         assert (
             f'../cn/css/vision-products.css?v={G["VERSION"]}' in text

@@ -1,4 +1,4 @@
-"""Rebuild the zh-CN and en-US product-family pages with a new visual system."""
+"""Rebuild the zh-CN and en-US product-family pages with the commercial system."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611260135"
+VERSION = "202611260152"
 HOME_MARKER = "<!-- BEGIN VP2 PRODUCT PAGE -->"
 HOME_END = "<!-- END VP2 PRODUCT PAGE -->"
 CTA_MARKER = "<!-- BEGIN VP2 CTA -->"
@@ -754,8 +754,27 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
         "dossier_eyebrow",
         "ENGINEERING FILE" if is_en else "工程档案",
     )
+    detail = DETAILS.get(slug, {}).get(lang_key)
+    specs_data = data.get("specs", [])
     hero_cta = "Discuss this application" if is_en else "沟通应用需求"
     detail_cta = "View engineering details" if is_en else "查看工程细节"
+    rail_label = "PRODUCT FILE" if is_en else "产品导航"
+    rail_links = [
+        ("#vp2-overview", "Overview" if is_en else "产品概览"),
+        (
+            "#vp2-detail" if detail else "#vp2-details",
+            "Details" if is_en else "结构细节",
+        ),
+        (
+            "#vp2-specs" if specs_data else "#vp2-details",
+            "Specifications" if is_en else "技术规格",
+        ),
+        (contact, "Get a recommendation" if is_en else "获取选型建议"),
+    ]
+    rail = "".join(f'<a href="{e(href)}">{e(label)}</a>' for href, label in rail_links)
+    feature_tags = "".join(
+        f"<span>{e(tag)}</span>" for _, _, tag in data["features"]
+    )
     stats = "".join(
         f'<div class="vp2-stat"><strong>{e(value)}</strong><span>{e(label)}</span></div>'
         for value, label in data["stats"]
@@ -784,7 +803,6 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
     </div>
   </section>
 """
-    specs_data = data.get("specs", [])
     specifications = ""
     if specs_data:
         spec_rows = "".join(
@@ -792,7 +810,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
             for label, value in specs_data
         )
         specifications = f"""
-  <section class="vp2-specifications" aria-labelledby="vp2-spec-title">
+  <section class="vp2-specifications" id="vp2-specs" aria-labelledby="vp2-spec-title">
     <div class="vp2-wrap">
       <div class="vp2-spec-layout">
         <div class="vp2-section-intro">
@@ -810,7 +828,6 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
     </div>
   </section>
 """
-    detail = DETAILS.get(slug, {}).get(lang_key)
     detail_section = ""
     if detail:
         groups = "".join(
@@ -828,7 +845,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
         )
         media_block = f'<div class="vp2-detail-gallery">{media}</div>' if media else ""
         detail_section = f"""
-  <section class="vp2-detail">
+  <section class="vp2-detail" id="vp2-detail">
     <div class="vp2-wrap">
       <div class="vp2-section-intro">
         <p class="vp2-eyebrow">{e("PRODUCT DETAILS" if is_en else "产品细节")}</p>
@@ -846,6 +863,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
 <main class="vp2-main">
   <section class="vp2-hero vp2-theme-{entry['theme']}" aria-labelledby="vp2-product-title">
     <div class="vp2-hero-copy">
+      <div class="vp2-model-line"><span>{e(entry["family"].upper())}</span>{e("INDUSTRIAL VISION" if is_en else "工业视觉平台")}</div>
       <p class="vp2-eyebrow">{e(data["eyebrow"])}</p>
       <h1 id="vp2-product-title">{e(data["title"])}</h1>
       <p class="vp2-lead">{e(data["lead"])}</p>
@@ -853,6 +871,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
         <a class="vp2-button" href="{contact}">{e(hero_cta)}</a>
         <a class="vp2-text-action" href="#vp2-details">{e(detail_cta)}</a>
       </div>
+      <div class="vp2-hero-tags">{feature_tags}</div>
     </div>
     <figure class="vp2-hero-media">
       <img src="../cn/images/redesign/products/{entry["image"]}?v={VERSION}"
@@ -860,7 +879,12 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
     </figure>
     <div class="vp2-stats">{stats}</div>
   </section>
-  <section class="vp2-benefits" aria-label="{e(data["title"])}">
+  <nav class="vp2-product-rail" aria-label="{e(rail_label)}">
+    <div class="vp2-wrap vp2-rail-inner">
+      <span>{e(rail_label)}</span>{rail}
+    </div>
+  </nav>
+  <section class="vp2-benefits" id="vp2-overview" aria-label="{e(data["title"])}">
     <div class="vp2-wrap"><div class="vp2-feature-grid">{features}</div></div>
   </section>
 {detail_section}
