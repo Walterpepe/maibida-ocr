@@ -269,7 +269,8 @@ body.vp2-page summary {
   width: min(1240px, calc(100% - 40px));
   min-height: 700px;
   margin: 0 auto;
-  padding: 70px 0 66px;
+  padding: 70px 36px 66px;
+  box-sizing: border-box;
   gap: 58px;
 }
 
@@ -1188,7 +1189,7 @@ body.vp2-page button:focus-visible {
 
   .vp2-hero {
     width: calc(100% - 28px);
-    padding: 38px 0 34px;
+    padding: 38px 18px 34px;
   }
 
   .vp2-hero h1 {
