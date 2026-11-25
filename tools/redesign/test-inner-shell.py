@@ -11,7 +11,18 @@ G = runpy.run_path(str(ROOT / "tools" / "redesign" / "apply-inner-shell.py"))
 for relative in G["PAGES"]:
     path = ROOT / relative
     text = path.read_text(encoding="utf-8")
-    assert "vision-inner" in text.split("<body", 1)[1].split(">", 1)[0], relative
+    body_attrs = text.split("<body", 1)[1].split(">", 1)[0]
+    assert "vision-inner" in body_attrs, relative
+    expected_class = (
+        "vision-product"
+        if relative.startswith("product/")
+        else "vision-productlist"
+        if relative.startswith("productlist/")
+        else "vision-contact"
+        if relative.startswith("contact")
+        else "vision-policy"
+    )
+    assert expected_class in body_attrs, relative
     prefix = "../" if "/" in relative else ""
     assert (
         f'href="{prefix}cn/css/vision-inner.css?v={G["VERSION"]}"' in text

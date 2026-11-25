@@ -31,6 +31,16 @@ node tools/redesign/derive-assets.js
 
 Outputs are stored under `cn/images/redesign/`.
 
+`build-product-assets.py` composes seven new live-site product stages from the
+same Maibida photography:
+
+```bash
+python tools/redesign/build-product-assets.py
+```
+
+Outputs for the product-family pages are stored under
+`cn/images/redesign/products/`.
+
 ## Build
 
 The homepage builder reads metadata from the pinned pre-redesign commit
@@ -40,6 +50,7 @@ analytics and favicon declarations.
 ```bash
 python tools/redesign/build-home.py
 python tools/redesign/apply-inner-shell.py
+python tools/redesign/build-product-pages.py
 ```
 
 ## Verification
@@ -47,6 +58,7 @@ python tools/redesign/apply-inner-shell.py
 ```bash
 python tools/redesign/test-build-home.py
 python tools/redesign/test-inner-shell.py
+python tools/redesign/test-product-pages.py
 node tools/check-website-quality.js --static-only
 node tools/check-website-quality.js
 ```
