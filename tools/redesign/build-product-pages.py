@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611261539"
+VERSION = "202611261625"
 HOME_MARKER = "<!-- BEGIN VP2 PRODUCT PAGE -->"
 HOME_END = "<!-- END VP2 PRODUCT PAGE -->"
 CTA_MARKER = "<!-- BEGIN VP2 CTA -->"
@@ -48,7 +48,7 @@ PAGES = {
             ],
         },
         "family": "monitor",
-        "image": "monitor-hero.webp",
+        "image": "monitor-hero-studio.webp",
         "theme": "light",
     },
     "camera": {
@@ -85,7 +85,7 @@ PAGES = {
             ],
         },
         "family": "camera",
-        "image": "camera-hero.webp",
+        "image": "camera-hero-studio.webp",
         "theme": "dark",
     },
     "feeder": {
@@ -122,7 +122,7 @@ PAGES = {
             ],
         },
         "family": "feeder",
-        "image": "feeder-hero.webp",
+        "image": "feeder-hero-studio.webp",
         "theme": "dark",
     },
     "sorter": {
@@ -203,7 +203,7 @@ PAGES = {
             "dossier_body": "The sample images below guide feeding, rotation, imaging and sorting decisions. Final configuration is confirmed with the actual part.",
         },
         "family": "sorter",
-        "image": "sorter-hero.webp",
+        "image": "sorter-hero-studio.webp",
         "theme": "light",
     },
     "connector": {
@@ -240,7 +240,7 @@ PAGES = {
             ],
         },
         "family": "inline",
-        "image": "inline-connector-hero.webp",
+        "image": "inline-connector-hero-studio.webp",
         "theme": "light",
     },
     "strip": {
@@ -277,7 +277,7 @@ PAGES = {
             ],
         },
         "family": "inline",
-        "image": "inline-strip-hero.webp",
+        "image": "inline-strip-hero-studio.webp",
         "theme": "light",
     },
     "plastic": {
@@ -314,7 +314,7 @@ PAGES = {
             ],
         },
         "family": "inline",
-        "image": "inline-plastic-hero.webp",
+        "image": "inline-plastic-hero-studio.webp",
         "theme": "dark",
     },
 }

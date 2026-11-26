@@ -31,8 +31,8 @@ node tools/redesign/derive-assets.js
 
 Outputs are stored under `cn/images/redesign/`.
 
-`build-product-assets.py` composes seven new live-site product stages from the
-same Maibida photography:
+`build-product-assets.py` composes seven legacy product stages from the same
+Maibida photography:
 
 ```bash
 python tools/redesign/build-product-assets.py
@@ -40,6 +40,14 @@ python tools/redesign/build-product-assets.py
 
 Outputs for the product-family pages are stored under
 `cn/images/redesign/products/`.
+
+`build-editorial-images.py` makes the live-site hero images. It keeps every
+source frame intact and extends the stage around it, so secondary product bodies,
+reflections, cables and machine sections are never segmented away:
+
+```bash
+python tools/redesign/build-editorial-images.py
+```
 
 ## Build
 

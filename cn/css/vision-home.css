@@ -764,7 +764,7 @@ html[lang="zh-CN"] .vh-hero h1 {
 .vh-tech figure img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   mix-blend-mode: multiply;
 }
 

@@ -6,6 +6,8 @@ import re
 import runpy
 from pathlib import Path
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "build-product-pages.py"))
 CSS = (ROOT / "cn" / "css" / "vision-products.css").read_text(encoding="utf-8")
@@ -84,6 +86,8 @@ for slug, entry in G["PAGES"].items():
         ), relative
         image = ROOT / "cn" / "images" / "redesign" / "products" / entry["image"]
         assert image.exists(), image
+        with Image.open(image) as rendered:
+            assert rendered.size == (1600, 1200), image
         assert (
             f'../cn/images/redesign/products/{entry["image"]}?v={G["VERSION"]}'
             in text

@@ -427,9 +427,9 @@ body.vp2-page .vp2-quote:hover {
   min-width: 0;
   margin: 0;
   overflow: hidden;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  border: 1px solid var(--vp2-line);
+  border-radius: var(--vp2-radius);
+  background: var(--vp2-paper);
 }
 
 .vp2-theme-dark .vp2-hero-media {
@@ -577,6 +577,13 @@ body.vp2-page .vp2-theme-dark .vp2-hero-media img {
   object-fit: contain;
   mix-blend-mode: multiply;
   background: transparent;
+}
+
+.vp2-detail-gallery img,
+.vp2-legacy .swiper08 .pic img,
+.vp2-legacy .fp-case-pic img,
+.vp2-legacy .vp-app img {
+  filter: saturate(0.94) contrast(1.03);
 }
 
 .vp2-detail-gallery figcaption {
