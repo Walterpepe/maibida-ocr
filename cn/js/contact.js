@@ -46,7 +46,16 @@
         .catch(function () { return { ok: false, status: r.status }; });
     }).then(function (r) {
       show(r.ok, r.ok ? (cfg.success || 'OK') : (cfg.error || 'Error'));
-      if (r.ok) form.reset();
+      if (r.ok) {
+        // GA4/GTM 标准转化事件:询盘提交成功
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          lead_source: location.pathname,
+          language: document.documentElement.lang || 'zh-CN'
+        });
+        form.reset();
+      }
     }).catch(function () {
       show(false, cfg.error || 'Error');
     }).then(function () {
