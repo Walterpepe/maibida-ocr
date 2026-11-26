@@ -86,6 +86,7 @@ PAGES = {
         },
         "family": "camera",
         "image": "camera-hero-studio.webp",
+        "image_version": "202611261705",
         "theme": "dark",
     },
     "feeder": {
@@ -840,6 +841,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
     </div>
   </section>
 """
+    image_version = entry.get("image_version", VERSION)
     return f"""
 {HOME_MARKER}
 {header(lang, data["file"], data["title"], entry["family"])}
@@ -855,7 +857,7 @@ def product_block(slug: str, entry: dict, lang_key: str, lang: str) -> str:
       </div>
     </div>
     <figure class="vp2-hero-media">
-      <img src="../cn/images/redesign/products/{entry["image"]}?v={VERSION}"
+      <img src="../cn/images/redesign/products/{entry["image"]}?v={image_version}"
         width="1600" height="1200" loading="eager" decoding="async" alt="{e(data["title"])}"/>
     </figure>
     <div class="vp2-stats">{stats}</div>

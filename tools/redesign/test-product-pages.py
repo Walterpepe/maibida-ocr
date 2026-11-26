@@ -88,8 +88,9 @@ for slug, entry in G["PAGES"].items():
         assert image.exists(), image
         with Image.open(image) as rendered:
             assert rendered.size == (1600, 1200), image
+        image_version = entry.get("image_version", G["VERSION"])
         assert (
-            f'../cn/images/redesign/products/{entry["image"]}?v={G["VERSION"]}'
+            f'../cn/images/redesign/products/{entry["image"]}?v={image_version}'
             in text
         ), relative
 

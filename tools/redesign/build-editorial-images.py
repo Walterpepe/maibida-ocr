@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "cn" / "images" / "redesign" / "products"
+CAMERA_SOURCE = ROOT / "tools" / "redesign" / "source" / "camera-hero-extended.png"
 SIZE = (1600, 1200)
 
 
@@ -76,6 +77,16 @@ def extend_product_photo(
     print(f"built {output}")
 
 
+def build_camera_scene(output: str) -> None:
+    """Encode the curated full-frame outpaint of both camera bodies."""
+    image = Image.open(CAMERA_SOURCE).convert("RGB")
+    if image.size != SIZE:
+        raise ValueError(f"unexpected camera source size: {image.size}")
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    image.save(OUTPUT / output, "WEBP", quality=94, method=6)
+    print(f"built {output}")
+
+
 def main() -> None:
     extend_product_photo(
         ROOT / "cn/images/redesign/product-monitor.webp",
@@ -83,12 +94,7 @@ def main() -> None:
         tone="light",
         max_box=(1320, 1080),
     )
-    extend_product_photo(
-        ROOT / "cn/images/redesign/technology-camera.webp",
-        "camera-hero-studio.webp",
-        tone="light",
-        max_box=(1260, 1080),
-    )
+    build_camera_scene("camera-hero-studio.webp")
     extend_product_photo(
         ROOT / "UserFiles/upload/image/feedplate/hero-robot.webp",
         "feeder-hero-studio.webp",

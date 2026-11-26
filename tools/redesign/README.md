@@ -49,6 +49,11 @@ reflections, cables and machine sections are never segmented away:
 python tools/redesign/build-editorial-images.py
 ```
 
+The camera hero uses a curated 4:3 outpaint generated from the original
+two-camera photograph. Its full-resolution PNG master lives in
+`tools/redesign/source/camera-hero-extended.png`; the build converts it to the
+served WebP without recomposing or cropping either product.
+
 ## Build
 
 The homepage builder reads metadata from the pinned pre-redesign commit
