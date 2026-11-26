@@ -108,10 +108,11 @@ body.vision-home summary {
   gap: 28px;
 }
 
-.vh-desktop-nav > a,
-.vh-menu > summary {
+body.vision-home .vh-desktop-nav > a,
+body.vision-home .vh-menu > summary {
   display: inline-flex;
   align-items: center;
+  height: 44px;
   min-height: 44px;
   padding: 0;
   border: 0;
@@ -119,13 +120,14 @@ body.vision-home summary {
   color: #3f3f42;
   font-size: 14px;
   font-weight: 500;
+  line-height: 44px;
   text-decoration: none;
   cursor: pointer;
 }
 
-.vh-desktop-nav > a:hover,
-.vh-menu > summary:hover,
-.vh-menu[open] > summary {
+body.vision-home .vh-desktop-nav > a:hover,
+body.vision-home .vh-menu > summary:hover,
+body.vision-home .vh-menu[open] > summary {
   color: var(--vh-blue);
 }
 
@@ -218,28 +220,37 @@ body.vision-home summary {
   gap: 12px;
 }
 
-.vh-language > summary {
+body.vision-home .vh-language > summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
   min-height: 44px;
   padding: 0 4px;
   color: var(--vh-muted);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 44px;
   cursor: pointer;
 }
 
-.vh-quote {
+body.vision-home .vh-quote {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  height: 36px;
   min-height: 34px;
-  padding: 6px 14px;
+  padding: 0 16px;
   border-radius: 999px;
   background: var(--vh-blue);
   color: #fff !important;
   font-size: 13px;
   font-weight: 600;
+  line-height: 36px;
   text-decoration: none;
 }
 
-.vh-quote:hover {
+body.vision-home .vh-quote:hover {
   background: #0077ed;
 }
 
@@ -452,13 +463,19 @@ html[lang="zh-CN"] .vh-hero h1 {
 .vh-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--vh-line);
   border-top: 1px solid var(--vh-line);
   border-bottom: 1px solid var(--vh-line);
+  border-radius: var(--vh-radius);
+  box-sizing: border-box;
   background: var(--vh-surface);
 }
 
 .vh-metric {
-  padding: 56px 28px;
+  padding: 38px 28px;
   border-right: 1px solid var(--vh-line);
   text-align: center;
 }
@@ -469,8 +486,8 @@ html[lang="zh-CN"] .vh-hero h1 {
 
 .vh-metric strong {
   display: block;
-  margin-bottom: 8px;
-  font-size: 42px;
+  margin-bottom: 6px;
+  font-size: 36px;
   line-height: 1;
 }
 
@@ -798,14 +815,8 @@ html[lang="zh-CN"] .vh-hero h1 {
   border-bottom: 1px solid var(--vh-line);
 }
 
-.vh-application span {
-  color: var(--vh-soft);
-  font-size: 12px;
-  font-weight: 700;
-}
-
 .vh-application h3 {
-  margin: 34px 0 12px;
+  margin: 0 0 12px;
   font-size: 23px;
   line-height: 1.2;
 }
@@ -1011,7 +1022,7 @@ body.vision-home summary:focus-visible {
 
   .vh-desktop-nav,
   .vh-language,
-  .vh-quote {
+  body.vision-home .vh-quote {
     display: none;
   }
 
@@ -1120,10 +1131,11 @@ body.vision-home summary:focus-visible {
 
   .vh-metrics {
     grid-template-columns: 1fr;
+    width: calc(100% - 28px);
   }
 
   .vh-metric {
-    padding: 34px 20px;
+    padding: 24px 20px;
     border-right: 0;
     border-bottom: 1px solid var(--vh-line);
   }
@@ -1194,7 +1206,7 @@ body.vision-home summary:focus-visible {
   }
 
   .vh-application h3 {
-    margin-top: 26px;
+    margin-top: 0;
   }
 
   .vh-footer {

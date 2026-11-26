@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611260135"
+VERSION = "202611261539"
 PAGES = [
     "product/10032.html",
     "product/10032.en-US.html",

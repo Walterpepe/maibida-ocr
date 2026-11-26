@@ -89,24 +89,26 @@ body.vp2-page summary {
   gap: 28px;
 }
 
-.vp2-desktop-nav > a,
-.vp2-product-menu > summary,
-.vp2-language > summary {
+body.vp2-page .vp2-desktop-nav > a,
+body.vp2-page .vp2-product-menu > summary,
+body.vp2-page .vp2-language > summary {
   display: inline-flex;
   align-items: center;
+  height: 44px;
   min-height: 44px;
   color: #3f3f42;
   font-size: 14px;
   font-weight: 500;
+  line-height: 44px;
   text-decoration: none;
   cursor: pointer;
 }
 
-.vp2-desktop-nav > a:hover,
-.vp2-product-menu > summary:hover,
-.vp2-product-menu[open] > summary,
-.vp2-language > summary:hover,
-.vp2-language[open] > summary {
+body.vp2-page .vp2-desktop-nav > a:hover,
+body.vp2-page .vp2-product-menu > summary:hover,
+body.vp2-page .vp2-product-menu[open] > summary,
+body.vp2-page .vp2-language > summary:hover,
+body.vp2-page .vp2-language[open] > summary {
   color: var(--vp2-blue);
 }
 
@@ -205,20 +207,23 @@ body.vp2-page summary {
   color: var(--vp2-blue);
 }
 
-.vp2-quote {
+body.vp2-page .vp2-quote {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  height: 36px;
   min-height: 34px;
-  padding: 6px 14px;
+  padding: 0 16px;
   border-radius: 999px;
   background: var(--vp2-blue);
   color: #fff !important;
   font-size: 13px;
   font-weight: 600;
+  line-height: 36px;
   text-decoration: none;
 }
 
-.vp2-quote:hover {
+body.vp2-page .vp2-quote:hover {
   background: #0077ed;
 }
 
@@ -428,8 +433,8 @@ body.vp2-page summary {
 }
 
 .vp2-theme-dark .vp2-hero-media {
-  border-color: rgba(255, 255, 255, 0.11);
-  background: #151517;
+  border-color: var(--vp2-line);
+  background: var(--vp2-paper);
 }
 
 .vp2-hero-media img {
@@ -437,6 +442,10 @@ body.vp2-page summary {
   aspect-ratio: 4 / 3;
   object-fit: contain;
   mix-blend-mode: multiply;
+}
+
+body.vp2-page .vp2-theme-dark .vp2-hero-media img {
+  mix-blend-mode: normal;
 }
 
 .vp2-wrap {
@@ -837,11 +846,14 @@ body.vp2-page summary {
   padding: 0 !important;
 }
 
-.vp2-legacy .strategic2,
-.vp2-legacy .vp-head,
-.vp2-legacy .fp-head {
-  margin-bottom: 34px;
-  text-align: left;
+body.vp2-page .vp2-legacy .strategic2,
+body.vp2-page .vp2-legacy .vp-head,
+body.vp2-page .vp2-legacy .fp-head {
+  width: auto;
+  max-width: none;
+  margin: 0 0 34px !important;
+  padding: 0;
+  text-align: left !important;
 }
 
 .vp2-legacy .strategic2 p:first-of-type,
@@ -863,6 +875,11 @@ body.vp2-page summary {
 
 .vp2-legacy .vp-head h2::after {
   display: none;
+}
+
+body.vp2-page .vp2-legacy .vp-apps-dark .vp-head h2,
+body.vp2-page .vp2-legacy .fp-cases-dark .fp-head h2 {
+  color: #fff !important;
 }
 
 .vp2-legacy .vp-ai-card,
@@ -1131,7 +1148,7 @@ body.vp2-page button:focus-visible {
 @media (max-width: 1050px) {
   .vp2-desktop-nav,
   .vp2-language,
-  .vp2-quote {
+  body.vp2-page .vp2-quote {
     display: none;
   }
 

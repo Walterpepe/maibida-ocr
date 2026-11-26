@@ -17,6 +17,23 @@ assert re.search(
     CSS,
     re.S,
 )
+assert re.search(
+    r"\.vp2-theme-dark \.vp2-hero-media\s*\{[^}]*background:\s*var\(--vp2-paper\)",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"body\.vp2-page \.vp2-legacy \.vp-head,\s*body\.vp2-page \.vp2-legacy \.fp-head",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"body\.vp2-page \.vp2-legacy \.vp-apps-dark \.vp-head h2",
+    CSS,
+    re.S,
+)
+assert "body.vp2-page .vp2-product-menu > summary" in CSS
+assert "body.vp2-page .vp2-language > summary" in CSS
 
 for slug, entry in G["PAGES"].items():
     for lang_key in ("zh", "en"):

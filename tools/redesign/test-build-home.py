@@ -23,6 +23,17 @@ for selector in (
         re.S,
     ), selector
 
+assert re.search(
+    r"body\.vision-home \.vh-menu > summary\s*\{[^}]*font-size:\s*14px[^}]*line-height:\s*44px",
+    CSS,
+    re.S,
+)
+assert re.search(
+    r"\.vh-metrics\s*\{[^}]*width:\s*min\(1240px, calc\(100% - 40px\)\)",
+    CSS,
+    re.S,
+)
+
 for code, data in G["LOCALES"].items():
     source = subprocess.check_output(
         ["git", "show", f"{G['BASE_COMMIT']}:{data['file']}"],
@@ -39,5 +50,8 @@ for code, data in G["LOCALES"].items():
     assert "<title>" in head.lower(), f"{code} missing title; {head[:500]}"
     assert head.lower().count("<head") == 1, code
     assert head.lower().count("</head>") == 1, code
+    body = G["build_body"](data)
+    assert '<article class="vh-application"><span' not in body, code
+    assert '<article class="vh-application"><h3' in body, code
 
 print("PASS homepage builder preserves head metadata")

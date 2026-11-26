@@ -13,7 +13,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611260135"
+VERSION = "202611261539"
 BASE_COMMIT = "86f6b2e"
 
 LANGUAGES = [
@@ -94,10 +94,10 @@ LOCALES = {
         "applications_title": "从微小连接，到精密组件。",
         "applications_body": "同一套视觉能力，适配不同材料、尺寸、表面与生产速度。",
         "applications": [
-            ("01", "注塑成型", "模具状态、缺料、毛刺与产品尺寸在线判断。"),
-            ("02", "连接器", "端子变形、缺料、间距与外观缺陷全检。"),
-            ("03", "电子元器件", "微小零件的高速识别、分类与自动剔除。"),
-            ("04", "精密零部件", "复杂轮廓与关键尺寸的稳定重复检测。"),
+            ("注塑成型", "模具状态、缺料、毛刺与产品尺寸在线判断。"),
+            ("连接器", "端子变形、缺料、间距与外观缺陷全检。"),
+            ("电子元器件", "微小零件的高速识别、分类与自动剔除。"),
+            ("精密零部件", "复杂轮廓与关键尺寸的稳定重复检测。"),
         ],
         "cta_eyebrow": "从样品开始",
         "cta_title": "告诉我们，您需要检测什么。",
@@ -174,10 +174,10 @@ LOCALES = {
         "applications_title": "From tiny connectors to precision components.",
         "applications_body": "One vision platform, tuned for different materials, tolerances, surface conditions and line speeds.",
         "applications": [
-            ("01", "Injection Molding", "Inline mold status, part presence, flash and dimensional judgment."),
-            ("02", "Connectors", "Full inspection of terminal deformation, missing material, pitch and appearance."),
-            ("03", "Electronic Components", "High-speed recognition, classification and automatic rejection of small parts."),
-            ("04", "Precision Parts", "Stable, repeatable inspection of complex contours and critical dimensions."),
+            ("Injection Molding", "Inline mold status, part presence, flash and dimensional judgment."),
+            ("Connectors", "Full inspection of terminal deformation, missing material, pitch and appearance."),
+            ("Electronic Components", "High-speed recognition, classification and automatic rejection of small parts."),
+            ("Precision Parts", "Stable, repeatable inspection of complex contours and critical dimensions."),
         ],
         "cta_eyebrow": "START WITH A SAMPLE",
         "cta_title": "Tell us what needs to be inspected.",
@@ -389,9 +389,9 @@ def build_body(data):
         for index, (title, description) in enumerate(data["capabilities"], 1)
     )
     applications = "".join(
-        f'<article class="vh-application"><span>{escape(number)}</span>'
-        f'<h3>{escape(title)}</h3><p>{escape(description)}</p></article>'
-        for number, title, description in data["applications"]
+        f'<article class="vh-application"><h3>{escape(title)}</h3>'
+        f"<p>{escape(description)}</p></article>"
+        for title, description in data["applications"]
     )
     hero_facts = "".join(
         f"<li><strong>{escape(value)}</strong><span>{escape(label)}</span></li>"
