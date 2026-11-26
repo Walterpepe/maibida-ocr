@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+
+<html lang="ms-MY">
+<head id="Head1">
+<meta charset="utf-8"/>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MXQP6WWX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="no" name="wap-font-scale"/>
+<link href="../cn/css/css.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/main.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/move.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/swiper.min.css?v=202611231130" rel="stylesheet"/>
+<script src="../cn/js/jquery.min.js?v=202611231130" type="text/javascript"></script>
+<link href="../cn/css/swiper-bundle.min.css?v=202611231130" rel="stylesheet"/>
+<script src="../cn/js/swiper-bundle.min.js?v=202611231130"></script>
+<style>
+
+        video {
+
+            width: 100%;
+
+            height: auto;
+
+        }
+
+    </style>
+<meta content="mold protection monitor, pemantauan acuan suntikan, elak perlanggaran acuan, pemeriksaan machine vision, prinsip pelindung acuan" name="keywords"/><title>Bagaimana Mold Protection Monitor Berfungsi? Prinsip Perlindungan Acuan Suntikan Dijelaskan | MAIBIDA</title><meta content="Ketahui cara mold protection monitor menggunakan kamera industri untuk merakam acuan semasa kitaran suntikan, membandingkannya dengan imej rujukan, dan menghantar isyarat I/O ke PLC bagi menyekat penutupan acuan apabila produk tertinggal, melekat, sisipan hilang, atau slaid/ejector abnormal." name="description"/><link href="https://www.maibida.com/article/mold-monitor-principle.ms-MY.html" rel="canonical"/><link href="https://www.maibida.com/article/mold-monitor-principle.html" hreflang="zh-CN" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-US.html" hreflang="en-US" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-SG.html" hreflang="en-SG" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ja-JP.html" hreflang="ja-JP" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.vi-VN.html" hreflang="vi-VN" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.th-TH.html" hreflang="th-TH" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.id-ID.html" hreflang="id-ID" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ms-MY.html" hreflang="ms-MY" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ko-KR.html" hreflang="ko-KR" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ru-RU.html" hreflang="ru-RU" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.es-MX.html" hreflang="es-MX" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.es-ES.html" hreflang="es-ES" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-US.html" hreflang="x-default" rel="alternate"/>
+<style>
+/* V1PRO 模保相机块：文字与图片等宽对称 */
+.lbutea2 .flex.jc h3{width:48%;font-size:44px;color:#333}
+.lbutea2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.lbutea2 .flex.jc img{width:48%;height:auto}
+.lbutea2 .flex.jc{align-items:center}
+@media (max-width:760px){
+.lbutea2 .flex.jc h3{width:100%;font-size:26px}
+.lbutea2 .flex.jc h3 .d1{font-size:15px}
+.lbutea2 .flex.jc img{width:100%;margin-top:20px}
+}
+
+</style>
+<style>
+/* 软件功能块：图片在左、文字在右，等宽对称 */
+.energy2 .flex.jc img{flex:1 1 46%;width:auto;max-width:48%;height:auto}
+.energy2 .flex.jc h3{flex:1 1 46%;min-width:320px;font-size:44px;color:#333;line-height:1.5}
+.energy2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.energy2 .flex.jc{align-items:center}
+@media (max-width:760px){
+.energy2 .flex.jc img{width:100%;max-width:100%}
+.energy2 .flex.jc h3{width:100%;font-size:26px}
+.energy2 .flex.jc h3 .d1{font-size:15px}
+}
+<style>
+/* 硬件优势块：图片在左、文字在右，等宽对称 */
+.agbore2 .flex.jc{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px}
+.agbore2 .flex.jc img{flex:1 1 44%;width:auto;max-width:46%;height:auto;border-radius:12px}
+.agbore2 .flex.jc h3{flex:1 1 44%;min-width:320px;font-size:44px;color:#333;line-height:1.5}
+.agbore2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.agbore2 .flex.jc h3 .d1 p{margin:8px 0}
+@media (max-width:760px){
+.agbore2 .flex.jc img{flex:1 1 100%;max-width:100%}
+.agbore2 .flex.jc h3{flex:1 1 100%;font-size:26px}
+.agbore2 .flex.jc h3 .d1{font-size:15px}
+}
+</style>
+<meta content="Bagaimana Mold Protection Monitor Berfungsi? Prinsip Perlindungan Acuan Suntikan Dijelaskan | MAIBIDA" property="og:title"/>
+<meta content="Monitor acuan IMX-790 dengan berbilang kamera, pemerolehan imej AI dan pemeriksaan ROI mengesan sisipan, sisa produk serta status pelepasan." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.maibida.com/article/mold-monitor-principle.ms-MY.html" property="og:url"/>
+<meta content="https://www.maibida.com/cn/images/maibida-logo.png" property="og:image"/>
+<meta content="MAIBIDA" property="og:site_name"/>
+<meta content="ms_MY" property="og:locale"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Laman Utama", "item": "https://www.maibida.com/"}, {"@type": "ListItem", "position": 2, "name": "Artikel Pengetahuan", "item": "https://www.maibida.com/article/mold-monitor-principle.ms-MY.html"}, {"@type": "ListItem", "position": 3, "name": "Prinsip Kerja Mold Protection Monitor", "item": "https://www.maibida.com/article/mold-monitor-principle.ms-MY.html"}]}</script>
+<link href="../cn/css/ocr-rebuild.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Bagaimana Mold Protection Monitor Berfungsi? Prinsip Perlindungan Acuan Suntikan Dijelaskan", "description": "Ketahui cara mold protection monitor menggunakan kamera industri untuk merakam acuan semasa kitaran suntikan, membandingkannya dengan imej rujukan, dan menghantar isyarat I/O ke PLC bagi menyekat penutupan acuan apabila produk tertinggal, melekat, sisipan hilang, atau slaid/ejector abnormal.", "image": "https://www.maibida.com/cn/images/maibida-logo.png", "inLanguage": "ms-MY", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "author": {"@type": "Organization", "name": "Kunshan Maibida Intelligent Equipment Co., Ltd.", "url": "https://www.maibida.com/"}, "publisher": {"@type": "Organization", "name": "Kunshan Maibida Intelligent Equipment Co., Ltd.", "logo": {"@type": "ImageObject", "url": "https://www.maibida.com/cn/images/maibida-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.maibida.com/article/mold-monitor-principle.ms-MY.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bagaimana mold protection monitor mengelakkan perlanggaran acuan?", "acceptedAnswer": {"@type": "Answer", "text": "Dalam jendela selepas ejeksi dan sebelum penutupan, ia merakam rongga dan membandingkannya dengan rujukan. Jika produk belum terlepas, ada objek asing, sisipan hilang, atau slaid/ejector abnormal, ia terus menghantar isyarat sekat penutupan melalui I/O ke PLC dan mencetus penggera, mengelakkan secara fizikal acuan menutup menimpa rongga atau objek asing."}}, {"@type": "Question", "name": "Berapa kali pemeriksaan setiap kitaran dan bila?", "acceptedAnswer": {"@type": "Answer", "text": "Biasanya dua. Pertama apabila acuan terbuka penuh dan produk belum diejeksi, memeriksa kelengkapan dan keklekitan; kedua selepas ejector kembali dan sebelum penutupan, memastikan tiada baki dan slaid/sisipan/ejector pada kedudukannya—pintu akhir pencegahan perlanggaran."}}, {"@type": "Question", "name": "Apa bezanya dengan pemeriksaan visual manual?", "acceptedAnswer": {"@type": "Answer", "text": "Operator boleh penat, terlepas kecacatan dan tidak dapat mengikuti kitaran buka/tutup berkelajuan tinggi. Monitor merakam secara automatik setiap kitaran, menilai dalam milisaat mengikut piawaian kuantitatif yang boleh dikesan, mengeksport imej penggera dan menginterlock henti mesin secara langsung."}}, {"@type": "Question", "name": "Apa itu ROI dan mengapa perlu set sensitiviti?", "acceptedAnswer": {"@type": "Answer", "text": "ROI ialah kawasan pemeriksaan terfokus untuk menutup variasi normal seperti haus. Sensitiviti menentukan besar perbezaan yang dianggap abnormal. Kekalkan ROI kecil dan laras sensitiviti melalui kitaran ujian agar tidak terlepas baki sebenar sambil menekan penggera palsu; setiap ROI boleh diset secara berasingan."}}, {"@type": "Question", "name": "Kecacatan apa yang boleh dikesan?", "acceptedAnswer": {"@type": "Answer", "text": "Baki dan keklekitan produk, produk hilang dalam rongga berbilang, kedudukan/kehilangan sisipan, slaid/ejector patah atau tidak kembali, short shot, flash, warna salah pada berbilang bahan, objek asing dalam rongga, serta pemeriksaan semula automatik selepas pintu keselamatan beroperasi."}}]}</script>
+<link href="../cn/css/site-multilingual.css?v=202611231130" rel="stylesheet"/><link href="../cn/css/ocr-diagrams.css?v=202611231130" rel="stylesheet"/><link href="../cn/css/ocr-spec-table.css?v=202611231130" rel="stylesheet"/><link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<style>
+.article-page{max-width:880px;margin:0 auto;padding:48px 20px 64px;color:#26313a;font-family:"Microsoft YaHei","PingFang",Arial,sans-serif;line-height:1.9}
+.article-eyebrow{color:var(--brand-green);font-size:14px;font-weight:700;letter-spacing:2px;margin:0 0 12px}
+.article-page h1,.article-page h2.article-h1{font-size:clamp(26px,3.4vw,38px);line-height:1.3;color:#18232b;margin:0 0 18px}
+.article-lead{font-size:17px;color:#3d4a54;background:#f4f8f6;border-left:4px solid var(--brand-green);padding:16px 20px;border-radius:0 10px 10px 0;margin:0 0 34px}
+.article-page h2,.article-page h3,.article-page h4{font-size:24px;color:#18232b;margin:40px 0 14px;padding-left:12px;border-left:5px solid var(--brand-green)}
+.article-page h3{font-size:19px;color:var(--brand-green);margin:26px 0 10px}
+.article-page p{font-size:16px;margin:0 0 16px}
+.article-page ul{margin:0 0 18px;padding-left:22px}
+.article-page li{margin:6px 0;font-size:16px}
+.article-page strong{color:#18232b}
+.article-steps{counter-reset:step;list-style:none;padding:0;margin:8px 0 20px}
+.article-steps li{position:relative;padding:14px 16px 14px 56px;background:#fff;border:1px solid #e3ebe7;border-radius:12px;margin:12px 0;counter-increment:step}
+.article-steps li::before{content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--brand-green);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.article-faq{margin-top:14px}
+.article-faq details{background:#fff;border:1px solid #e3ebe7;border-radius:12px;padding:16px 20px;margin:12px 0}
+.article-faq summary{font-weight:700;color:#18232b;cursor:pointer;font-size:17px}
+.article-faq details p{margin:12px 0 0;color:#3d4a54}
+.article-cta{margin-top:36px;padding:24px;background:linear-gradient(135deg,#087b3d,#0e7268);border-radius:14px;color:#fff}
+.article-cta h2{color:#fff;border:none;padding:0;margin:0 0 10px}
+.article-cta a{color:#fff;text-decoration:underline;font-weight:700}
+.article-related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.article-related a{display:block;padding:16px 18px;background:#f8fbf9;border:1px solid #dfe7e3;border-radius:12px;color:var(--brand-green);font-weight:700;text-decoration:none}
+.article-related a:hover{border-color:var(--brand-green-bright)}
+@media(max-width:640px){.article-page{padding:32px 16px 48px}.article-related{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1 class="sr-h1">Bagaimana Mold Protection Monitor Berfungsi? Prinsip Perlindungan Acuan Suntikan</h1>
+<div class="top">
+<div class="clear wrap">
+<div class="logo fl">
+<a href="../index.ms-MY.html">
+<img alt="Fungsi perisian•  Kawalan skrin sentuh penuh, operasi mudah dan senang digunakan; kelajuan pemprosesan tinggi, masa pemeriksaan sistem boleh mencapai 0.03 s berdasarkan tetapan kawasan;•Kepekaan ROI boleh dilaraskan secara berasingan, bilangan ROI tidak terhad; •AI memperoleh imej serta" class="i1" src="../UserFiles/upload/image/20260130/6390537782787865841043014.webp" width="339" height="112"/>
+<img alt="Kelebihan perkakasan•  Saiz ringkas, operasi pegang tangan yang mudah, unit utama dilengkapi 5 port rangkaian, kamera boleh ditambah secara fleksibel mengikut keperluan pengeluaran serta antara muka sistem MES dikhaskan untuk penyambungan; •Menyokong kamera sehingga 800×10⁴ piksel, mengintegrasikan inframerah/cahaya putih secara bersepadu" class="i2" src="../UserFiles/upload/image/20260130/6390537782397634082084337.webp" width="339" height="112"/>
+</a>
+</div>
+<details class="vp-nav-menu"><summary>Pusat Produk</summary><ul class="fr T-nav">
+<li><a class="cur" href="10032.ms-MY.html">Monitor acuan</a></li><li><a class="" href="smart-camera.ms-MY.html">Penderia visi</a></li>
+<li><a class="" href="../productlist/10039.ms-MY.html">Mesin pengasingan visi</a></li><li><a class="" href="../productlist/10029.ms-MY.html">Sistem suapan dan susunan dulang fleksibel</a></li><li><a class="" href="../productlist/10030.ms-MY.html">Peralatan pemeriksaan in-line</a><div class="secon"><a href="../productlist/10030.ms-MY.html">Peralatan pemeriksaan in-line penyambung</a><a href="../productlist/10034.ms-MY.html">Peralatan pemeriksaan penarikan jalur HDMI</a><a href="../productlist/10036.ms-MY.html">Peralatan pemeriksaan in-line komponen plastik</a></div></li>
+</ul></details>
+<details class="vp-language-switch"><summary aria-label="Bahasa"><span aria-hidden="true">◎</span>Bahasa</summary><nav aria-label="Bahasa"><a class="" href="mold-monitor-principle.html" hreflang="zh-CN" lang="zh-CN">简体中文</a><a class="" href="mold-monitor-principle.en-US.html" hreflang="en-US" lang="en-US">English (US)</a><a class="" href="mold-monitor-principle.en-SG.html" hreflang="en-SG" lang="en-SG">English (Singapore)</a><a class="" href="mold-monitor-principle.ja-JP.html" hreflang="ja-JP" lang="ja-JP">日本語</a><a class="" href="mold-monitor-principle.vi-VN.html" hreflang="vi-VN" lang="vi-VN">Tiếng Việt</a><a class="" href="mold-monitor-principle.th-TH.html" hreflang="th-TH" lang="th-TH">ไทย</a><a class="" href="mold-monitor-principle.id-ID.html" hreflang="id-ID" lang="id-ID">Bahasa Indonesia</a><a aria-current="page" class="active" href="mold-monitor-principle.ms-MY.html" hreflang="ms-MY" lang="ms-MY">Bahasa Melayu</a><a class="" href="mold-monitor-principle.ko-KR.html" hreflang="ko-KR" lang="ko-KR">한국어</a><a class="" href="mold-monitor-principle.ru-RU.html" hreflang="ru-RU" lang="ru-RU">Русский</a><a class="" href="mold-monitor-principle.es-MX.html" hreflang="es-MX" lang="es-MX">Español (Latinoamérica)</a><a class="" href="mold-monitor-principle.es-ES.html" hreflang="es-ES" lang="es-ES">Español (España)</a></nav></details><a class="vp-contact-link" href="../contact.ms-MY.html">Hubungi</a><a class="vp-whatsapp-link" href="https://wa.me/8615995675085?text=Halo%20Maibida%2C%20saya%20ingin%20bertanya%20tentang%20lampu%20penglihatan%20mesin%2C%20pemantau%20acuan%20atau%20kamera%20pintar.%20Sila%20hantar%20cadangan%20pemilihan%20dan%20sebut%20harga.%20Sumber%3A%20maibida.com" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-expanded="false" aria-controls="wa-consult-panel" data-wa-toggle title="WhatsApp" aria-label="WhatsApp">WhatsApp</a>
+<!-- BEGIN whatsapp-consult-panel -->
+<div class="wa-consult-panel" id="wa-consult-panel" role="dialog" aria-modal="false" aria-labelledby="wa-consult-title" hidden>
+<div class="wa-consult-head"><h2 id="wa-consult-title">Perundingan WhatsApp</h2><button class="wa-consult-close" type="button" aria-label="Tutup">&times;</button></div>
+<p class="wa-consult-intro">Pembeli luar negara boleh menghubungi pasukan jualan dan teknikal kami terus melalui WhatsApp untuk pemilihan produk, sebut harga dan dokumen teknikal.</p>
+<ul class="wa-consult-list"><li>Model, spesifikasi dan keserasian pemantau acuan, sensor penglihatan dan kamera pintar</li><li>Harga, maklumat tempoh penghantaran serta urusan sampel atau percubaan</li><li>Projek OEM dan tempahan khas, panduan pemasangan serta sokongan selepas jualan</li></ul>
+<p class="wa-consult-meta"><strong>Waktu perkhidmatan: </strong>Isnin hingga Jumaat, 09:00-18:00 (GMT+8, Waktu Piawai China). Mesej di luar waktu ini boleh ditinggalkan; untuk perkara segera, sila e-mel juga ke mai_bida@163.com.</p>
+<p class="wa-consult-meta"><strong>Nombor WhatsApp: </strong><a href="https://wa.me/8615995675085?text=Halo%20Maibida%2C%20saya%20ingin%20bertanya%20tentang%20lampu%20penglihatan%20mesin%2C%20pemantau%20acuan%20atau%20kamera%20pintar.%20Sila%20hantar%20cadangan%20pemilihan%20dan%20sebut%20harga.%20Sumber%3A%20maibida.com" target="_blank" rel="noopener noreferrer">+86 159 9567 5085</a></p>
+<a class="wa-consult-btn" href="https://wa.me/8615995675085?text=Halo%20Maibida%2C%20saya%20ingin%20bertanya%20tentang%20lampu%20penglihatan%20mesin%2C%20pemantau%20acuan%20atau%20kamera%20pintar.%20Sila%20hantar%20cadangan%20pemilihan%20dan%20sebut%20harga.%20Sumber%3A%20maibida.com" target="_blank" rel="noopener noreferrer">Mula sembang WhatsApp</a>
+<p class="wa-consult-note">Jangan hantar kata laluan atau maklumat perbankan melalui WhatsApp. Perbualan hanya digunakan untuk menjawab pertanyaan anda; lihat <a href="../privacy.ms-MY.html">Dasar Privasi</a> untuk butiran.</p>
+</div>
+<!-- END whatsapp-consult-panel -->
+</div>
+<!-- main结束 -->
+<div class="ny-nav"><div class="wrap rel flex jc"><div class="position">Artikel Pengetahuan</div><p class="flex"><a href="/">Laman Utama</a><span style="margin:0 8px;color:#999">/</span><a class="cur" href="https://www.maibida.com/article/mold-monitor-principle.ms-MY.html">Prinsip Kerja Mold Protection Monitor</a></p></div></div><!-- ny-nav结束 -->
+</div>
+<main>
+<article class="wrap article-page">
+<p class="article-eyebrow">Artikel Pengetahuan · Perlindungan Acuan Suntikan</p>
+<h2 class="article-h1">Bagaimana Mold Protection Monitor Berfungsi? Prinsip Perlindungan Acuan Suntikan</h2>
+<p class="article-lead">Ringkasnya: mold protection monitor (pelindung acuan) menggunakan kamera industri untuk merakam rongga acuan pada titik tetap antara acuan terbuka, ejeksi dan penutupan, kemudian membandingkannya secara automatik dengan imej rujukan yang telah diajar. Apabila ia mengesan produk tertinggal, produk melekat, sisipan hilang, atau slaid/ejector abnormal, ia menghantar isyarat henti melalui antara muka I/O ke PLC mesin suntikan sebelum acuan ditutup, bagi mengelakkan kerosakan acuan secara fizikal.</p>
+<h3>1. Apa Itu Mold Protection Monitor</h3>
+<p>Ia adalah peranti pemeriksaan atas talian dan perlindungan acuan berasaskan machine vision, terdiri daripada kamera industri (CCD), sumber cahaya, unit pengawal dan perisian pemeriksaan. Ia tidak menggantikan kawalan mesin suntikan itu sendiri, sebaliknya bertindak sebagai ‘penjaga visual’ bebas yang merakam dan menilai keadaan acuan pada setiap kitaran, lalu memulangkan hasilnya kepada mesin sebagai isyarat pensuisan.</p>
+<p>Nilai utamanya ialah menukar ‘pemantauan acuan’ manual yang bergantung pada mata dan pengalaman operator kepada pemeriksaan automatik yang boleh diukur, boleh dikesan dan bertindak balas dalam milisaat—mengurangkan kos pembaikan akibat perlanggaran dan menstabilkan rentak pengeluaran.</p>
+<h3>2. Prinsip Teras: Dari Rakaman hingga Henti Interlock</h3>
+<p>Prosesnya mengikut tiga peringkat—ajar sekali, banding setiap kitaran, interlock apabila abnormal—dan berjalan dalam empat langkah:</p>
+<ol class="article-steps"><li><strong>Bina templat rujukan (teaching).</strong> Semasa persediaan, beberapa imej produk baik dalam keadaan normal dirakam; perisian menjana templat piawai, sementara jurutera menentukan kawasan pemeriksaan (ROI) serta ambang sensitiviti dan keluasan setiap kawasan.</li><li><strong>Rakaman tercetus kitaran.</strong> Selepas menerima isyarat seperti ‘acuan terbuka penuh’, peranti menunda seketika (menunggu getaran reda dan robot keluar) lalu mencetus kamera merakam rongga acuan masa nyata.</li><li><strong>Perbandingan dan penilaian imej.</strong> Perisian menganalisis perbezaan ciri dan skala kelabu antara imej langsung dan templat dalam setiap ROI. Peralatan MAIBIDA boleh memeriksa satu kawasan dalam kira-kira 0.03 saat. Perbezaan melebihi ambang dinilai abnormal, dan bayang minyak dibezakan daripada objek asing sebenar bagi mengurangkan penggera palsu.</li><li><strong>Henti interlock I/O dan penggera.</strong> Apabila abnormal, ia terus mengeluarkan isyarat ‘sekat penutupan’ melalui I/O, mencetus penggera dan menyimpan imej penggera; hanya jika lulus kitaran seterusnya diteruskan. Semua penilaian selesai sebelum tindakan penutupan bermula.</li></ol>
+<h3>3. Dua Pemeriksaan Penting dalam Satu Kitaran Pengacuan</h3>
+<p>Biasanya peranti merakam dua kali setiap kitaran suntikan, masing-masing meliputi risiko berbeza:</p>
+<h4>Pemeriksaan pertama: acuan terbuka penuh, produk belum diejeksi</h4>
+<p>Produk masih dalam acuan. Ini terutamanya memeriksa sama ada produk terbentuk sepenuhnya, ada short shot atau flash, dan sama ada ia melekat pada belahan acuan tetap.</p>
+<h4>Pemeriksaan kedua: ejector telah kembali, sejurus sebelum penutupan</h4>
+<p>Ini ialah pintu akhir pencegahan perlanggaran acuan dan mengesahkan tiga perkara:</p>
+<ul><li>Sama ada produk atau sisa runner telah diejeksi sepenuhnya dan tiada baki dalam rongga;</li><li>Sama ada slaid, sisipan dan ejector kembali ke kedudukan dan tiada yang patah;</li><li>Sama ada objek asing jatuh ke dalam rongga. Jika mana-mana gagal, penutupan disekat.</li></ul>
+<p>Proses yang lebih kompleks boleh menambah pemeriksaan atau mencetus pemeriksaan semula automatik selepas pintu keselamatan beroperasi.</p>
+<h3>4. ROI dan Sensitiviti: Dua Tetapan yang Menentukan Ketepatan</h3>
+<p><strong>ROI (Kawasan Minat)</strong> ialah kawasan yang ditanda untuk perbandingan terfokus—rongga, ejector, slaid dsb. Prinsipnya ‘sekecil mungkin’, sambil menutup kawasan dengan variasi normal seperti kesan haus jangka panjang, alur pengudaraan dan laluan robot bagi mengelak penggera palsu berterusan.</p>
+<p><strong>Sensitiviti (ambang perbezaan)</strong> menentukan sejauh mana perbezaan imej dianggap abnormal. Terlalu tinggi menyebabkan kerap berhenti kerana perbezaan kecil; terlalu rendah berisiko terlepas baki sebenar. Pendekatan betul ialah pelarasan halus mengikut kawasan sepanjang 10–30 kitaran ujian, bukan menetap maksimum. Setiap ROI boleh mempunyai sensitiviti dan keluasan pemeriksaan tersendiri.</p>
+<h3>5. Kecacatan dan Risiko Biasa yang Boleh Dikesan</h3>
+<ul><li>Produk tidak terlepas, baki produk/runner, melekat pada acuan tetap;</li><li>Produk hilang dalam acuan berbilang rongga, warna salah pada produk berbilang bahan;</li><li>Kedudukan sisipan, sisipan hilang atau lebih/kurang;</li><li>Kedudukan slaid abnormal, ejector patah atau tidak kembali;</li><li>Short shot, flash, dimensi di luar toleransi, objek asing dalam rongga;</li><li>Pembersihan penggera pintu keselamatan dan pemeriksaan semula automatik selepas pintu beroperasi.</li></ul>
+<h3>6. Kelebihan Berbanding Pemeriksaan Visual Manual</h3>
+<ul><li><strong>Konsisten tanpa penat:</strong> pemeriksaan automatik setiap kitaran, 24/7, tidak terjejas oleh syif atau tumpuan;</li><li><strong>Kelajuan tinggi dengan interlock:</strong> penilaian milisaat yang bersambung terus ke henti mesin, manakala manual hanya mengesan selepas kejadian;</li><li><strong>Terpiawai dan boleh dikesan:</strong> kriteria kuantitatif, imej dan parameter penggera boleh dieksport untuk pengesanan kualiti;</li><li><strong>Kos dan kecekapan:</strong> mengurangkan pembaikan acuan dan masa henti akibat perlanggaran, menekan penggunaan agen pelepas dan kitaran ejeksi, memperbaiki rentak pengacuan.</li></ul>
+<h3>7. Aplikasi dan Produk Berkaitan</h3>
+<p>Mold protection monitor digunakan secara meluas dalam pengacuan suntikan, penyambung, komponen elektronik dan komponen ketepatan, serta boleh digabungkan dengan AI vision, pemeriksaan inline dan flexible feeding:</p>
+<h3>Produk Berkaitan</h3><div class="article-related">
+<a href="../product/10032.html">Mold Protection Monitor: Perlindungan Acuan Suntikan</a>
+<a href="../product/smart-camera.html">Sensor Visi AI dan Smart Camera Industri</a>
+<a href="../productlist/10030.html">Peralatan Pemeriksaan Inline Penyambung/Plastik</a>
+<a href="../productlist/10039.html">Mesin Isih Visi: Kecacatan dan Pengisihan</a>
+</div>
+<h3>Soalan Lazim</h3><div class="article-faq">
+<details open><summary>Bagaimana mold protection monitor mengelakkan perlanggaran acuan?</summary><p>Dalam jendela selepas ejeksi dan sebelum penutupan, ia merakam rongga dan membandingkannya dengan rujukan. Jika produk belum terlepas, ada objek asing, sisipan hilang, atau slaid/ejector abnormal, ia terus menghantar isyarat sekat penutupan melalui I/O ke PLC dan mencetus penggera, mengelakkan secara fizikal acuan menutup menimpa rongga atau objek asing.</p></details>
+<details><summary>Berapa kali pemeriksaan setiap kitaran dan bila?</summary><p>Biasanya dua. Pertama apabila acuan terbuka penuh dan produk belum diejeksi, memeriksa kelengkapan dan keklekitan; kedua selepas ejector kembali dan sebelum penutupan, memastikan tiada baki dan slaid/sisipan/ejector pada kedudukannya—pintu akhir pencegahan perlanggaran.</p></details>
+<details><summary>Apa bezanya dengan pemeriksaan visual manual?</summary><p>Operator boleh penat, terlepas kecacatan dan tidak dapat mengikuti kitaran buka/tutup berkelajuan tinggi. Monitor merakam secara automatik setiap kitaran, menilai dalam milisaat mengikut piawaian kuantitatif yang boleh dikesan, mengeksport imej penggera dan menginterlock henti mesin secara langsung.</p></details>
+<details><summary>Apa itu ROI dan mengapa perlu set sensitiviti?</summary><p>ROI ialah kawasan pemeriksaan terfokus untuk menutup variasi normal seperti haus. Sensitiviti menentukan besar perbezaan yang dianggap abnormal. Kekalkan ROI kecil dan laras sensitiviti melalui kitaran ujian agar tidak terlepas baki sebenar sambil menekan penggera palsu; setiap ROI boleh diset secara berasingan.</p></details>
+<details><summary>Kecacatan apa yang boleh dikesan?</summary><p>Baki dan keklekitan produk, produk hilang dalam rongga berbilang, kedudukan/kehilangan sisipan, slaid/ejector patah atau tidak kembali, short shot, flash, warna salah pada berbilang bahan, objek asing dalam rongga, serta pemeriksaan semula automatik selepas pintu keselamatan beroperasi.</p></details>
+</div>
+<div class="article-cta"><h3>Perlu bantuan pemilihan atau penilaian penyelesaian?</h3><p>Kami boleh memberikan panduan pemilihan, sokongan tetapan ROI dan ujian kebolehlaksanaan sampel berdasarkan struktur acuan, bahan produk dan masa kitaran anda. <a href="../contact.html">Hubungi Kami</a></p></div>
+</article>
+</main>
+<div class="foot">
+<div class="wrap foot-main">
+<div class="foot-brand">
+<a href="../index.ms-MY.html"><img loading="lazy" decoding="async" alt="Kunshan Maibida Intelligent Equipment Co., Ltd." src="../UserFiles/upload/image/20260130/6390537782787865841043014.webp" width="339" height="112"/></a>
+<p class="foot-slogan">MAIBIDA · Merealisasikan Masa Depan Pembuatan Pintar</p>
+<p class="foot-desc">Kunshan Maibida Intelligent Equipment Co., Ltd. mengkhusus dalam sumber cahaya visi mesin dan peralatan pemeriksaan in-line industri. Dengan penyelidikan dan pembangunan, pengeluaran serta jualan di bawah satu entiti, syarikat menyediakan penyelesaian bersepadu untuk pemeriksaan visi, pemantauan acuan, pengasingan pintar dan suapan automasi kepada industri pembuatan.</p>
+</div>
+<div class="foot-nav">
+<h4>Pusat Produk</h4>
+<a href="10032.ms-MY.html">Monitor acuan</a>
+<a href="smart-camera.ms-MY.html">Penderia visi</a>
+<a href="../productlist/10039.ms-MY.html">Mesin pengasingan visi</a>
+<a href="../productlist/10029.ms-MY.html">Sistem suapan dan susunan dulang fleksibel</a>
+<a href="../productlist/10030.ms-MY.html">Peralatan pemeriksaan in-line</a>
+</div><div class="foot-nav foot-articles"><h4>Artikel Pengetahuan</h4><a href="../article/mold-monitor-principle.ms-MY.html">Prinsip Kerja Mold Protection Monitor</a><a href="../article/mold-monitor-selection-guide.ms-MY.html">Panduan Pemilihan Mold Protection Monitor</a><a href="../article/vision-sorting-vs-manual-inspection.ms-MY.html">Isih Visi Berbanding Pemeriksaan Manual</a><a href="../article/ccd-inline-inspection-guide.ms-MY.html">Panduan Pemeriksaan Inline CCD</a><a href="../article/flexible-feeding-tray-loading-guide.ms-MY.html">Panduan Suapan Fleksibel Muatan Dulang</a></div>
+<div class="foot-contact">
+<h4>Hubungi Kami</h4>
+<p class="fc-line">Talian khidmat pelanggan:<span><a href="tel:+8615995675085" aria-label="Call 15995675085" style="color:inherit;text-decoration:none">15995675085</a></span></p>
+<p class="fc-line">E-mel rasmi:<span><a href="mailto:mai_bida@163.com" aria-label="Email mai_bida@163.com" style="color:inherit;text-decoration:none">mai_bida@163.com</a></span></p>
+<p class="fc-line">Alamat: Bilik 213, Tingkat 2, Taman Teknologi Yuda, No. 6, Jalan Leshan, Bandar Yushan, Kunshan, Suzhou, Jiangsu, China</p>
+<!-- BEGIN whatsapp-footer -->
+<p class="fc-line fc-wa">WhatsApp: <span><a href="https://wa.me/8615995675085?text=Halo%20Maibida%2C%20saya%20ingin%20bertanya%20tentang%20lampu%20penglihatan%20mesin%2C%20pemantau%20acuan%20atau%20kamera%20pintar.%20Sila%20hantar%20cadangan%20pemilihan%20dan%20sebut%20harga.%20Sumber%3A%20maibida.com" target="_blank" rel="noopener noreferrer" aria-label="Perundingan WhatsApp +86 159 9567 5085" style="color:inherit;text-decoration:none">+86 159 9567 5085</a></span></p>
+<!-- END whatsapp-footer -->
+<div class="foot-social"><a href="https://www.linkedin.com/in/wen-yu-8705b2450" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a><a href="https://www.youtube.com/@WenYu-m4l" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.instagram.com/yuwen48698/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61595291249603" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a></div>
+</div>
+</div>
+<div class="eaoplc">
+<p>© 2020–2026 Kunshan Maibida Intelligent Equipment Co., Ltd. All Rights Reserved. </p><p><img loading="lazy" decoding="async" alt="Hubungi Kami" src="../cn/images/logo3.webp" width="18" height="18"/>China</p>
+<p class="foot-legal" style="margin:8px 0 0"><a href="../privacy.ms-MY.html" style="color:inherit;text-decoration:underline">Dasar Privasi</a> &nbsp;·&nbsp; <a href="../terms.ms-MY.html" style="color:inherit;text-decoration:underline">Syarat Jualan</a></p>
+<p class="foot-icp" style="margin:8px 0 0"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">苏ICP备2026089220号</a></p></div>
+</div>
+<!-- foot结束 -->
+<script src="../cn/js/henfon.js?v=202611231130" type="text/javascript"></script>
+<link href="../cn/css/aos.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<script src="../cn/js/aos.js?v=202611231130" type="text/javascript"></script>
+<script type="text/javascript">
+
+    AOS.init({
+
+        easing: 'ease-out-back',
+
+        duration: 1000
+
+    });
+
+
+
+</script>
+<script>
+
+    (function () {
+
+        var visits = document.createElement("script");
+
+        visits.src = "/plug-in/visits.js";
+
+        var s = document.getElementsByTagName("script")[0];
+
+        s.parentNode.insertBefore(visits, s);
+
+    })();
+
+</script>
+<div class="float-sild">
+<a href="javascript:;" onclick="scrollToTop()">
+<img loading="lazy" decoding="async" alt="Kembali ke atas" src="../cn/images/gt.webp" width="56" height="56"/></a>
+</div>
+<script>
+function scrollToTop(){
+	var d = document.documentElement || document.body;
+	var t = d.scrollTop;
+	var step = Math.max(1, Math.round(t / 20));
+	(function anim(){
+		t -= step;
+		if(t <= 0){ d.scrollTop = 0; return; }
+		d.scrollTop = t;
+		requestAnimationFrame(anim);
+	})();
+}
+</script>
+<script src="../cn/js/site-multilingual.js?v=202611231130"></script><script src="../cn/js/whatsapp-consult.js?v=202611231130" defer></script>
+</body>
+</html>

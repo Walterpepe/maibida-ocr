@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head id="Head1">
+<meta charset="utf-8"/>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MXQP6WWX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="no" name="wap-font-scale"/>
+<link href="../cn/css/css.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/main.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/move.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<link href="../cn/css/swiper.min.css?v=202611231130" rel="stylesheet"/>
+<script src="../cn/js/jquery.min.js?v=202611231130" type="text/javascript"></script>
+<link href="../cn/css/swiper-bundle.min.css?v=202611231130" rel="stylesheet"/>
+<script src="../cn/js/swiper-bundle.min.js?v=202611231130"></script>
+<style>
+
+        video {
+
+            width: 100%;
+
+            height: auto;
+
+        }
+
+    </style>
+<meta content="模具监视器,注塑模具保护,压模防护,机器视觉检测,模具保护器原理" name="keywords"/><title>模具监视器是怎么工作的？注塑模具保护原理与压模防护逻辑｜迈必达</title><meta content="详解模具监视器（模具保护器）的工作原理：工业相机在注塑开模/合模周期采集图像，与基准模板比对，发现产品残留、粘模、滑块顶针异常即输出信号阻止合模，防止压模。" name="description"/><link href="https://www.maibida.com/article/mold-monitor-principle.html" rel="canonical"/><link href="https://www.maibida.com/article/mold-monitor-principle.html" hreflang="zh-CN" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-US.html" hreflang="en-US" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-SG.html" hreflang="en-SG" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ja-JP.html" hreflang="ja-JP" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.vi-VN.html" hreflang="vi-VN" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.th-TH.html" hreflang="th-TH" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.id-ID.html" hreflang="id-ID" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ms-MY.html" hreflang="ms-MY" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ko-KR.html" hreflang="ko-KR" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.ru-RU.html" hreflang="ru-RU" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.es-MX.html" hreflang="es-MX" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.es-ES.html" hreflang="es-ES" rel="alternate"/><link href="https://www.maibida.com/article/mold-monitor-principle.en-US.html" hreflang="x-default" rel="alternate"/>
+<style>
+/* V1PRO 模保相机块：文字与图片等宽对称 */
+.lbutea2 .flex.jc h3{width:48%;font-size:44px;color:#333}
+.lbutea2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.lbutea2 .flex.jc img{width:48%;height:auto}
+.lbutea2 .flex.jc{align-items:center}
+@media (max-width:760px){
+.lbutea2 .flex.jc h3{width:100%;font-size:26px}
+.lbutea2 .flex.jc h3 .d1{font-size:15px}
+.lbutea2 .flex.jc img{width:100%;margin-top:20px}
+}
+
+</style>
+<style>
+/* 软件功能块：图片在左、文字在右，等宽对称 */
+.energy2 .flex.jc img{flex:1 1 46%;width:auto;max-width:48%;height:auto}
+.energy2 .flex.jc h3{flex:1 1 46%;min-width:320px;font-size:44px;color:#333;line-height:1.5}
+.energy2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.energy2 .flex.jc{align-items:center}
+@media (max-width:760px){
+.energy2 .flex.jc img{width:100%;max-width:100%}
+.energy2 .flex.jc h3{width:100%;font-size:26px}
+.energy2 .flex.jc h3 .d1{font-size:15px}
+}
+<style>
+/* 硬件优势块：图片在左、文字在右，等宽对称 */
+.agbore2 .flex.jc{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px}
+.agbore2 .flex.jc img{flex:1 1 44%;width:auto;max-width:46%;height:auto;border-radius:12px}
+.agbore2 .flex.jc h3{flex:1 1 44%;min-width:320px;font-size:44px;color:#333;line-height:1.5}
+.agbore2 .flex.jc h3 .d1{font-size:17px;line-height:2;color:#555;margin-top:18px}
+.agbore2 .flex.jc h3 .d1 p{margin:8px 0}
+@media (max-width:760px){
+.agbore2 .flex.jc img{flex:1 1 100%;max-width:100%}
+.agbore2 .flex.jc h3{flex:1 1 100%;font-size:26px}
+.agbore2 .flex.jc h3 .d1{font-size:15px}
+}
+</style>
+
+<meta content="模具监视器是怎么工作的？注塑模具保护原理与压模防护逻辑｜迈必达" property="og:title"/>
+<meta content="模具监视器 在线检测 非标自动化 视觉检测 CCD在线检测 注塑机模具保护" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.maibida.com/article/mold-monitor-principle.html" property="og:url"/>
+<meta content="https://www.maibida.com/cn/images/maibida-logo.png" property="og:image"/>
+<meta content="昆山迈必达智能设备有限公司" property="og:site_name"/>
+<meta content="zh_CN" property="og:locale"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.maibida.com/"}, {"@type": "ListItem", "position": 2, "name": "知识文章", "item": "https://www.maibida.com/article/mold-monitor-principle.html"}, {"@type": "ListItem", "position": 3, "name": "模具监视器工作原理", "item": "https://www.maibida.com/article/mold-monitor-principle.html"}]}</script>
+<link href="../cn/css/ocr-rebuild.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "模具监视器是怎么工作的？注塑模具保护原理与压模防护逻辑", "description": "详解模具监视器的图像采集、基准建模、周期比对与 I/O 联锁停机原理，以及两次关键检测时机与 ROI 设置。", "image": "https://www.maibida.com/cn/images/maibida-logo.png", "inLanguage": "zh-CN", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "author": {"@type": "Organization", "name": "昆山迈必达智能设备有限公司", "url": "https://www.maibida.com/"}, "publisher": {"@type": "Organization", "name": "昆山迈必达智能设备有限公司", "logo": {"@type": "ImageObject", "url": "https://www.maibida.com/cn/images/maibida-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.maibida.com/article/mold-monitor-principle.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "模具监视器是怎么防止压模的？", "acceptedAnswer": {"@type": "Answer", "text": "在注塑机开模、产品顶出后与合模前的关键窗口，模具监视器用工业相机拍摄模腔图像并与合格基准图比对；一旦发现产品未脱落、模腔有异物、镶件缺失或滑块顶针未回位，立即通过 I/O 接口向注塑机 PLC 输出禁止合模信号并报警，从物理上避免模具闭合时压坏模腔或异物。"}}, {"@type": "Question", "name": "模具监视器一个周期检测几次？分别在什么时候？", "acceptedAnswer": {"@type": "Answer", "text": "通常为两次。第一次（一检）在开模到位、产品尚未顶出时，检查产品是否成型完整、有无粘模或缺料；第二次（二检）在顶针回退到位、合模开始前，确认模腔无产品或水口料残留、滑块镶件顶针均已归位，这是防止压模的最后关口。部分工艺可按需增加检测次数。"}}, {"@type": "Question", "name": "模具监视器和人工目视检查有什么区别？", "acceptedAnswer": {"@type": "Answer", "text": "人工目视易疲劳、漏检且无法在高速开合模周期内稳定判断；模具监视器每个成型周期自动拍照、毫秒级比对，检测标准量化可追溯，报警图片与参数可导出，能 7×24 小时稳定运行，并直接联动设备停机，而不仅是提示。"}}, {"@type": "Question", "name": "什么是 ROI 检测区域？为什么要设置灵敏度？", "acceptedAnswer": {"@type": "Answer", "text": "ROI（感兴趣区域）是在画面中圈定需要重点比对的模腔、顶针、滑块等区域，屏蔽长期磨损、排气槽等正常变化的干扰；灵敏度（差异阈值）决定图像差异达到多大才判为异常。ROI 越小越精准、灵敏度需结合试样验证，设置不当会导致漏检或频繁误报。"}}, {"@type": "Question", "name": "模具监视器能检测哪些常见缺陷？", "acceptedAnswer": {"@type": "Answer", "text": "可检测产品残留与粘模、多穴产品缺失、镶件到位/遗漏、滑块与顶针折断或未复位、产品缺料与毛边、多色产品混色、异物落入模腔等，并支持安全门动作后自动复检，覆盖注塑成型中主要的压模与品质风险。"}}]}</script>
+<link href="../cn/css/site-multilingual.css?v=202611231130" rel="stylesheet"/><link href="../cn/css/ocr-diagrams.css?v=202611231130" rel="stylesheet"/><link href="../cn/css/ocr-spec-table.css?v=202611231130" rel="stylesheet"/><link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<style>
+.article-page{max-width:880px;margin:0 auto;padding:48px 20px 64px;color:#26313a;font-family:"Microsoft YaHei","PingFang",Arial,sans-serif;line-height:1.9}
+.article-eyebrow{color:var(--brand-green);font-size:14px;font-weight:700;letter-spacing:2px;margin:0 0 12px}
+.article-page h1,.article-page h2.article-h1{font-size:clamp(26px,3.4vw,38px);line-height:1.3;color:#18232b;margin:0 0 18px}
+.article-lead{font-size:17px;color:#3d4a54;background:#f4f8f6;border-left:4px solid var(--brand-green);padding:16px 20px;border-radius:0 10px 10px 0;margin:0 0 34px}
+.article-page h2,.article-page h3,.article-page h4{font-size:24px;color:#18232b;margin:40px 0 14px;padding-left:12px;border-left:5px solid var(--brand-green)}
+.article-page h3{font-size:19px;color:var(--brand-green);margin:26px 0 10px}
+.article-page p{font-size:16px;margin:0 0 16px}
+.article-page ul{margin:0 0 18px;padding-left:22px}
+.article-page li{margin:6px 0;font-size:16px}
+.article-page strong{color:#18232b}
+.article-steps{counter-reset:step;list-style:none;padding:0;margin:8px 0 20px}
+.article-steps li{position:relative;padding:14px 16px 14px 56px;background:#fff;border:1px solid #e3ebe7;border-radius:12px;margin:12px 0;counter-increment:step}
+.article-steps li::before{content:counter(step);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--brand-green);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.article-faq{margin-top:14px}
+.article-faq details{background:#fff;border:1px solid #e3ebe7;border-radius:12px;padding:16px 20px;margin:12px 0}
+.article-faq summary{font-weight:700;color:#18232b;cursor:pointer;font-size:17px}
+.article-faq details p{margin:12px 0 0;color:#3d4a54}
+.article-cta{margin-top:36px;padding:24px;background:linear-gradient(135deg,#087b3d,#0e7268);border-radius:14px;color:#fff}
+.article-cta h2{color:#fff;border:none;padding:0;margin:0 0 10px}
+.article-cta a{color:#fff;text-decoration:underline;font-weight:700}
+.article-related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.article-related a{display:block;padding:16px 18px;background:#f8fbf9;border:1px solid #dfe7e3;border-radius:12px;color:var(--brand-green);font-weight:700;text-decoration:none}
+.article-related a:hover{border-color:var(--brand-green-bright)}
+@media(max-width:640px){.article-page{padding:32px 16px 48px}.article-related{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1 class="sr-h1">模具监视器是怎么工作的？注塑模具保护原理</h1>
+<div class="top">
+<div class="clear wrap">
+<div class="logo fl">
+<a href="/">
+<img alt="软件功能•  全触摸屏控制，操作简单易用；处理速度快，根据区域的设定系统检测时间可达到0.03秒;•可独立调整ROI灵敏度，ROI数量不受限制；•AI获取图像及" class="i1" src="../UserFiles/upload/image/20260130/6390537782787865841043014.webp" width="339" height="112"/>
+<img alt="硬件优势•  体积轻巧，手持操作方便，主机配备5个网口，根据生产需求灵活追加相机以及预留对接MES系统接口；•支持搭载最高800万像素相机，集成一体化红外/白光" class="i2" src="../UserFiles/upload/image/20260130/6390537782397634082084337.webp" width="339" height="112"/>
+</a>
+</div>
+
+<details class="vp-nav-menu"><summary>产品中心</summary><ul class="fr T-nav">
+<li><a class="cur" href="../product/10032.html">模具监视器</a></li><li><a class="" href="../product/smart-camera.html">视觉传感器</a></li>
+<li><a class="" href="../productlist/10039.html">视觉筛选机</a></li><li><a class="" href="../productlist/10029.html">柔性上料摆盘机</a></li><li><a class="" href="../productlist/10030.html">在线检测设备</a><div class="secon"><a href="../productlist/10030.html">连接器在线检测设备</a><a href="../productlist/10034.html">HDMI拉料检测设备</a><a href="../productlist/10036.html">塑料件在线检测设备</a></div></li>
+</ul></details>
+<details class="vp-language-switch"><summary aria-label="语言 / Language"><span aria-hidden="true">◎</span>语言 / Language</summary><nav aria-label="语言 / Language"><a aria-current="page" class="active" href="mold-monitor-principle.html" hreflang="zh-CN" lang="zh-CN">简体中文</a><a href="mold-monitor-principle.en-US.html" hreflang="en-US" lang="en-US">English (US)</a><a href="mold-monitor-principle.en-SG.html" hreflang="en-SG" lang="en-SG">English (Singapore)</a><a href="mold-monitor-principle.ja-JP.html" hreflang="ja-JP" lang="ja-JP">日本語</a><a href="mold-monitor-principle.vi-VN.html" hreflang="vi-VN" lang="vi-VN">Tiếng Việt</a><a href="mold-monitor-principle.th-TH.html" hreflang="th-TH" lang="th-TH">ไทย</a><a href="mold-monitor-principle.id-ID.html" hreflang="id-ID" lang="id-ID">Bahasa Indonesia</a><a href="mold-monitor-principle.ms-MY.html" hreflang="ms-MY" lang="ms-MY">Bahasa Melayu</a><a href="mold-monitor-principle.ko-KR.html" hreflang="ko-KR" lang="ko-KR">한국어</a><a href="mold-monitor-principle.ru-RU.html" hreflang="ru-RU" lang="ru-RU">Русский</a><a href="mold-monitor-principle.es-MX.html" hreflang="es-MX" lang="es-MX">Español (Latinoamérica)</a><a href="mold-monitor-principle.es-ES.html" hreflang="es-ES" lang="es-ES">Español (España)</a></nav></details><a class="vp-contact-link" href="../contact.html">留言反馈</a><a class="vp-whatsapp-link" href="https://wa.me/8615995675085?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E8%BF%88%E5%BF%85%E8%BE%BE%E7%9A%84%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%85%89%E6%BA%90%E3%80%81%E6%A8%A1%E5%85%B7%E7%9B%91%E8%A7%86%E5%99%A8%E6%88%96%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%EF%BC%8C%E8%AF%B7%E5%8D%8F%E5%8A%A9%E6%8F%90%E4%BE%9B%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE%E4%B8%8E%E6%8A%A5%E4%BB%B7%E3%80%82%E6%9D%A5%E6%BA%90%EF%BC%9Amaibida.com" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-expanded="false" aria-controls="wa-consult-panel" data-wa-toggle title="WhatsApp 咨询" aria-label="WhatsApp 咨询">WhatsApp 咨询</a>
+<!-- BEGIN whatsapp-consult-panel -->
+<div class="wa-consult-panel" id="wa-consult-panel" role="dialog" aria-modal="false" aria-labelledby="wa-consult-title" hidden>
+<div class="wa-consult-head"><h2 id="wa-consult-title">WhatsApp 咨询</h2><button class="wa-consult-close" type="button" aria-label="关闭咨询面板">&times;</button></div>
+<p class="wa-consult-intro">海外客户可通过 WhatsApp 直接与我们的业务与技术人员沟通，获取产品选型、报价与技术资料。</p>
+<ul class="wa-consult-list"><li>模具监视器、视觉传感器与智能相机的型号、参数及兼容性</li><li>产品报价、交期信息与样品或试用安排</li><li>OEM 与定制方案、安装调试及售后技术支持</li></ul>
+<p class="wa-consult-meta"><strong>在线时间：</strong>周一至周五 09:00–18:00（GMT+8，中国标准时间）。非工作时间也可留言；如需紧急协助，请同时发送邮件至 mai_bida@163.com。</p>
+<p class="wa-consult-meta"><strong>WhatsApp 号码：</strong><a href="https://wa.me/8615995675085?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E8%BF%88%E5%BF%85%E8%BE%BE%E7%9A%84%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%85%89%E6%BA%90%E3%80%81%E6%A8%A1%E5%85%B7%E7%9B%91%E8%A7%86%E5%99%A8%E6%88%96%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%EF%BC%8C%E8%AF%B7%E5%8D%8F%E5%8A%A9%E6%8F%90%E4%BE%9B%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE%E4%B8%8E%E6%8A%A5%E4%BB%B7%E3%80%82%E6%9D%A5%E6%BA%90%EF%BC%9Amaibida.com" target="_blank" rel="noopener noreferrer">+86 159 9567 5085</a></p>
+<a class="wa-consult-btn" href="https://wa.me/8615995675085?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E8%BF%88%E5%BF%85%E8%BE%BE%E7%9A%84%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%85%89%E6%BA%90%E3%80%81%E6%A8%A1%E5%85%B7%E7%9B%91%E8%A7%86%E5%99%A8%E6%88%96%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%EF%BC%8C%E8%AF%B7%E5%8D%8F%E5%8A%A9%E6%8F%90%E4%BE%9B%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE%E4%B8%8E%E6%8A%A5%E4%BB%B7%E3%80%82%E6%9D%A5%E6%BA%90%EF%BC%9Amaibida.com" target="_blank" rel="noopener noreferrer">打开 WhatsApp 发起咨询</a>
+<p class="wa-consult-note">请勿通过 WhatsApp 发送密码、银行账号等敏感信息。我们仅将沟通内容用于回复您的咨询，处理方式详见 <a href="../privacy.html">隐私政策</a>。</p>
+</div>
+<!-- END whatsapp-consult-panel -->
+</div>
+<!-- main结束 -->
+<div class="ny-nav"><div class="wrap rel flex jc"><div class="position">知识文章</div><p class="flex"><a href="/">首页</a><span style="margin:0 8px;color:#999">/</span><a class="cur" href="https://www.maibida.com/article/mold-monitor-principle.html">模具监视器工作原理</a></p></div></div><!-- ny-nav结束 -->
+</div>
+<main>
+<article class="wrap article-page">
+<p class="article-eyebrow">知识文章 · 注塑模具保护</p>
+<h2 class="article-h1">模具监视器是怎么工作的？注塑模具保护原理与压模防护逻辑</h2>
+<p class="article-lead">一句话结论：模具监视器（模具保护器）用工业相机在注塑机开模、顶出到合模的固定周期内拍摄模腔，与预先学习的合格基准图像自动比对，一旦发现产品残留、粘模、镶件缺失或滑块顶针异常，就通过 I/O 接口在合模前向注塑机 PLC 输出停机信号，从物理上防止压模。</p>
+
+<h3>一、什么是模具监视器</h3>
+<p>模具监视器是一套基于机器视觉的在线检测与模具保护装置，由工业相机（CCD）、光源、控制器主机和检测软件构成。它不替代注塑机本身的控制，而是作为独立的“视觉守门员”，在每个成型周期对模具状态进行拍照判定，并把结果以开关量信号反馈给注塑机。</p>
+<p>其核心价值在于把传统依赖人工目视、经验判断的“看模”动作，变成可量化、可追溯、毫秒级响应的自动检测，从而降低模具撞坏、压模的维修成本，稳定生产节拍。</p>
+
+<h3>二、核心工作原理：从拍照到联锁停机</h3>
+<p>模具监视器的工作过程可以拆成“一次学习、每周期比对、异常联锁”三个阶段，具体运行时分四步：</p>
+<ol class="article-steps">
+<li><strong>建立基准模板（示教学习）。</strong>调试阶段用合格产品的正常状态拍摄若干张图像，软件据此生成标准模板，并由工程师圈定检测区域（ROI）、设定各区域灵敏度与面积阈值。</li>
+<li><strong>周期触发拍照。</strong>设备接收注塑机开模终到位等信号后，在预设延时（等待模具停止震动、机械手离开）后自动触发相机，采集模腔实时图像。</li>
+<li><strong>图像比对判定。</strong>软件把实时图与基准模板在各 ROI 内做特征与灰度差异分析，迈必达设备单区域检测时间可达约 0.03 秒；差异超过阈值即判定异常，并能区分油污阴影与真实异物，降低误报。</li>
+<li><strong>I/O 联锁停机与报警。</strong>判定异常时立即通过 I/O 输出禁止合模信号并报警、保存报警图片；判定合格才放行下一周期，整个判定在合模动作发生前完成。</li>
+</ol>
+
+<h3>三、一个成型周期内的两次关键检测</h3>
+<p>模具监视器通常在一个注塑周期内执行两次拍照，分别对应不同的风险点：</p>
+<h4>第一次检测（一检）：开模到位、产品未顶出</h4>
+<p>此时产品仍在模内，主要检查产品是否完整成型、有无缺料、毛边，以及是否粘附在前模（粘模）。</p>
+<h4>第二次检测（二检）：顶针回退到位、合模开始前</h4>
+<p>这是防止压模的最后关口，重点确认三件事：</p>
+<ul>
+<li>产品或水口料是否已完全顶出、模腔内有无残留；</li>
+<li>滑块、镶件、顶针是否回到规定位置，有无折断；</li>
+<li>模腔内是否落入异物。任一不满足即阻止合模。</li>
+</ul>
+<p>部分复杂工艺还会按需增加检测次数，或在安全门动作后触发自动复检。</p>
+
+<h3>四、ROI 与灵敏度：决定检测准不准的两个关键设置</h3>
+<p><strong>ROI（感兴趣区域）</strong>是在画面中圈定需要重点比对的模穴、顶针、滑块等区域。原则是“能小不大”，并把长期磨损发黑处、排气槽、机械手进出位置等正常变化区域做屏蔽，避免持续误报。</p>
+<p><strong>灵敏度（差异阈值）</strong>决定图像差异达到多大才算异常：阈值过高易漏检，过低则频繁误报。正确做法是结合连续试样（通常 10–30 模）验证后确定，而不是直接拉满。每个 ROI 还可独立设置灵敏度与检测面积，适应复杂模具。</p>
+
+<h3>五、典型可检测的缺陷与风险</h3>
+<ul>
+<li>产品未脱模、产品或水口料残留、粘前模；</li>
+<li>多穴产品缺失或残留、多色产品混色；</li>
+<li>镶件是否到位、有无遗漏或多放少放；</li>
+<li>滑块位置异常、顶针折断或未复位；</li>
+<li>产品缺料、毛边、尺寸超差，模腔异物落入；</li>
+<li>安全门开关消除报警、安全门动作后自动复检。</li>
+</ul>
+
+<h3>六、相比人工目视的优势</h3>
+<ul>
+<li><strong>稳定无疲劳：</strong>7×24 小时每个周期自动检测，不受班次、注意力影响；</li>
+<li><strong>高速可联动：</strong>毫秒级判定并直接联锁停机，而人工只能事后发现；</li>
+<li><strong>标准可追溯：</strong>检测标准量化，报警图片与参数可一键导出，便于品质追溯；</li>
+<li><strong>降本增效：</strong>减少模具维修与撞模停机，降低脱模剂使用与顶针次数，改善成型周期。</li>
+</ul>
+
+<h3>七、应用场景与相关产品</h3>
+<p>模具监视器广泛用于注塑、连接器、电子元器件与精密零部件生产，并可与 AI 视觉、在线检测、柔性上料等方案组合：</p>
+<div class="article-related">
+<a href="../product/10032.html">模具监视器：注塑模具保护与压模防护</a>
+<a href="../product/smart-camera.html">AI 视觉传感器与工业智能相机</a>
+<a href="../productlist/10030.html">连接器 / 塑料件在线检测设备</a>
+<a href="../productlist/10039.html">视觉筛选机：外观缺陷与分拣</a>
+</div>
+
+<h3>常见问题 FAQ</h3>
+<div class="article-faq">
+<details open><summary>模具监视器是怎么防止压模的？</summary><p>在开模、产品顶出后与合模前的关键窗口拍摄模腔并与基准图比对，发现产品未脱落、异物、镶件缺失或滑块顶针异常时，立即通过 I/O 向注塑机 PLC 输出禁止合模信号并报警，从物理上避免合模压坏模腔或异物。</p></details>
+<details><summary>一个周期检测几次？分别在什么时候？</summary><p>通常两次。一检在开模到位、产品未顶出时，查成型完整性与粘模；二检在顶针回位、合模前，确认模腔无残留、滑块镶件顶针归位，是防压模的最后关口。</p></details>
+<details><summary>和人工目视检查有什么区别？</summary><p>人工易疲劳漏检、无法匹配高速开合模；模具监视器每周期自动拍照、毫秒级比对、标准可追溯、报警图可导出，并直接联动设备停机而非仅提示。</p></details>
+<details><summary>什么是 ROI？为什么要设灵敏度？</summary><p>ROI 是圈定的重点检测区域，用于屏蔽正常磨损等干扰；灵敏度决定差异多大才判异常。ROI 宜小、灵敏度需试样验证，设置不当会漏检或频繁误报。</p></details>
+<details><summary>能检测哪些常见缺陷？</summary><p>产品残留与粘模、多穴缺失、镶件到位/遗漏、滑块顶针折断或未复位、缺料毛边、多色混色、模腔异物等，并支持安全门动作后自动复检。</p></details>
+</div>
+
+<div class="article-cta">
+<h3>需要选型或方案评估？</h3>
+<p>可结合你的模具结构、产品材质与节拍，提供模具监视器与机器视觉检测的选型建议、ROI 设置指导和试样可行性测试。欢迎通过 <a href="../contact.html">联系我们</a> 或页面 WhatsApp 咨询获取书面报价与交付周期。</p>
+</div>
+</article>
+</main>
+<div class="foot">
+<div class="wrap foot-main">
+<div class="foot-brand">
+<a href="/"><img loading="lazy" decoding="async" alt="昆山迈必达智能设备有限公司" src="../UserFiles/upload/image/20260130/6390537782787865841043014.webp" width="339" height="112"/></a>
+<p class="foot-slogan">MAIBIDA · 智造未来</p>
+<p class="foot-desc">昆山迈必达智能设备有限公司专注机器视觉光源与工业在线检测设备，集研发、生产、销售于一体，为制造业提供视觉检测、模具监视、智能筛选与自动化上料一体化解决方案。</p>
+</div>
+<div class="foot-nav">
+<h3>产品中心</h3>
+<a href="../product/10032.html">模具监视器</a>
+<a href="../product/smart-camera.html">视觉传感器</a>
+<a href="../productlist/10039.html">视觉筛选机</a>
+<a href="../productlist/10029.html">柔性上料摆盘机</a>
+<a href="../productlist/10030.html">在线检测设备</a>
+</div><div class="foot-nav foot-articles"><h3>知识文章</h3><a href="../article/mold-monitor-principle.html">模具监视器工作原理</a><a href="../article/mold-monitor-selection-guide.html">模具监视器选型指南</a><a href="../article/vision-sorting-vs-manual-inspection.html">视觉筛选机 vs 人工质检</a><a href="../article/ccd-inline-inspection-guide.html">CCD 在线检测详解</a><a href="../article/flexible-feeding-tray-loading-guide.html">柔性上料摆盘机</a></div>
+<div class="foot-contact">
+<h3>联系我们</h3>
+<p class="fc-line">客户服务热线：<span><a href="tel:+8615995675085" aria-label="Call 15995675085" style="color:inherit;text-decoration:none">15995675085</a></span></p>
+<p class="fc-line">官方邮箱：<span><a href="mailto:mai_bida@163.com" aria-label="Email mai_bida@163.com" style="color:inherit;text-decoration:none">mai_bida@163.com</a></span></p>
+<p class="fc-line">地 址：中国江苏省苏州昆山市玉山镇乐山路6号裕大科技园2楼213室</p>
+<!-- BEGIN whatsapp-footer -->
+<p class="fc-line fc-wa">WhatsApp 咨询：<span><a href="https://wa.me/8615995675085?text=%E6%82%A8%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E8%BF%88%E5%BF%85%E8%BE%BE%E7%9A%84%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%85%89%E6%BA%90%E3%80%81%E6%A8%A1%E5%85%B7%E7%9B%91%E8%A7%86%E5%99%A8%E6%88%96%E6%99%BA%E8%83%BD%E7%9B%B8%E6%9C%BA%EF%BC%8C%E8%AF%B7%E5%8D%8F%E5%8A%A9%E6%8F%90%E4%BE%9B%E9%80%89%E5%9E%8B%E5%BB%BA%E8%AE%AE%E4%B8%8E%E6%8A%A5%E4%BB%B7%E3%80%82%E6%9D%A5%E6%BA%90%EF%BC%9Amaibida.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 咨询 +86 159 9567 5085" style="color:inherit;text-decoration:none">+86 159 9567 5085</a></span></p>
+<!-- END whatsapp-footer -->
+<div class="foot-social"><a href="https://www.linkedin.com/in/wen-yu-8705b2450" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a><a href="https://www.youtube.com/@WenYu-m4l" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.instagram.com/yuwen48698/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61595291249603" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a></div>
+</div>
+</div>
+<div class="eaoplc">
+<p>© 2020–2026 昆山迈必达智能设备有限公司 All Rights Reserved. </p><p><img loading="lazy" decoding="async" alt="联系我们" src="../cn/images/logo3.webp" width="18" height="18"/>中国</p>
+<p class="foot-legal" style="margin:8px 0 0"><a href="../privacy.html" style="color:inherit;text-decoration:underline">隐私政策</a> &nbsp;·&nbsp; <a href="../terms.html" style="color:inherit;text-decoration:underline">销售条款</a></p>
+<p class="foot-icp" style="margin:8px 0 0"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">苏ICP备2026089220号</a></p></div>
+</div>
+<!-- foot结束 -->
+<script src="../cn/js/henfon.js?v=202611231130" type="text/javascript"></script>
+<link href="../cn/css/aos.css?v=202611231130" rel="stylesheet" type="text/css"/>
+<script src="../cn/js/aos.js?v=202611231130" type="text/javascript"></script>
+<script type="text/javascript">
+
+    AOS.init({
+
+        easing: 'ease-out-back',
+
+        duration: 1000
+
+    });
+
+
+
+</script>
+<script>
+
+    (function () {
+
+        var visits = document.createElement("script");
+
+        visits.src = "/plug-in/visits.js";
+
+        var s = document.getElementsByTagName("script")[0];
+
+        s.parentNode.insertBefore(visits, s);
+
+    })();
+
+</script>
+<div class="float-sild">
+<a href="javascript:;" onclick="scrollToTop()">
+<img loading="lazy" decoding="async" alt="返回顶部" src="../cn/images/gt.webp" width="56" height="56"/></a>
+</div>
+<script>
+function scrollToTop(){
+	var d = document.documentElement || document.body;
+	var t = d.scrollTop;
+	var step = Math.max(1, Math.round(t / 20));
+	(function anim(){
+		t -= step;
+		if(t <= 0){ d.scrollTop = 0; return; }
+		d.scrollTop = t;
+		requestAnimationFrame(anim);
+	})();
+}
+</script>
+<script src="../cn/js/site-multilingual.js?v=202611231130"></script><script src="../cn/js/whatsapp-consult.js?v=202611231130" defer></script>
+</body>
+</html>

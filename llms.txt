@@ -1,0 +1,39 @@
+# MAIBIDA 迈必达
+
+> 昆山迈必达智能设备有限公司（MAIBIDA）是工业机器视觉光源与在线检测设备制造商，专注模具监视器、AI 视觉传感器、视觉筛选机、柔性上料摆盘机与在线视觉检测设备，为注塑、连接器、电子元器件与精密零部件生产提供视觉检测与自动化解决方案。
+
+## 公司信息
+
+- 公司全称：昆山迈必达智能设备有限公司
+- 品牌：迈必达 / MAIBIDA
+- 所在地：中国江苏省昆山市
+- 销售电话：+86-159-9567-5085
+- 邮箱：mai_bida@163.com
+- 官网：https://www.maibida.com/
+
+## 核心产品线
+
+- [模具监视器](https://www.maibida.com/product/10032.html): 对模穴、模芯、镶件、顶针、产品残留与脱模状态实时监视，防止压模，降低模具损坏风险。
+- [视觉传感器](https://www.maibida.com/product/smart-camera.html): 集成 AI 视觉能力与多种检测工具，适用于字符、外观、位置、数量及有无检测。
+- [视觉筛选机](https://www.maibida.com/productlist/10039.html): 面向工业零部件完成外观缺陷、尺寸检测与良品/不良品自动分拣。
+- [柔性上料摆盘机](https://www.maibida.com/productlist/10029.html): 结合视觉定位与并联机器人，实现多规格产品柔性上料、抓取、分拣与摆盘。
+- [在线检测设备](https://www.maibida.com/productlist/10030.html): 支持连接器、冲压料带、Insert Molding 与塑料件的高速在线视觉检测。
+
+## 典型应用行业
+
+- 注塑模具保护：开模/合模周期内检测产品残留、粘模与顶针滑块回位。
+- 连接器与电子元器件：端子、HDMI 等高速在线外观与尺寸检测。
+- 精密零部件：CCD 视觉缺陷检测、字符识别（OCR）与自动分拣。
+- 非标自动化：视觉定位引导机器人柔性上料与摆盘。
+
+## 多语言版本
+
+网站提供 12 种语言版本，覆盖以下市场：简体中文（默认）、英语（美国/新加坡）、日语、越南语、泰语、印尼语、马来语、韩语、俄语、墨西哥西班牙语、西班牙西班牙语。各语言入口见站点地图。
+
+## 关键页面
+
+- [首页](https://www.maibida.com/): 公司与产品总览
+- [联系我们](https://www.maibida.com/contact.html): 询盘与联系方式
+- [站点地图](https://www.maibida.com/sitemap.xml): 全部可索引 URL
+- [隐私政策](https://www.maibida.com/privacy.html)
+- [销售条款](https://www.maibida.com/terms.html)
