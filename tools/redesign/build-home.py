@@ -13,7 +13,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-VERSION = "202611261625"
+VERSION = "202611262145"
 BASE_COMMIT = "86f6b2e"
 
 LANGUAGES = [
@@ -251,16 +251,16 @@ def product_cards(data):
     <div class="vh-feature-points" aria-label="{escape(names[0])}">{feature_points}</div>
   </div>
   <figure>
-    <img src="cn/images/redesign/product-monitor.webp?v={VERSION}"
-      width="542" height="530" loading="lazy" decoding="async"
+    <img src="cn/images/redesign/products/monitor-hero-studio.webp?v={VERSION}"
+      width="1600" height="1200" loading="lazy" decoding="async"
       alt="{escape(names[0])}">
   </figure>
 </div>"""
 
     cards = []
     images = [
-        ("product-camera.webp", 970, 970),
-        ("product-inline.webp", 970, 900),
+        ("products/camera-hero-studio.webp", 1600, 1200),
+        ("products/sorter-hero-studio.webp", 1600, 1200),
     ]
     for (name, description, href), (image, width, height) in zip(
         data["products"][1:3], images
@@ -282,8 +282,8 @@ def product_cards(data):
 
     pair = []
     images = [
-        ("product-sorter.webp", 685, 470),
-        ("product-feeder.webp", 810, 1020),
+        ("products/feeder-hero-studio.webp", 1600, 1200),
+        ("products/inline-connector-hero-studio.webp", 1600, 1200),
     ]
     for (name, description, href), (image, width, height) in zip(
         data["products"][3:5], images
@@ -492,8 +492,8 @@ def build_body(data):
         <ul class="vh-capabilities">{capabilities}</ul>
       </div>
       <figure data-reveal>
-        <img src="cn/images/redesign/technology-camera.webp?v={VERSION}"
-          width="1760" height="850" loading="lazy" decoding="async"
+        <img src="cn/images/redesign/products/camera-hero-studio.webp?v={VERSION}"
+          width="1600" height="1200" loading="lazy" decoding="async"
           alt="{escape(data["tech_image_alt"])}">
       </figure>
     </div>

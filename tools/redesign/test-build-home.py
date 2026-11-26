@@ -10,6 +10,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 G = runpy.run_path(str(ROOT / "tools" / "redesign" / "build-home.py"))
 CSS = (ROOT / "cn" / "css" / "vision-home.css").read_text(encoding="utf-8")
+HOME_IMAGES = {
+    "products/monitor-hero-studio.webp",
+    "products/camera-hero-studio.webp",
+    "products/sorter-hero-studio.webp",
+    "products/feeder-hero-studio.webp",
+    "products/inline-connector-hero-studio.webp",
+}
 
 for selector in (
     ".vh-manifesto-inner",
@@ -53,5 +60,8 @@ for code, data in G["LOCALES"].items():
     body = G["build_body"](data)
     assert '<article class="vh-application"><span' not in body, code
     assert '<article class="vh-application"><h3' in body, code
+    for image in HOME_IMAGES:
+        assert f"cn/images/redesign/{image}" in body, (code, image)
+    assert "cn/images/redesign/technology-camera.webp" not in body, code
 
 print("PASS homepage builder preserves head metadata")

@@ -41,18 +41,18 @@ python tools/redesign/build-product-assets.py
 Outputs for the product-family pages are stored under
 `cn/images/redesign/products/`.
 
-`build-editorial-images.py` makes the live-site hero images. It keeps every
-source frame intact and extends the stage around it, so secondary product bodies,
-reflections, cables and machine sections are never segmented away:
+`build-editorial-images.py` encodes the live-site product photography. Every
+marketing hero is a curated 4:3 outpaint built from the original photograph,
+keeping the full product silhouette, reflections, cables and machine sections
+inside a seamless studio frame:
 
 ```bash
 python tools/redesign/build-editorial-images.py
 ```
 
-The camera hero uses a curated 4:3 outpaint generated from the original
-two-camera photograph. Its full-resolution PNG master lives in
-`tools/redesign/source/camera-hero-extended.png`; the build converts it to the
-served WebP without recomposing or cropping either product.
+The full-resolution PNG masters live in `tools/redesign/source/`. The build
+converts them to served WebP assets without recomposing or cropping the
+products.
 
 ## Build
 

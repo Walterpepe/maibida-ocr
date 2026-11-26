@@ -38,5 +38,11 @@ for relative in G["PAGES"]:
     assert (
         f'src="{prefix}cn/js/vision-inner.js?v={G["VERSION"]}"' in text
     ), relative
+    if relative.startswith("contact"):
+        assert (
+            f'{prefix}cn/images/redesign/products/camera-hero-studio.webp'
+            in text
+        ), relative
+        assert "technology-camera.webp" not in text, relative
 
 print(f"PASS interior shell applied to {len(G['PAGES'])} bilingual pages")
