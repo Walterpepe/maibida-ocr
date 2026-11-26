@@ -68,8 +68,13 @@ sudo tools/deploy/deploy.sh
 Each release is unpacked under `/var/www/maibida/releases/`. The live path is a
 symlink at `/var/www/maibida/current`. During the release build, every CSS/JS
 reference is rewritten to the deployment minute (`v=YYYYMMDDHHMM`) before the
-symlink switches. This keeps HTML uncached while allowing assets to retain the
-seven-day cache policy.
+symlink switches. This keeps each release's assets unique while allowing the
+EdgeOne stable-mode HTML cache to avoid origin round trips for nearby visitors.
+
+Before the symlink switches, `deploy.sh` runs the static website-quality gate.
+It blocks releases that lose contact-form accessibility metadata, explicit
+labels, same-origin submission, safe external links, image alternatives, or
+required page metadata.
 
 Roll back by pointing the symlink at an earlier release and restarting the local
 services:
@@ -100,6 +105,66 @@ Inquiry messages are stored in:
 The monthly systemd timer enforces the 24-month retention promise used by the
 privacy pages.
 
+## Inquiry Notifications
+
+Notifications run only after the inquiry has been appended to
+`messages.ndjson`. They are asynchronous, so a failed notification never turns
+a successful form submission into an error. Configure either or both channels
+in a root-owned environment file:
+
+```bash
+sudo install -d -m 755 /etc/maibida
+sudo install -m 600 tools/deploy/notifications.env.example /etc/maibida/notifications.env
+sudo editor /etc/maibida/notifications.env
+sudo systemctl restart maibida-api.service
+```
+
+For WeChat delivery, create a WeCom group robot and set
+`MAIBIDA_WECOM_WEBHOOK_URL`. The service posts a Markdown summary to the group
+robot. Personal WeChat accounts cannot be automated through an official
+standalone bot API; WeCom group robots, WeChat Official Accounts, or enterprise
+WeChat APIs are the supported paths.
+
+Typical WeCom setup:
+
+1. Open the target group in WeCom.
+2. Open group settings, add a group robot, and copy its webhook URL.
+3. Set `MAIBIDA_WECOM_WEBHOOK_URL` in `/etc/maibida/notifications.env`.
+4. Restart `maibida-api.service`.
+
+For email delivery through SMTP, set `MAIBIDA_SMTP_HOST`,
+`MAIBIDA_SMTP_USER`, `MAIBIDA_SMTP_PASS`, `MAIBIDA_SMTP_FROM`, and
+`MAIBIDA_EMAIL_TO`. Port 465 uses implicit TLS and port 587 uses STARTTLS. The
+notification uses a dependency-free Node SMTP client; credentials remain in
+process memory and are never written to a temporary file.
+
+For Tencent Exmail, use `smtp.exmail.qq.com` on port `465` or `587`, the full mailbox
+address as `MAIBIDA_SMTP_USER` and `MAIBIDA_SMTP_FROM`, and the mailbox SMTP
+authorization code as `MAIBIDA_SMTP_PASS`. QQ Mail and other providers work the
+same way when they support SMTP on port 465 or port 587.
+
+Preview formatting without sending:
+
+```bash
+node tools/test-notifications.js
+```
+
+Send a sample through the configured real channels:
+
+```bash
+MAIBIDA_NOTIFY_LIVE=1 node tools/test-notifications.js
+```
+
+Because systemd keeps the production credentials in its own environment, a
+server-side live test can be run without exposing them in shell history:
+
+```bash
+sudo systemd-run --quiet --wait --pipe --collect \
+  --property=EnvironmentFile=/etc/maibida/notifications.env \
+  --property=Environment=MAIBIDA_NOTIFY_LIVE=1 \
+  /usr/bin/node /home/ubuntu/maibida-ocr/tools/test-notifications.js
+```
+
 ## Local Firewall
 
 Enable the baseline firewall while preserving SSH access:
@@ -119,8 +184,12 @@ Recommended CDN behavior:
 - Use `https://www.maibida.com` as the canonical public hostname.
 - Configure the CDN origin with HTTPS, the `www.maibida.com` SNI/Host value, and
   the current origin certificate.
-- Cache images, video, PDFs, fonts, CSS, and JavaScript. Do not cache HTML,
-  `robots.txt`, `sitemap.xml`, or `/api/messages`.
+- Cache images, video, PDFs, fonts, CSS, and JavaScript for seven days.
+- During active development, do not cache HTML, `robots.txt`, `sitemap.xml`,
+  or `/api/messages`.
+- In stable mode, force a short EdgeOne node-cache TTL for `/` and `*.html`.
+  Browsers still receive `Cache-Control: no-cache` and revalidate with the
+  nearby edge node. Purge all HTML URLs immediately after every release.
 - Respect the origin's `Cache-Control` and `CDN-Cache-Control` headers.
 - Enable the CDN WAF, bot protection, and edge rate limiting for `/api/messages`.
 - Configure the provider's trusted IP ranges in Nginx with `set_real_ip_from`
@@ -156,7 +225,18 @@ sh tools/deploy/check-production.sh
 
 The check verifies DNS, redirects, TLS, security headers, localized pages,
 compliance pages, the inquiry API, private-data blocking, image delivery, and
-the SEO files.
+the SEO files. It also verifies that the release contact form is same-origin and
+retains the autocomplete and live-error accessibility wiring.
+
+Measure the live HTTP TTFB from six countries with Globalping:
+
+```bash
+node tools/measure-global-latency.js
+node tools/measure-global-latency.js --id MEASUREMENT_ID
+```
+
+The output includes `EO-Cache-Status`, DNS/TCP/TLS timings, first-byte latency,
+and total request time for each probe.
 
 ## EdgeOne Automation
 
@@ -187,6 +267,9 @@ teo:ModifyFunction
 teo:DescribeFunctionRules
 teo:CreateFunctionRule
 teo:ModifyFunctionRule
+teo:DescribeL7AccRules
+teo:CreateL7AccRules
+teo:ModifyL7AccRule
 ```
 
 Preview the exact requests without sending credentials or making changes:
@@ -194,6 +277,7 @@ Preview the exact requests without sending credentials or making changes:
 ```bash
 node tools/edgeone/edgeone-purge.js --dry-run
 node tools/edgeone/deploy-function.js --dry-run
+node tools/edgeone/configure-html-cache.js --dry-run
 ```
 
 Deploy the contact API function:
@@ -208,10 +292,21 @@ then creates a `www.maibida.com` + `/api/messages` trigger rule. Copy the return
 function/rule IDs into `/etc/maibida/edgeone.env`; later deploys update the
 existing function deterministically.
 
-`tools/deploy/deploy.sh` invokes the function deployer and then submits separate
-EdgeOne URL/prefix purges for `/`, all `contact*` pages, `/cn/css/`, and
-`/cn/js/`. Missing EdgeOne
-credentials produce a warning; set `EDGEONE_FUNCTION_STRICT=1` or
+Configure the HTML cache profile:
+
+```bash
+node tools/edgeone/configure-html-cache.js --mode stable --ttl 600
+node tools/edgeone/configure-html-cache.js --mode development
+```
+
+Stable mode forces node caching for `/` and `*.html`, while API and SEO paths
+keep their origin policies. Development mode disables that rule. The default
+`EDGEONE_HTML_CACHE_TTL` is 600 seconds; deployment purges override it.
+
+`tools/deploy/deploy.sh` invokes the function deployer, applies the configured
+HTML cache mode, and then purges the homepage plus every HTML URL in batches of
+50. Missing EdgeOne credentials produce a warning; set
+`EDGEONE_FUNCTION_STRICT=1`, `EDGEONE_HTML_CACHE_STRICT=1`, or
 `EDGEONE_PURGE_STRICT=1` when a release must fail instead.
 
 Manual purge and targeted URL purge:
@@ -219,6 +314,7 @@ Manual purge and targeted URL purge:
 ```bash
 node tools/edgeone/edgeone-purge.js --dry-run
 node tools/edgeone/edgeone-purge.js
+node tools/edgeone/edgeone-purge.js --html --repo-root .
 node tools/edgeone/edgeone-purge.js \
   --url https://www.maibida.com/contact.html
 ```

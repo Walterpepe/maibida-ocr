@@ -2,6 +2,7 @@ const http=require('http');
 const fs=require('fs');
 const path=require('path');
 const crypto=require('crypto');
+const {notifyInquiry}=require('./notifications');
 const root=path.resolve(__dirname,'..');
 const port=Number(process.env.PORT||process.argv[2]||8899);
 const host=process.env.HOST||'127.0.0.1';
@@ -144,6 +145,8 @@ function handleMessage(req,res){
     fs.appendFileSync(messageFile,JSON.stringify(rec)+'\n','utf8');
     try{fs.chmodSync(messageFile,0o600);}catch(_){/* Windows ACLs handled by deployment */}
     sendJson(res,200,{ok:true,id:rec.id});
+    // Notification failures never change the user's successful form response.
+    setImmediate(()=>notifyInquiry(rec));
   }).catch(err=>{
     if(!res.headersSent){
       const tooLarge=err&&err.message==='too_large';

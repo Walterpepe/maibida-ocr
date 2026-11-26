@@ -64,6 +64,10 @@ async function main() {
   let response = await invoke(new Request(url, { method: "GET" }));
   assert(response.status === 405, "GET should return 405");
   assert(response.headers.get("cache-control") === "no-store", "405 must be no-store");
+  assert(
+    response.headers.get("x-maibida-edge-function") === "contact-api",
+    "405 must include Edge Function marker"
+  );
 
   response = await invoke(
     new Request(url, {
@@ -79,6 +83,10 @@ async function main() {
     })
   );
   assert(response.status === 200, "honeypot should fake success");
+  assert(
+    response.headers.get("x-maibida-edge-function") === "contact-api",
+    "honeypot response must include Edge Function marker"
+  );
   assert(originCalls === 0, "honeypot must not reach origin");
 
   response = await invoke(
@@ -111,6 +119,10 @@ async function main() {
   assert(response.status === 200, "valid submission should reach origin");
   assert(originCalls === 1, "valid submission should call origin exactly once");
   assert(response.headers.get("cache-control") === "no-store", "200 must be no-store");
+  assert(
+    response.headers.get("x-maibida-edge-function") === "contact-api",
+    "forwarded response must include Edge Function marker"
+  );
 
   console.log("PASS Edge Function validation and origin forwarding");
 }

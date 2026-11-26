@@ -12,6 +12,7 @@ Environment=HOST=127.0.0.1
 Environment=PORT=8899
 Environment=MAIBIDA_MESSAGE_DIR=/var/lib/maibida/messages
 Environment=MAIBIDA_ALLOWED_ORIGINS=https://www.maibida.com,https://maibida.com
+EnvironmentFile=-/etc/maibida/notifications.env
 ExecStart=/usr/bin/node /var/www/maibida/current/tools/preview-server.js
 Restart=on-failure
 RestartSec=1s

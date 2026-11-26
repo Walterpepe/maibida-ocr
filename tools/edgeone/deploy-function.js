@@ -8,6 +8,9 @@ const { loadConfig, requestEdgeOne } = require("./edgeone-api");
 const DEFAULT_ZONE_ID = "zone-3x9ct40r4u3w";
 const DEFAULT_HOST = "www.maibida.com";
 const DEFAULT_FUNCTION_NAME = "maibida-contact-api";
+const DEFAULT_FUNCTION_ID = "ef-gve3hyp7";
+const DEFAULT_RULE_ID = "rule-duda03jj";
+const FUNCTION_REMARK = "Validate and forward Maibida contact form submissions";
 const FUNCTION_FILE = path.join(__dirname, "function", "contact-api.js");
 
 function parseArgs(argv) {
@@ -16,8 +19,8 @@ function parseArgs(argv) {
     strict: false,
     zoneId: process.env.EDGEONE_ZONE_ID || DEFAULT_ZONE_ID,
     host: process.env.EDGEONE_HOST || DEFAULT_HOST,
-    functionId: process.env.EDGEONE_FUNCTION_ID || "",
-    ruleId: process.env.EDGEONE_FUNCTION_RULE_ID || "",
+    functionId: process.env.EDGEONE_FUNCTION_ID || DEFAULT_FUNCTION_ID,
+    ruleId: process.env.EDGEONE_FUNCTION_RULE_ID || DEFAULT_RULE_ID,
     functionName:
       process.env.EDGEONE_FUNCTION_NAME || DEFAULT_FUNCTION_NAME,
     envFile: process.env.EDGEONE_ENV_FILE || "",
@@ -105,7 +108,7 @@ function rulePayload(zoneId, host, functionId) {
 
 async function findExistingFunction(config, args, content) {
   if (args.functionId) return { id: args.functionId, created: false };
-  const response = await requestEdgeOne(
+  const named = await requestEdgeOne(
     "DescribeFunctions",
     {
       ZoneId: args.zoneId,
@@ -114,12 +117,22 @@ async function findExistingFunction(config, args, content) {
     },
     config
   );
-  const functions = response.Functions || [];
-  const exact = functions.find(
-    fn => fn.Name === args.functionName || fn.FunctionName === args.functionName
+  const functions = named.Functions || [];
+  const exact = functions.find(fn =>
+    (fn.Name || fn.FunctionName || "").startsWith(args.functionName)
   );
   if (exact) {
     return { id: exact.FunctionId, created: false };
+  }
+
+  const all = await requestEdgeOne(
+    "DescribeFunctions",
+    { ZoneId: args.zoneId, Limit: 200 },
+    config
+  );
+  const byRemark = (all.Functions || []).find(fn => fn.Remark === FUNCTION_REMARK);
+  if (byRemark) {
+    return { id: byRemark.FunctionId, created: false };
   }
 
   const created = await requestEdgeOne(
@@ -128,7 +141,7 @@ async function findExistingFunction(config, args, content) {
       ZoneId: args.zoneId,
       Name: args.functionName,
       Content: content,
-      Remark: "Validate and forward Maibida contact form submissions"
+      Remark: FUNCTION_REMARK
     },
     config
   );
@@ -204,7 +217,7 @@ async function main() {
         ZoneId: args.zoneId,
         FunctionId: functionId,
         Content: content,
-        Remark: "Validate and forward Maibida contact form submissions"
+        Remark: FUNCTION_REMARK
       },
       config
     );

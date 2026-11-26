@@ -31,6 +31,8 @@ tar -xpf "${TARBALL}" -C "${RELEASE_DIR}"
 # Every release gets minute-level CSS/JS URLs, independent of browser caches.
 node "${RELEASE_DIR}/tools/bump-asset-version.js" "${ASSET_VERSION}"
 node "${RELEASE_DIR}/tools/verify-asset-versions.js"
+QUALITY_REPORT=/tmp/maibida-quality.json \
+  node "${RELEASE_DIR}/tools/check-website-quality.js" --static-only
 
 chown -R root:www-data "${RELEASE_DIR}"
 find "${RELEASE_DIR}" -type d -exec chmod 755 {} +
@@ -38,6 +40,10 @@ find "${RELEASE_DIR}" -type f -exec chmod 644 {} +
 chmod 755 "${RELEASE_DIR}"/tools/deploy/*.sh
 
 install -d -o www-data -g www-data -m 750 "${MESSAGE_DIR}"
+install -d -o root -g root -m 755 /etc/maibida
+if [[ ! -f /etc/maibida/notifications.env ]]; then
+  install -m 600 "${RELEASE_DIR}/tools/deploy/notifications.env.example" /etc/maibida/notifications.env
+fi
 
 ln -sfn "${RELEASE_DIR}" "${CURRENT_LINK}.tmp"
 mv -Tf "${CURRENT_LINK}.tmp" "${CURRENT_LINK}"
@@ -89,7 +95,9 @@ if [[ -f "${EDGEONE_ENV_FILE}" ]]; then
 fi
 
 node "${REPO_ROOT}/tools/edgeone/deploy-function.js" "${EDGEONE_ARGS[@]}"
-node "${REPO_ROOT}/tools/edgeone/edgeone-purge.js" --deploy "${EDGEONE_ARGS[@]}"
+node "${REPO_ROOT}/tools/edgeone/configure-html-cache.js" --deploy "${EDGEONE_ARGS[@]}"
+node "${REPO_ROOT}/tools/edgeone/edgeone-purge.js" --deploy --html \
+  --repo-root "${REPO_ROOT}" "${EDGEONE_ARGS[@]}"
 
 printf '\nDeployed %s\nCurrent release: %s\nMessage store: %s\n' \
   "$(git -C "${REPO_ROOT}" rev-parse --short HEAD)" "${RELEASE_DIR}" "${MESSAGE_DIR}/messages.ndjson"

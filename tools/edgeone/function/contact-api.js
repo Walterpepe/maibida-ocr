@@ -16,6 +16,7 @@ function json(body, status, extraHeaders) {
       {
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-store",
+        "X-Maibida-Edge-Function": "contact-api",
         "X-Content-Type-Options": "nosniff"
       },
       extraHeaders || {}
@@ -141,6 +142,7 @@ async function handle(event) {
   const response = await fetch(forwarded);
   const headers = new Headers(response.headers);
   headers.set("Cache-Control", "no-store");
+  headers.set("X-Maibida-Edge-Function", "contact-api");
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
