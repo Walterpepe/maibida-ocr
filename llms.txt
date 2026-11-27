@@ -37,3 +37,94 @@
 - [站点地图](https://www.maibida.com/sitemap.xml): 全部可索引 URL
 - [隐私政策](https://www.maibida.com/privacy.html)
 - [销售条款](https://www.maibida.com/terms.html)
+
+## 多语言版本
+
+全站页面提供 12 种语言，文件名后缀规则：默认中文无后缀，其余语言在 .html 前加语言码（如 contact.en-US.html、product/10032.ja-JP.html）。语言码对照：
+
+- 简体中文（默认）：zh-CN（示例 https://www.maibida.com/index.html）
+- 英语（美国）：en-US（示例 https://www.maibida.com/index.en-US.html）
+- 英语（新加坡）：en-SG（示例 https://www.maibida.com/index.en-SG.html）
+- 日语：ja-JP（示例 https://www.maibida.com/index.ja-JP.html）
+- 越南语：vi-VN（示例 https://www.maibida.com/index.vi-VN.html）
+- 泰语：th-TH（示例 https://www.maibida.com/index.th-TH.html）
+- 印尼语：id-ID（示例 https://www.maibida.com/index.id-ID.html）
+- 马来语：ms-MY（示例 https://www.maibida.com/index.ms-MY.html）
+- 韩语：ko-KR（示例 https://www.maibida.com/index.ko-KR.html）
+- 俄语：ru-RU（示例 https://www.maibida.com/index.ru-RU.html）
+- 西班牙语（墨西哥）：es-MX（示例 https://www.maibida.com/index.es-MX.html）
+- 西班牙语（西班牙）：es-ES（示例 https://www.maibida.com/index.es-ES.html）
+
+## 技术文章（5 个主题 × 12 语言 = 60 篇）
+
+每篇文章均为同模板多语言版本，中文 URL 如下，替换语言后缀即可得到其余 11 个语言版本（后缀规则同上）。
+
+### 模具监视器工作原理：注塑模具保护与压模防护逻辑
+- [简体中文（默认）] https://www.maibida.com/article/mold-monitor-principle.html
+- [英语（美国）] https://www.maibida.com/article/mold-monitor-principle.en-US.html
+- [英语（新加坡）] https://www.maibida.com/article/mold-monitor-principle.en-SG.html
+- [日语] https://www.maibida.com/article/mold-monitor-principle.ja-JP.html
+- [越南语] https://www.maibida.com/article/mold-monitor-principle.vi-VN.html
+- [泰语] https://www.maibida.com/article/mold-monitor-principle.th-TH.html
+- [印尼语] https://www.maibida.com/article/mold-monitor-principle.id-ID.html
+- [马来语] https://www.maibida.com/article/mold-monitor-principle.ms-MY.html
+- [韩语] https://www.maibida.com/article/mold-monitor-principle.ko-KR.html
+- [俄语] https://www.maibida.com/article/mold-monitor-principle.ru-RU.html
+- [西班牙语（墨西哥）] https://www.maibida.com/article/mold-monitor-principle.es-MX.html
+- [西班牙语（西班牙）] https://www.maibida.com/article/mold-monitor-principle.es-ES.html
+
+### 模具监视器选型指南：相机、光源、算力与部署
+- [简体中文（默认）] https://www.maibida.com/article/mold-monitor-selection-guide.html
+- [英语（美国）] https://www.maibida.com/article/mold-monitor-selection-guide.en-US.html
+- [英语（新加坡）] https://www.maibida.com/article/mold-monitor-selection-guide.en-SG.html
+- [日语] https://www.maibida.com/article/mold-monitor-selection-guide.ja-JP.html
+- [越南语] https://www.maibida.com/article/mold-monitor-selection-guide.vi-VN.html
+- [泰语] https://www.maibida.com/article/mold-monitor-selection-guide.th-TH.html
+- [印尼语] https://www.maibida.com/article/mold-monitor-selection-guide.id-ID.html
+- [马来语] https://www.maibida.com/article/mold-monitor-selection-guide.ms-MY.html
+- [韩语] https://www.maibida.com/article/mold-monitor-selection-guide.ko-KR.html
+- [俄语] https://www.maibida.com/article/mold-monitor-selection-guide.ru-RU.html
+- [西班牙语（墨西哥）] https://www.maibida.com/article/mold-monitor-selection-guide.es-MX.html
+- [西班牙语（西班牙）] https://www.maibida.com/article/mold-monitor-selection-guide.es-ES.html
+
+### 视觉筛选机 vs 人工质检：精度与成本对比
+- [简体中文（默认）] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.html
+- [英语（美国）] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.en-US.html
+- [英语（新加坡）] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.en-SG.html
+- [日语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.ja-JP.html
+- [越南语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.vi-VN.html
+- [泰语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.th-TH.html
+- [印尼语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.id-ID.html
+- [马来语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.ms-MY.html
+- [韩语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.ko-KR.html
+- [俄语] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.ru-RU.html
+- [西班牙语（墨西哥）] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.es-MX.html
+- [西班牙语（西班牙）] https://www.maibida.com/article/vision-sorting-vs-manual-inspection.es-ES.html
+
+### CCD 在线检测：连接器高速视觉检测指南
+- [简体中文（默认）] https://www.maibida.com/article/ccd-inline-inspection-guide.html
+- [英语（美国）] https://www.maibida.com/article/ccd-inline-inspection-guide.en-US.html
+- [英语（新加坡）] https://www.maibida.com/article/ccd-inline-inspection-guide.en-SG.html
+- [日语] https://www.maibida.com/article/ccd-inline-inspection-guide.ja-JP.html
+- [越南语] https://www.maibida.com/article/ccd-inline-inspection-guide.vi-VN.html
+- [泰语] https://www.maibida.com/article/ccd-inline-inspection-guide.th-TH.html
+- [印尼语] https://www.maibida.com/article/ccd-inline-inspection-guide.id-ID.html
+- [马来语] https://www.maibida.com/article/ccd-inline-inspection-guide.ms-MY.html
+- [韩语] https://www.maibida.com/article/ccd-inline-inspection-guide.ko-KR.html
+- [俄语] https://www.maibida.com/article/ccd-inline-inspection-guide.ru-RU.html
+- [西班牙语（墨西哥）] https://www.maibida.com/article/ccd-inline-inspection-guide.es-MX.html
+- [西班牙语（西班牙）] https://www.maibida.com/article/ccd-inline-inspection-guide.es-ES.html
+
+### 柔性上料摆盘机：多规格小零件供料方案
+- [简体中文（默认）] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.html
+- [英语（美国）] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.en-US.html
+- [英语（新加坡）] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.en-SG.html
+- [日语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.ja-JP.html
+- [越南语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.vi-VN.html
+- [泰语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.th-TH.html
+- [印尼语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.id-ID.html
+- [马来语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.ms-MY.html
+- [韩语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.ko-KR.html
+- [俄语] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.ru-RU.html
+- [西班牙语（墨西哥）] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.es-MX.html
+- [西班牙语（西班牙）] https://www.maibida.com/article/flexible-feeding-tray-loading-guide.es-ES.html

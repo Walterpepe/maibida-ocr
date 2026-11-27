@@ -119,8 +119,8 @@ dataLayer.push({
 
 ## 8. 对接信息（待填写）
 
-- GTM 容器 ID：`GTM-`MXQP6WWX
-- GA4 衡量 ID：`G-`JRY9Z07FZ6
+- GTM 容器 ID：`GTM-MXQP6WWX`
+- GA4 衡量 ID：`G-JRY9Z07FZ6`
 - GTM 管理员：
 - GA4 管理员：
 - 计划上线日期：
